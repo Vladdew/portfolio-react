@@ -164,7 +164,7 @@
 
     .project__name {
       color: #138714;
-      font-size: 10px;
+      font-size: 1px;
       position: absolute;
       top: 64px;
       left: 0px;
@@ -186,7 +186,7 @@
 
     .project__name {
       color: #138714;
-      font-size: 10px;
+      font-size: 1px;
       position: absolute;
       top: 64px;
       left: 0px;
@@ -208,7 +208,7 @@
     background-size: cover;
     .project__name {
       color: #138714;
-      font-size: 10px;
+      font-size: 1px;
       position: absolute;
       top: 64px;
       left: 0px;
@@ -218,6 +218,28 @@
   &__name-d3Graph:hover .project__name {
     color: #ffffff;
     font-size: 12px;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 12px;
+    left: 2px;
+    width: 167px;
+  }
+
+  &__name-AITelegramBot {
+    background: url("/img/visitki/gpt.png");
+    background-size: cover;
+    .project__name {
+      color: #138714;
+      font-size: 1px;
+      position: absolute;
+      top: 64px;
+      left: 0px;
+    }
+  }
+
+  &__name-AITelegramBot:hover .project__name {
+    color: #ffffff;
+    font-size: 10px;
     letter-spacing: 2px;
     position: absolute;
     top: 12px;

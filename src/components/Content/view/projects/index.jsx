@@ -46,32 +46,18 @@ const Projects = () => {
     },
   };
 
-  const mockVisual = {
+  const AITelegramBot = {
     data: {
-      homepage: "https://app.mockvisual.com/",
-      name: "mockVisual",
-      description: "React / TypeScript / KonvaJS",
+      homepage: "https://t.me/WowTalkingBrilliantBot_bot",
+      name: "AITelegramBot",
+      description:
+        "NodeJS / TypeScript / Express / Docker / Telegram bot / Digital Ocean",
     },
   };
 
   return (
     <div className="projects">
       <div className="projects__container">
-        {Array.isArray(projects || null) && (
-          <Project project={d3Graph} animated={flag} />
-        )}
-        {/* {Array.isArray(projects) && (
-          <Project project={mockVisual} animated={flag} />
-        )} */}
-        {Array.isArray(projects) && (
-          <Project project={vipclub} animated={flag} />
-        )}
-        {/* {Array.isArray(projects) && (
-          <Project project={lepestok} animated={flag} />
-        )} */}
-        {Array.isArray(projects) && (
-          <Project project={calendar} animated={flag} />
-        )}
         {Array.isArray(projects) &&
           projects.map(project => {
             return (
@@ -82,6 +68,22 @@ const Projects = () => {
               />
             );
           })}
+
+        {/* {Array.isArray(projects) && (
+          <Project project={lepestok} animated={flag} />
+        )} */}
+        {Array.isArray(projects) && (
+          <Project project={calendar} animated={flag} />
+        )}
+        {Array.isArray(projects) && (
+          <Project project={vipclub} animated={flag} />
+        )}
+        {Array.isArray(projects) && (
+          <Project project={d3Graph} animated={flag} />
+        )}
+        {Array.isArray(projects) && (
+          <Project project={AITelegramBot} animated={flag} />
+        )}
         <div className="projects__scene">
           {Array.isArray(projects) &&
             projects.map((project, index) => {
