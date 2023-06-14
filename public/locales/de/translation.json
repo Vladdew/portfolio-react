@@ -1,0 +1,53 @@
+{
+  "main-info": {
+    "status": "React entwikler",
+    "address": "Goslar, Deutschland"
+  },
+  "exp": {
+    "pe-title": "BERUFSERFAHRUNG",
+    "pe-title1": "PROFESSIONELLE FÄHIGKEITEN",
+    "pe-description": "Einige Jahre Erfahrung als Freelancer. Zwei Jahre kommerzielle Erfahrung als React-Entwickler in einem IT-Unternehmen.",
+    "skills": {
+      "html": "HTML5 Pixel-perfekte Entwicklung, Bootstrap 4",
+      "css": "Responsives Webdesign, SASS, BEM, CSS-Übergänge, Flexbox, Grid, Kenntnisse in der Kompatibilität mit verschiedenen Browsern, Semantic UI",
+      "version": "Versions-",
+      "control": "kontrolle:"
+    }
+  },
+  "education": {
+    "title": "Ausbildung",
+    "vuz1": {
+      "qualify": "Junior-Spezialist",
+      "name": "Hochschule mit dem Schwerpunkt Computertechnologien"
+    },
+    "vuz2": {
+      "qualify1": "Master of Computer- wissenschaften",
+      "qualify2": "Ingenieur-Forscher",
+      "name": "Ostukrainische Nationaluniversität. Automatisierte technologische Prozesssteuerung."
+    },
+    "vuz3": {
+      "qualify": "React-Entwickler",
+      "name": "Mate Academy Online"
+    }
+  },
+  "contacts": {
+    "title": "Kontakte",
+    "phone": "Telefon",
+    "email-copied": "E-Mail kopiert!",
+    "or_write_here": "Hier eingeben",
+    "address-title": "Adresse",
+    "address": "Goslar, Deutschland"
+  },
+  "profile-description": {
+    "part1": "Fühlen Sie sich frei, neue Technologien zu studieren und kontinuierlich Problemlösungen zu üben. Ihren Fortschritt können Sie auf Codewars verfolgen.",
+    "part2": "Ich möchte gerne in einem Team arbeiten. Ich suche interessante",
+    "part3": "und fröhliche Menschen, mit denen ich gemeinsam Mehrwert schaffen kann.",
+    "part4": "Ich spreche Englisch auf mittlerem Niveau und lerne derzeit Deutsch. Meine Muttersprachen sind Russisch und Ukrainisch."
+  },
+  "profile-title": {
+    "professional": "Berufliches",
+    "profile": "Profil",
+    "more_than_100_solved": "Über hundert gelöste",
+    "problems": "Probleme"
+  }
+}

@@ -1,0 +1,16 @@
+.cv {
+  position: relative;
+  display: grid;
+  grid-template: 298px 0 260px 292px/200px 490px;
+  grid-template-areas:
+    "foto info "
+    "title description "
+    "contacts exp"
+    "education exp";
+  width: 690px;
+  height: 850px;
+  background-color: white;
+  box-shadow: 10px 10px 15px -8px rgba(0, 0, 0, 0.29);
+  border-radius: 1px;
+  margin: 15px 0 0 299px;
+}

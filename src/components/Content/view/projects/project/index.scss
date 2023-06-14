@@ -1,0 +1,227 @@
+.project {
+  background-size: 100%;
+  perspective: 500px;
+  margin: -90px 0 0;
+  transform: rotate(0);
+  visibility: hidden;
+  outline: none;
+  top: -200px;
+
+  &--animated {
+    visibility: visible;
+    display: block;
+    transition: transform 0.3s, top 0.3s, visibility 0.2s 0.5s, margin 0.5s 0.5s;
+    margin: -28px 0 0;
+    transform: rotate(-12deg);
+    position: relative;
+    top: 210px;
+    text-decoration: none;
+  }
+
+  &:hover .project__container {
+    top: -15px;
+    left: -15px;
+    background: #5f5f5f;
+  }
+
+  &__container {
+    position: relative;
+    height: 90px;
+    width: 175px;
+    left: 0;
+    top: 0;
+    transition: background 0.3s, top 0.2s, left 0.2s;
+    box-shadow: -1px 1px 1px 1px rgba(0, 0, 0, 0.45);
+
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+  }
+
+  &__name-mockVisual {
+    background: url("/img/visitki/mock.jpg") 100%;
+    .project__name {
+      opacity: 0;
+    }
+    .project__name:hover {
+      color: #ffffff;
+      font-size: 12px;
+      letter-spacing: 2px;
+      position: absolute;
+      padding-top: 12px;
+      left: 2px;
+      width: 167px;
+      height: 100%;
+      opacity: 1;
+    }
+  }
+
+  &__name-mockVisual:after {
+    content: "new";
+    font-size: 9px;
+    color: red;
+    border: 1px solid red;
+    background-color: yellow;
+    padding: 2px;
+    position: absolute;
+    top: -8px;
+    right: -2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+
+  &__name-vipclub {
+    background: url("/img/visitki/vip.jpg") 100%;
+    .project__name {
+      opacity: 0;
+    }
+    .project__name:hover {
+      color: #ffffff;
+      font-size: 12px;
+      letter-spacing: 2px;
+      position: absolute;
+      padding-top: 12px;
+      left: 2px;
+      width: 167px;
+      opacity: 1;
+    }
+  }
+
+  &__name-vipclub:after {
+    content: "hot";
+    font-size: 9px;
+    color: red;
+    border: 1px solid red;
+    background-color: yellow;
+    padding: 2px;
+    position: absolute;
+    top: -8px;
+    right: -2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+
+  &__name-lepestok {
+    background: url("/img/visitki/lepestok.jpg") 100%;
+    .project__name {
+      opacity: 0;
+    }
+    .project__name:hover {
+      color: #ffffff;
+      font-size: 12px;
+      letter-spacing: 2px;
+      position: absolute;
+      padding-top: 12px;
+      left: 2px;
+      width: 167px;
+      opacity: 1;
+    }
+  }
+
+  &__name-calendar {
+    background: url("/img/visitki/logo-big.png");
+    background-size: 100%;
+    .project__name {
+      opacity: 0;
+    }
+  }
+
+  &__name-calendar:hover .project__name {
+    color: #ffffff;
+    letter-spacing: 2px;
+    position: absolute;
+    font-size: 12px;
+    padding-top: 12px;
+    right: 6px;
+    width: 162px;
+    opacity: 1;
+  }
+
+  &__name-react_uber-eats {
+    background: url("/img/visitki/uber.jpg");
+
+    .project__name {
+      color: #138714;
+      font-size: 10px;
+      position: absolute;
+      top: 37px;
+      right: 8px;
+      width: 73px;
+    }
+  }
+  &__name-react_uber-eats:hover .project__name {
+    color: #ffffff;
+    letter-spacing: 2px;
+    position: absolute;
+    font-size: 12px;
+    top: 13px;
+    right: 6px;
+    width: 162px;
+  }
+
+  &__name-portfolio_layout_miami {
+    background: url("/img/visitki/miami.jpg");
+
+    .project__name {
+      color: #138714;
+      font-size: 10px;
+      position: absolute;
+      top: 64px;
+      left: 0px;
+    }
+  }
+
+  &__name-portfolio_layout_miami:hover .project__name {
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 12px;
+    left: 2px;
+    width: 167px;
+  }
+
+  &__name-portfolio_layout_dia {
+    background: url("/img/visitki/dia.jpg");
+
+    .project__name {
+      color: #138714;
+      font-size: 10px;
+      position: absolute;
+      top: 64px;
+      left: 0px;
+    }
+  }
+
+  &__name-portfolio_layout_dia:hover .project__name {
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 12px;
+    left: 2px;
+    width: 167px;
+  }
+
+  &__name-d3Graph {
+    background: url("/img/visitki/d3.jpg");
+    background-size: cover;
+    .project__name {
+      color: #138714;
+      font-size: 10px;
+      position: absolute;
+      top: 64px;
+      left: 0px;
+    }
+  }
+
+  &__name-d3Graph:hover .project__name {
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 12px;
+    left: 2px;
+    width: 167px;
+  }
+}

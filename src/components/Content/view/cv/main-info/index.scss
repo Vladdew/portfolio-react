@@ -1,0 +1,98 @@
+.main-info {
+  padding-left: 50px;
+  grid-area: info;
+  position: relative;
+  &__name {
+    font-family: "Russell";
+    letter-spacing: 1px;
+    margin: 43px 0 10px;
+    font-size: 30px;
+  }
+  &__pic {
+    max-width: 24px;
+  }
+
+  &__name,
+  .main-info__status {
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  &__status {
+    background: #2d2d2d;
+    padding: 7px 0 5px 10px;
+    font-size: 14px;
+    color: #d2c166;
+  }
+
+  &__address {
+    font-size: 10px;
+    color: #383838;
+    padding: 10px 0 0 2px;
+    text-align: left;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  &__print {
+    position: relative;
+    top: -5px;
+    right: 3px;
+    transform: scale(0.5);
+    transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
+    cursor: pointer;
+  }
+
+  &__info {
+    position: absolute;
+    top: -5px;
+    right: 3px;
+    transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+  }
+
+  &__switchLang-container {
+    position: absolute;
+    right: 0;
+    top: 1px;
+  }
+
+  &__switchLang {
+    height: 48px;
+    top: 10px;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
+    cursor: pointer;
+    transform: scale(0.53);
+  }
+
+  &__switchLang-en {
+    height: 40px;
+    top: -8px;
+    right: 10px;
+  }
+
+  &__switchLang-de {
+    height: 46px;
+    top: -5px;
+    right: 0;
+  }
+
+  &__switchLang:hover {
+    transform: scale(0.6);
+  }
+
+  &__switchLang:active {
+    transform: scale(0.55);
+  }
+
+  &__print:hover {
+    transform: scale(0.55);
+  }
+
+  &__info:hover {
+    transform: scale(1.05);
+  }
+}

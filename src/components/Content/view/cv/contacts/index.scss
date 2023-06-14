@@ -1,0 +1,140 @@
+.contacts-wrap {
+  background: #262730;
+  color: white;
+  padding: 9px 21px 0 0;
+  position: relative;
+  grid-area: contacts;
+
+  & h3 {
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #d8ba43;
+    border-bottom: 2px solid #d8ba43;
+    padding-bottom: 4px;
+    font-family: "roboto";
+    text-align: right;
+  }
+
+  &__accent-yellow {
+    width: 27px;
+    height: 4px;
+    background-color: #d8ba43;
+    position: absolute;
+    right: 21px;
+    top: 28px;
+  }
+
+  &__contacts {
+    padding-left: 16px;
+  }
+
+  &__contact-title-email {
+    cursor: pointer;
+  }
+
+  &__contactme {
+    position: relative;
+    margin-top: 4px;
+    list-style-type: none;
+    text-align: right;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+
+    & img {
+      height: 15px;
+      position: absolute;
+      left: -3px;
+      top: 3.4px;
+      transition: transform 0.3s;
+    }
+    &:hover img {
+      transform: scaleX(-1);
+    }
+  }
+  &__contactme.copied {
+    &:hover img {
+      transform: scaleX(1);
+    }
+  }
+
+  &__home-link,
+  .contacts-wrap__call-link {
+    color: #fff;
+  }
+
+  &__call-link {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+
+  &__contact-title {
+    position: absolute;
+    top: 12px;
+    right: 42px;
+    font-size: 9px;
+    letter-spacing: 1.4px;
+  }
+
+  &__contact-title-email-copied {
+    top: 13px;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 4px;
+    color: #282727;
+    background: white;
+  }
+
+  &__contact-styles {
+    margin-bottom: -8px;
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+
+  &__icon-border {
+    border: 1px solid;
+    border-radius: 50px;
+    width: 24px;
+    height: 24px;
+    margin-top: 13px;
+    display: inline-block;
+    cursor: pointer;
+    transition: border 0.3s;
+    &:hover {
+      border: 1px solid #d8ba43;
+    }
+  }
+
+  &__icon-border1 img {
+    position: relative;
+    left: -5px;
+    top: 4px;
+  }
+
+  &__icon-border2 img {
+    position: relative;
+    left: -1px;
+    top: 2px;
+    width: 22px;
+    height: 21px;
+  }
+
+  &__icon-border3 img {
+    position: relative;
+    left: -5.5px;
+    top: 4px;
+  }
+
+  &__icon-border4 img {
+    position: relative;
+    left: -4px;
+    top: 4px;
+  }
+
+  &__telegram-link {
+    text-decoration: none;
+    color: #fff;
+  }
+}
