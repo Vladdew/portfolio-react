@@ -84,23 +84,7 @@ const Projects = () => {
         {Array.isArray(projects) && (
           <Project project={AITelegramBot} animated={flag} />
         )}
-        <div className="projects__scene">
-          {Array.isArray(projects) &&
-            projects.map((project, index) => {
-              return (
-                <img
-                  className={
-                    !flag
-                      ? "projects__getImg"
-                      : `projects__getImg projects__getImg-${project.data.name}`
-                  }
-                  src="/img/projects.png"
-                  alt="projects"
-                  key={index}
-                />
-              );
-            })}
-        </div>
+
         <button
           type="button"
           aria-label="GetFromGit-projects"
