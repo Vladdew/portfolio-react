@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/portfolio-react/static/css/main.bc3c292b.css",
+    "main.js": "/portfolio-react/static/js/main.1ed4024d.js",
+    "static/media/gazon.jpg": "/portfolio-react/static/media/gazon.0b8cb9de8e1bc64ccc71.jpg",
+    "static/media/photo1.jpg": "/portfolio-react/static/media/photo1.f95862079841387faa05.jpg",
+    "static/media/fon-mobile.jpg": "/portfolio-react/static/media/fon-mobile.f5b0db18763877d5aac8.jpg",
+    "static/media/fon.jpg": "/portfolio-react/static/media/fon.bd2cba954d22613c1e2b.jpg",
+    "static/media/Neverwinter.ttf": "/portfolio-react/static/media/Neverwinter.88658d7fb012b4964bd3.ttf",
+    "static/media/i-keys.png": "/portfolio-react/static/media/i-keys.5804bacb614894f1e5d9.png",
+    "static/media/Russell.otf": "/portfolio-react/static/media/Russell.1cf59e55e294f984e822.otf",
+    "static/media/square.jpg": "/portfolio-react/static/media/square.b6762125ce988e550928.jpg",
+    "static/media/cup.png": "/portfolio-react/static/media/cup.47601470062b1edcb7ea.png",
+    "static/media/logo-big.png": "/portfolio-react/static/media/logo-big.d875f0c6b17f1d18859e.png",
+    "static/media/projects-main.jpg": "/portfolio-react/static/media/projects-main.d875f0c6b17f1d18859e.jpg",
+    "static/media/get.jpg": "/portfolio-react/static/media/get.5e002f89c3ef401bc790.jpg",
+    "static/media/lepestok.jpg": "/portfolio-react/static/media/lepestok.66f523e7386f7b8dadc2.jpg",
+    "static/media/pen.png": "/portfolio-react/static/media/pen.79ce24524619d206ed60.png",
+    "static/media/vip.jpg": "/portfolio-react/static/media/vip.8fd15ebf4a0f83791cb3.jpg",
+    "static/media/en.png": "/portfolio-react/static/media/en.1616faab3ec18e7816d6.png",
+    "static/media/dia.jpg": "/portfolio-react/static/media/dia.e9d573df235811d071ff.jpg",
+    "static/media/mock.jpg": "/portfolio-react/static/media/mock.8622a6c1eb9001ab96f1.jpg",
+    "static/media/uber.jpg": "/portfolio-react/static/media/uber.63341e2c14e73f38fa66.jpg",
+    "static/media/cwars.jpg": "/portfolio-react/static/media/cwars.d25aeccaab12fd791873.jpg",
+    "static/media/miami.jpg": "/portfolio-react/static/media/miami.e44ad5048bb50a3512c6.jpg",
+    "static/media/d3.jpg": "/portfolio-react/static/media/d3.3f4e5b06a6eb8f8ae23f.jpg",
+    "index.html": "/portfolio-react/index.html",
+    "static/media/getFetch.cjs": "/portfolio-react/static/media/getFetch.40f37ddea2378391108f.cjs",
+    "main.bc3c292b.css.map": "/portfolio-react/static/css/main.bc3c292b.css.map",
+    "main.1ed4024d.js.map": "/portfolio-react/static/js/main.1ed4024d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc3c292b.css",
+    "static/js/main.1ed4024d.js"
+  ]
+}
