@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.b39e61c1.css",
-    "main.js": "./static/js/main.304be3c7.js",
+    "main.js": "./static/js/main.ac3b74fb.js",
     "static/media/gpt.png": "./static/media/gpt.f1a7d34fd4e3005656d1.png",
     "static/media/gazon.jpg": "./static/media/gazon.0b8cb9de8e1bc64ccc71.jpg",
     "static/media/photo1.jpg": "./static/media/photo1.f95862079841387faa05.jpg",
@@ -28,10 +28,10 @@
     "index.html": "./index.html",
     "static/media/getFetch.cjs": "./static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.b39e61c1.css.map": "./static/css/main.b39e61c1.css.map",
-    "main.304be3c7.js.map": "./static/js/main.304be3c7.js.map"
+    "main.ac3b74fb.js.map": "./static/js/main.ac3b74fb.js.map"
   },
   "entrypoints": [
     "static/css/main.b39e61c1.css",
-    "static/js/main.304be3c7.js"
+    "static/js/main.ac3b74fb.js"
   ]
 }
