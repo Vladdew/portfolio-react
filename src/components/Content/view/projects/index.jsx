@@ -46,14 +46,14 @@ const Projects = () => {
     },
   };
 
-  const AITelegramBot = {
-    data: {
-      homepage: "https://t.me/WowTalkingBrilliantBot_bot",
-      name: "AITelegramBot",
-      description:
-        "NodeJS / TypeScript / Express / Docker / Telegram bot / Digital Ocean",
-    },
-  };
+  // const AITelegramBot = {
+  //   data: {
+  //     homepage: "https://t.me/WowTalkingBrilliantBot_bot",
+  //     name: "AITelegramBot",
+  //     description:
+  //       "NodeJS / TypeScript / Express / Docker / Telegram bot / Digital Ocean",
+  //   },
+  // };
 
   return (
     <div className="projects">
@@ -81,9 +81,9 @@ const Projects = () => {
         {Array.isArray(projects) && (
           <Project project={d3Graph} animated={flag} />
         )}
-        {Array.isArray(projects) && (
+        {/* {Array.isArray(projects) && (
           <Project project={AITelegramBot} animated={flag} />
-        )}
+        )} */}
 
         <button
           type="button"
