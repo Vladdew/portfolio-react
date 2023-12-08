@@ -12,6 +12,10 @@
   .projects {
     left: 17px;
   }
+
+  .heft {
+    left: 24px;
+  }
 }
 
 @media screen and (max-width: 1300px) {
@@ -64,11 +68,16 @@
     top: 393px;
   }
 
+  .heft {
+    transform: rotate(0);
+    left: 718px;
+    top: 33px;
+  }
+
   .pen {
-    width: 28px;
-    height: 240px;
-    left: 724px;
-    top: 61px;
+    transform: rotate(4deg);
+    left: 918px;
+    top: 181px;
   }
 
   .projects {
@@ -125,15 +134,25 @@
   }
 
   .pen {
-    left: 676px;
+    transform: rotate(-2deg);
+    left: 876px;
+    top: 101px;
   }
 
   .cup {
     top: 393px;
   }
+
+  .heft {
+    left: 690px;
+  }
 }
 
 @media screen and (max-width: 920px) {
+  .heft {
+    display: none;
+  }
+
   .cv {
     margin: -30px 0 0 -55px;
     transform: scale(0.8);
@@ -158,10 +177,7 @@
   }
 
   .iphone {
-    left: auto;
-    right: 25px;
-    transform: rotate(-10deg);
-    top: 555px;
+    display: none;
   }
   .project__container {
     box-shadow: 0px 2px 1px 2px rgba(0, 0, 0, 0.35);
@@ -173,10 +189,7 @@
   }
 
   .cup {
-    top: -3px;
-    width: 151px;
-    height: 174px;
-    left: 665px;
+    display: none;
   }
 
   .pen {
@@ -272,6 +285,7 @@
   }
 
   .projects {
+    display: block;
     left: 125px;
     bottom: 0px;
     top: unset;

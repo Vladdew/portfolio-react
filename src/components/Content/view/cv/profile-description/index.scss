@@ -1,7 +1,3 @@
-div.profile-description-de {
-  padding: 6px 30px 6px 50px;
-}
-
 .profile-description {
   height: 108px;
   box-sizing: border-box;
@@ -12,7 +8,7 @@ div.profile-description-de {
   line-height: 14px;
   letter-spacing: 1.1px;
   transition: padding 1s;
-  padding: 10px 30px 6px 50px;
+  padding: 6px 30px 6px 50px;
   background: #b39933;
   grid-area: description;
 

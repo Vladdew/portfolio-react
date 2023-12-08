@@ -53,7 +53,7 @@ const Exp = () => {
           <hr className="exp__hr" />
         </div>
         <div className="exp__item-wrap">
-          <span className="exp__item">Backend:</span>
+          <span className="exp__item exp__item-last">Backend:</span>
           <p className="exp__skill">
             NodeJs/ Express/ JWT access/ refresh/ Bcrypt/ Telegram bot{" "}
           </p>
