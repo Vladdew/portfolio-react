@@ -6,7 +6,6 @@ import Projects from "./view/projects";
 const Content = () => (
   <>
     <Projects />
-    <div className="heft" />
     <CV />
   </>
 );

@@ -1,4 +1,5 @@
 import Content from "../Content/Content";
+import Heft from "../Content/view/Heft/Heft";
 import "normalize.css";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
         <div className="pen" />
         <div className="cup" />
         <div className="iphone" />
+        <Heft />
         <Content />
       </div>
     </div>
