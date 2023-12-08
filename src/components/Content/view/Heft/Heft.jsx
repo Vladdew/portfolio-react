@@ -4,7 +4,7 @@ import CvPDF from "./CvPDF";
 const Heft = () => {
   const [isUnfolded, unfoldPDF] = useState(false);
   const cv = "/cv_de.pdf";
-  //console.log("Heft", cv);
+  console.log("Heft", "/portfolio-react" + cv);
   const stop = e => {
     e.stopPropagation();
   };
