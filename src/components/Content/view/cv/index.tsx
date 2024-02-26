@@ -5,18 +5,8 @@ import ProfileDescription from "./profile-description";
 import Contacts from "./contacts";
 import Exp from "./exp";
 import Education from "./education";
-import { useState, useEffect } from "react";
 
 const CV = (props: { onClick: () => void; isCv: boolean | "1" }) => {
-  // const [flag, setFlag] = useState<null | boolean>(null);
-  // const [flag2, setFlag2] = useState<null | boolean>(null);
-
-  // useEffect(() => {
-  //   console.log("РАзок", flag);
-  //   //return () => setFlag(true);
-  // }, []);
-  //console.log("flag", flag);
-
   return (
     <div
       id="cv"
@@ -33,7 +23,7 @@ const CV = (props: { onClick: () => void; isCv: boolean | "1" }) => {
       <ProfileDescription />
       <Exp />
       <Contacts />
-      <MainInfo />
+      <MainInfo onClick={props.onClick} />
 
       <Education />
       <div

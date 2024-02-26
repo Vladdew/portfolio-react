@@ -8,7 +8,6 @@ const Content = () => {
   const [isCV, setIsCV] = useState<boolean | "1">("1");
 
   const onClick = () => {
-    console.log(!Boolean(isCV));
     setIsCV(!Boolean(isCV));
   };
 

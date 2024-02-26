@@ -6,15 +6,17 @@ import { switchLanguage } from "./languageSlice";
 import print from "../../../../../icons/print.png";
 import en from "../../../../../icons/en.png";
 import de from "../../../../../icons/de.png";
+import cv from "../../../../../icons/cv.png";
+
 import "./index.scss";
 
-function MainInfo() {
+function MainInfo(props: { onClick: () => void }) {
   const { t, i18n } = useTranslation();
 
   const dispatch = useDispatch();
   const [lang, setLang] = useState("de");
 
-  const changeLanguage = language => {
+  const changeLanguage = (language: "en" | "de") => {
     setLang(language);
     i18n.changeLanguage(language);
     dispatch(switchLanguage(language));
@@ -22,7 +24,21 @@ function MainInfo() {
 
   return (
     <div id="main-info" className="main-info">
-      <span className="main-info__switchLang-container">
+      <span className="main-info__tools-container">
+        <img
+          title="Open CV"
+          onClick={() => props.onClick()}
+          className="main-info__opencv"
+          alt="Open CV"
+          src={cv}
+        />
+        <img
+          title="Print to PDF"
+          onClick={() => window.print()}
+          className="main-info__print"
+          alt="item"
+          src={print}
+        />
         <img
           title={lang === "en" ? "English" : "Deutsch"}
           className={
@@ -33,13 +49,6 @@ function MainInfo() {
           alt="item"
           src={lang === "en" ? en : de}
           onClick={() => changeLanguage(lang === "en" ? "de" : "en")}
-        />
-        <img
-          title="Print to PDF"
-          onClick={() => window.print()}
-          className="main-info__print"
-          alt="item"
-          src={print}
         />
       </span>
 

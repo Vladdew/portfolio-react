@@ -14,7 +14,8 @@
   border-radius: 14px;
   background-size: 100%;
   background-position-x: center;
-  transform: scale(0.25) translate(-597px, -700px) rotate(-42deg);
+  background-repeat: no-repeat;
+  transform: scale(0.2) translate(-597px, -700px) rotate(-42deg);
 
   & .overlay {
     position: absolute;
@@ -27,10 +28,6 @@
     box-shadow: none;
     visibility: visible;
     cursor: pointer;
-  }
-
-  & .overlay:hover {
-    box-shadow: 0px 0px 16px 7px rgba(255, 255, 255, 1);
   }
 
   & .viewer {
@@ -71,7 +68,7 @@
       //box-shadow: 13px 13px 2px -9px rgba(34, 60, 80, 0.29);
     }
     50% {
-      transform: scale(0.3) translate(1200px, -350px);
+      transform: scale(0.2) translate(1200px, -350px);
       //
     }
 
@@ -83,16 +80,18 @@
 
   @keyframes rotare-heft-out {
     from {
-      transform: translate(67%, 0%);
+      //transform: translate(-0, -200px);
+      transform: scale(1);
+
       animation-timing-function: cubic-bezier(0.88, 0.38, 0.99, 0.83);
     }
 
     50% {
-      transform: scale(0.25) translate(-430px, -587px) rotate(-10deg);
+      transform: scale(0.2) translate(-430px, -587px) rotate(-10deg);
     }
 
     to {
-      transform: scale(0.25) translate(-597px, -700px) rotate(-42deg);
+      transform: scale(0.2) translate(-597px, -700px) rotate(-42deg);
     }
   }
 
