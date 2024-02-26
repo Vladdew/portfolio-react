@@ -1,79 +1,75 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import { Worker } from "@react-pdf-viewer/core";
-import { Viewer } from "@react-pdf-viewer/core";
+import { OpenFile, Viewer, SpecialZoomLevel } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";
-import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import { toolbarPlugin, ToolbarSlot } from "@react-pdf-viewer/toolbar";
+import { SelectionMode } from "@react-pdf-viewer/selection-mode";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+import "@react-pdf-viewer/toolbar/lib/styles/index.css";
 
-interface Props {
-  cv: any;
-}
-
-const CvPDF = ({ props }: any) => {
+const CvPDF = () => {
   const [pdfFile, setPdfFile] = useState("");
-  const [pdfError, setPdfError] = useState("");
-  const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
-  const allowedFiles = ["application/pdf"];
-  const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files || !e.target) return;
-    let selectedFile = e.target.files[0];
-    // console.log(selectedFile.type);
-    if (selectedFile) {
-      if (selectedFile && allowedFiles.includes(selectedFile.type)) {
-        let reader = new FileReader();
-        reader.readAsDataURL(selectedFile);
-        reader.onloadend = (e: any) => {
-          setPdfError("");
-          setPdfFile(e.target.result);
-        };
-      } else {
-        setPdfError("Not a valid pdf: Please select only PDF");
-        setPdfFile("");
-      }
-    } else {
-      console.log("please select a PDF");
-    }
-  };
+  useEffect(() => {
+    setPdfFile("cv.pdf");
+  }, []);
+
+  const toolbarPluginInstance = toolbarPlugin({
+    getFilePlugin: {
+      fileNameGenerator: (file: OpenFile) => {
+        const fileName = file.name.substring(file.name.lastIndexOf("/") + 1);
+        return `a-copy-of-${fileName}`;
+      },
+    },
+    searchPlugin: {
+      keyword: "PDF",
+    },
+    selectionModePlugin: {
+      selectionMode: SelectionMode.Text,
+    },
+  });
+  const { Toolbar } = toolbarPluginInstance;
 
   return (
-    <div className="container">
-      {/* Upload PDF */}
-      <form>
-        <label>
-          <h5>Upload PDF</h5>
-        </label>
-        <br></br>
+    <div className="viewer">
+      <Toolbar>
+        {(props: ToolbarSlot) => {
+          const { Download, EnterFullScreen, Print, Zoom, ZoomIn, ZoomOut } =
+            props;
+          return (
+            <div className="viewer__toolbar-slot">
+              <div style={{ padding: "0px 2px" }}>
+                <ZoomOut />
+              </div>
+              <div style={{ padding: "0px 2px" }}>
+                <Zoom />
+              </div>
+              <div style={{ padding: "0px 2px" }}>
+                <ZoomIn />
+              </div>
 
-        <input
-          type="file"
-          className="form-control"
-          onChange={handleFile}
-        ></input>
-
-        {/* we will display error message in case user select some file
-        other than pdf */}
-        {pdfError && <span className="text-danger">{pdfError}</span>}
-      </form>
-
-      {/* View PDF */}
-      <h5>View PDF</h5>
-      <div className="viewer">
-        {/* render this if we have a pdf file */}
-        {pdfFile && (
-          <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
-            <Viewer
-              fileUrl={props || pdfFile}
-              plugins={[defaultLayoutPluginInstance]}
-            ></Viewer>
-          </Worker>
-        )}
-
-        {/* render this if we have pdfFile state null   */}
-        {!pdfFile && <>No file is selected yet</>}
-      </div>
+              <div style={{ padding: "0px 2px", marginLeft: "auto" }}>
+                <EnterFullScreen />
+              </div>
+              <div style={{ padding: "0px 2px" }}>
+                <Download />
+              </div>
+              <div style={{ padding: "0px 2px" }}>
+                <Print />
+              </div>
+            </div>
+          );
+        }}
+      </Toolbar>
+      <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+        <Viewer
+          fileUrl={pdfFile}
+          defaultScale={SpecialZoomLevel.PageFit}
+          plugins={[toolbarPluginInstance]}
+        ></Viewer>
+      </Worker>
     </div>
+    //</div>
   );
 };
 

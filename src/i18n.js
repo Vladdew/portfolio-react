@@ -19,7 +19,7 @@ i18n
     },
     backend: {
       //loadPath: "/portfolio-react/locales/{{lng}}/{{ns}}.json",
-      loadPath: "/portfolio-react/locales/{{lng}}/{{ns}}.json",
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
   });
 

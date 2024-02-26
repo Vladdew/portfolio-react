@@ -23,18 +23,20 @@
   border-radius: 10px;
   box-sizing: border-box;
   padding-bottom: 15px;
+  perspective: 1500px;
+  perspective-origin: left;
 }
 
 .pen {
   background: url("/img/pen.png");
-  width: 15px;
+  width: 13px;
   height: 115px;
   background-size: 66%;
   background-repeat: no-repeat;
   position: absolute;
-  left: 216px;
-  top: 390px;
-  transform: rotate(2deg);
+  left: 83px;
+  top: 329px;
+  transform: rotate(-54deg);
 }
 
 .cup {
@@ -62,18 +64,6 @@
   background-repeat: no-repeat;
   border-radius: 21px;
   box-shadow: 2px 1px 5px 2px rgba(0, 0, 0, 0.36);
-}
-
-.heft {
-  background-image: url("/img/heft2.png");
-  width: 180px;
-  height: 270px;
-  position: absolute;
-  left: 16px;
-  top: 223px;
-  transform: rotate(-3deg);
-  background-size: 100.5%;
-  background-repeat: no-repeat;
 }
 
 .projects {
