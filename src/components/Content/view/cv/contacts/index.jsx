@@ -18,13 +18,13 @@ const Contacts = () => {
       <p className="contacts-wrap__accent-yellow" />
       <ul className="contacts-wrap__contacts">
         <li className="contacts-wrap__contactme">
-          <a className="contacts-wrap__call-link" href="tel:+380991177577">
+          <a className="contacts-wrap__call-link" href="tel:+49015156852622">
             <div className="contacts-wrap__contact-title">
               <span className="contacts-wrap__contact-styles">
                 {t("contacts.phone")}
               </span>
               <br />
-              +49(174)2722988
+              +49 (0151) 5685 2622
             </div>
             <div className="contacts-wrap__icon-border contacts-wrap__icon-border1">
               <img src={phone} alt="contact" />
