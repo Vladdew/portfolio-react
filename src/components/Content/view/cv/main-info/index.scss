@@ -70,6 +70,15 @@
     margin-bottom: 10px;
     cursor: pointer;
     margin-right: 10px;
+    transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
+  }
+
+  &__opencv:hover {
+    transform: scale(1.1);
+  }
+
+  &__opencv:active {
+    transform: scale(0.9);
   }
 
   &__switchLang {

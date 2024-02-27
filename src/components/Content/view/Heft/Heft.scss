@@ -106,16 +106,21 @@
     border-radius: 4px;
     padding: 2px 6px 2px 6px;
     box-sizing: border-box;
-    transition: border 0.3s, color 0.3s, border-radius 0.8s, transform 0.6s;
+    transition: border 0.3s, color 0.3s, border-radius 0.3s,
+      transform 0.6s cubic-bezier(0, 1.84, 0.73, 0.81);
     background: transparent;
     color: #636363;
   }
 
   .cls:hover {
-    transform: rotate(90deg);
+    transform: rotate(90deg) scale(1.1);
     border: 1px dashed #f24d4d94;
     color: #f24d4d;
     border-radius: 6px;
+  }
+
+  .cls:active {
+    transform: scale(0.9);
   }
 
   & .rpv-core {
