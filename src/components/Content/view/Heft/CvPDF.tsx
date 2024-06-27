@@ -6,13 +6,25 @@ import { toolbarPlugin, ToolbarSlot } from "@react-pdf-viewer/toolbar";
 import { SelectionMode } from "@react-pdf-viewer/selection-mode";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import "@react-pdf-viewer/toolbar/lib/styles/index.css";
+import PDFDesctopMagnifier from "../PDFDesctopMagnifier/PDFDesctopMagnifier";
 
-const CvPDF = () => {
+type CvPDFTypes = {
+  isCv: boolean | "1";
+  flag: boolean;
+};
+const CvPDF = (props: CvPDFTypes) => {
+  const [isClicked, setIsClicked] = useState(false);
   const [pdfFile, setPdfFile] = useState("");
 
   useEffect(() => {
     setPdfFile("cv.pdf");
   }, []);
+
+  function onClick() {
+    if (props.flag) {
+      setIsClicked(true);
+    }
+  }
 
   const toolbarPluginInstance = toolbarPlugin({
     getFilePlugin: {
@@ -37,7 +49,7 @@ const CvPDF = () => {
           const { Download, EnterFullScreen, Print, Zoom, ZoomIn, ZoomOut } =
             props;
           return (
-            <div className="viewer__toolbar-slot">
+            <div onClick={onClick} className="viewer__toolbar-slot">
               <div style={{ padding: "0px 2px" }}>
                 <ZoomOut />
               </div>
@@ -61,6 +73,7 @@ const CvPDF = () => {
           );
         }}
       </Toolbar>
+      {!isClicked && <PDFDesctopMagnifier flag={props.flag} />}
       <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
         <Viewer
           fileUrl={pdfFile}
@@ -69,7 +82,6 @@ const CvPDF = () => {
         ></Viewer>
       </Worker>
     </div>
-    //</div>
   );
 };
 

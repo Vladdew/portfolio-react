@@ -17,6 +17,23 @@
   background-repeat: no-repeat;
   transform: scale(0.2) translate(-597px, -700px) rotate(-42deg);
 
+  &__magnifier-img-container {
+    position: relative;
+  }
+
+  &__magnifier-img {
+    width: 96.9%;
+    position: absolute;
+    top: 32px;
+    left: 8px;
+    z-index: 2;
+    opacity: 0;
+  }
+
+  &__magnifier-img-active {
+    opacity: 1;
+  }
+
   & .overlay {
     position: absolute;
     transform: rotate(-0.2deg);

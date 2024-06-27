@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import CvPDF from "./CvPDF";
 
 const Heft = (props: { onClick: () => void; isCv: boolean | "1" }) => {
+  const [showFakeImgFlag, SetShowFakeImgFlag] = useState(false);
+
   return (
     <div
       className={
@@ -11,8 +13,14 @@ const Heft = (props: { onClick: () => void; isCv: boolean | "1" }) => {
           ? "heft animate-out"
           : "heft animate-in"
       }
+      onMouseEnter={() => {
+        SetShowFakeImgFlag(true);
+      }}
+      onMouseLeave={() => {
+        SetShowFakeImgFlag(false);
+      }}
     >
-      <CvPDF />
+      <CvPDF isCv={props.isCv} flag={showFakeImgFlag} />
       <div
         onClick={() => {
           props.onClick();
