@@ -416,10 +416,17 @@
     transform: rotate3d(81, -47, 17, 38deg);
   }
 
+  .main-info {
+    padding-left: 24px;
+  }
+
   h2.main-info {
     &__name {
       letter-spacing: 1px;
       margin: 0;
+      margin-top: 16px;
+      margin-bottom: 10px;
+      font-size: 1.3em;
     }
 
     &__status {

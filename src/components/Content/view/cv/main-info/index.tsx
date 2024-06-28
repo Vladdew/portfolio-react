@@ -54,7 +54,9 @@ function MainInfo(props: { onClick: () => void }) {
 
       <h2 className="main-info__name">
         <br />
-        Vladyslav
+        Presniakov
+        <br />
+        Vlad
       </h2>
       <div className="main-info__status">{t("main-info.status")}</div>
       <div className="main-info__address">{t("main-info.address")}</div>
