@@ -14,7 +14,7 @@ const Heft = (props: { onClick: () => void; isCv: boolean | "1" }) => {
           : "heft animate-in"
       }
       onMouseEnter={() => {
-        SetShowFakeImgFlag(true);
+        props.isCv !== "1" && SetShowFakeImgFlag(true);
       }}
       onMouseLeave={() => {
         SetShowFakeImgFlag(false);
