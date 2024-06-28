@@ -5,11 +5,13 @@ import email from "../../../../../icons/email.png";
 import telegram from "../../../../../icons/telegram.png";
 import home from "../../../../../icons/home.png";
 import { useTranslation } from "react-i18next";
+import { isMobile } from "react-device-detect";
 
 import "./index.scss";
 
 const Contacts = () => {
   const [flag, setFlag] = useState(false);
+  const [flag2, setFlag2] = useState(false);
   const { t } = useTranslation();
 
   return (
@@ -17,19 +19,41 @@ const Contacts = () => {
       <h3>{t("contacts.title")}</h3>
       <p className="contacts-wrap__accent-yellow" />
       <ul className="contacts-wrap__contacts">
-        <li className="contacts-wrap__contactme">
-          <a className="contacts-wrap__call-link" href="tel:+49015156852622">
-            <div className="contacts-wrap__contact-title">
-              <span className="contacts-wrap__contact-styles">
-                {t("contacts.phone")}
-              </span>
-              <br />
-              +49 (0151) 5685 2622
+        <li
+          className={
+            flag2
+              ? "contacts-wrap__contactme copied-tel"
+              : "contacts-wrap__contactme"
+          }
+          onClick={() => {
+            setFlag2(true);
+            setTimeout(() => {
+              setFlag2(false);
+            }, 3000);
+            navigator.clipboard.writeText("+49015156852622");
+          }}
+        >
+          {!flag2 ? (
+            <a
+              className="contacts-wrap__call-link"
+              href={isMobile ? "tel:+49015156852622" : "#!"}
+            >
+              <div className="contacts-wrap__contact-title contacts-wrap__contact-title-tel">
+                <span className="contacts-wrap__contact-styles">
+                  {t("contacts.phone")}
+                </span>
+                <br />
+                +49 (0151) 5685 2622
+              </div>
+            </a>
+          ) : (
+            <div className="contacts-wrap__contact-title contacts-wrap__contact-title-tel-copied">
+              {t("contacts.tel-copied")}
             </div>
-            <div className="contacts-wrap__icon-border contacts-wrap__icon-border1">
-              <img src={phone} alt="contact" />
-            </div>
-          </a>
+          )}
+          <div className="contacts-wrap__icon-border contacts-wrap__icon-border2">
+            <img src={flag2 ? done : phone} alt="icon-copy-email" />
+          </div>
         </li>
         <li
           onClick={() => {
