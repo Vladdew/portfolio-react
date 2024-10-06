@@ -109,27 +109,11 @@
     top: 234px;
   }
 
-  // .iphone {
-  //   right: 35px;
-  //   transform: rotate3d(0, 2, 2, 29deg);
-  //   top: 606px;
-  // }
-
-  // .pen {
-  //   transform: rotate(-2deg);
-  //   left: 876px;
-  //   top: 101px;
-  // }
-
   .cup {
     top: 469px;
     left: 97px;
     width: 150px;
   }
-
-  // .heft {
-  //   left: 690px;
-  // }
 }
 
 @media screen and (max-width: 920px) {
@@ -152,7 +136,6 @@
 
   @keyframes rotare-cv-i {
     from {
-      //box-shadow: 13px 13px 2px -9px rgba(34, 60, 80, 0.29);
       transform: skew(-10deg, 10deg) scale(0.3) translate(1200px, -350px)
         rotate(48deg);
     }
@@ -163,7 +146,6 @@
 
     to {
       transform: skew(0deg, 0deg) scale(0.9);
-      //box-shadow: -2px 4px 100px 16px rgba(34, 60, 80, 0.11);
     }
   }
 
@@ -229,7 +211,6 @@
 
   @keyframes rotare-cv-i {
     from {
-      //box-shadow: 13px 13px 2px -9px rgba(34, 60, 80, 0.29);
       transform: skew(-10deg, 10deg) scale(0.3) translate(1200px, -350px)
         rotate(48deg);
     }
@@ -240,7 +221,6 @@
 
     to {
       transform: skew(0deg, 0deg) scale(1);
-      //box-shadow: -2px 4px 100px 16px rgba(34, 60, 80, 0.11);
     }
   }
 
@@ -500,7 +480,7 @@
     }
   }
 
-  .contacts-wrap {
+  .sections-wrap {
     &__contacts-title {
       font-family: "Cormorant", sans-serif;
       letter-spacing: 2px;
@@ -590,7 +570,7 @@
     visibility: hidden;
   }
 
-  .contacts-wrap h3 {
+  .sections-wrap h3 {
     color: black;
     border-bottom: none;
   }
@@ -610,21 +590,21 @@
 
   .profile-description,
   .profile-title,
-  .contacts-wrap__home-link,
-  .contacts-wrap__contact-title,
-  .contacts-wrap__telegram-link,
+  .sections-wrap__home-link,
+  .sections-wrap__contact-title,
+  .sections-wrap__telegram-link,
   .education,
-  .contacts-wrap .contacts-wrap__call-link {
+  .sections-wrap .sections-wrap__call-link {
     color: black !important;
   }
 
-  .contacts-wrap__contacts {
+  .sections-wrap__contacts {
     position: relative;
     left: 44px;
   }
 
-  .contacts-wrap__icon-border,
-  .contacts-wrap__icon-border1 {
+  .sections-wrap__icon-border,
+  .sections-wrap__icon-border1 {
     visibility: hidden;
   }
 
@@ -632,7 +612,7 @@
     visibility: hidden;
   }
 
-  div.contacts-wrap h3 {
+  div.sections-wrap h3 {
     color: black;
     border-bottom: none;
   }

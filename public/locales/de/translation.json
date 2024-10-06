@@ -50,5 +50,12 @@
     "profile": "Profil",
     "more_than_100_solved": "Über hundert gelöste",
     "problems": "Probleme"
+  },
+  "about": {
+    "title": "Über mich"
+  },
+
+  "languages": {
+    "title": "Sprachen"
   }
 }

@@ -1,31 +1,47 @@
-.contacts-wrap {
-  background: #262730;
+.sections-wrap {
   color: white;
-  padding: 9px 21px 0 0;
   position: relative;
-  grid-area: contacts;
 
   & h3 {
+    letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 15px;
-    color: #d8ba43;
-    border-bottom: 2px solid #d8ba43;
+    color: #f4d644;
+    border-bottom: 2px solid #f4d644;
     padding-bottom: 4px;
-    font-family: "roboto";
-    text-align: right;
+    font-family: "Cormorant Infant", serif;
+    font-weight: 600;
+    text-align: left;
+    width: 160px;
+    position: relative;
+    right: -64px;
+
+    & span {
+      margin-left: -75px;
+    }
   }
 
   &__accent-yellow {
-    width: 27px;
-    height: 4px;
-    background-color: #d8ba43;
+    width: 80px;
+    height: 5px;
+    background-color: #f4d644;
     position: absolute;
-    right: 21px;
-    top: 28px;
+    left: 0;
+    top: 26px;
   }
 
   &__contacts {
-    padding-left: 16px;
+    padding-left: 0;
+    margin: -10px 0 5px 0;
+    position: relative;
+    left: -36px;
+    width: 100%;
+    height: 154px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
   }
 
   &__contact-title-email {
@@ -34,24 +50,31 @@
 
   &__contactme {
     position: relative;
-    margin-top: 4px;
+    margin-top: 2px;
     list-style-type: none;
-    text-align: right;
+    text-align: left;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    margin-left: 38px;
+    width: 184px;
 
     & img {
       height: 15px;
       position: absolute;
-      left: -3px;
-      top: 3.4px;
       transition: transform 0.3s;
     }
-    &:hover img {
+    .sections-wrap__icon-border:hover img {
       transform: scaleX(-1);
+      filter: sepia(0.5) saturate(100%) hue-rotate(90deg) brightness(1)
+        contrast(1);
     }
   }
+
+  &__contactme3 {
+    margin-top: 14px;
+  }
+
   &__contactme.copied {
     &:hover img {
       transform: scaleX(1);
@@ -65,7 +88,7 @@
   }
 
   &__home-link,
-  .contacts-wrap__call-link {
+  .sections-wrap__call-link {
     color: #fff;
   }
 
@@ -73,14 +96,15 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-end;
+    color: white;
   }
 
   &__contact-title {
     position: absolute;
     top: 12px;
-    right: 42px;
-    font-size: 9px;
-    letter-spacing: 1.4px;
+    right: -20px;
+    letter-spacing: 2px;
+    width: 170px;
   }
 
   &__contact-title-email-copied {
@@ -104,48 +128,56 @@
   &__contact-styles {
     margin-bottom: -8px;
     display: block;
-    font-size: 11px;
+    font-size: 10px;
     text-transform: uppercase;
+    font-weight: bold;
   }
 
   &__icon-border {
     border: 1px solid;
     border-radius: 50px;
-    width: 24px;
-    height: 24px;
+    width: 14px;
+    height: 14px;
     margin-top: 13px;
-    display: inline-block;
+    display: flex;
     cursor: pointer;
     transition: border 0.3s;
+    justify-content: center;
+    align-items: center;
+
     &:hover {
-      border: 1px solid #d8ba43;
+      border: 1px solid #f4d644;
     }
   }
 
   &__icon-border1 img {
     position: relative;
-    left: -5px;
-    top: 4px;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
   }
 
   &__icon-border2 img {
     position: relative;
-    left: -1px;
-    top: 2px;
-    width: 22px;
-    height: 21px;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
   }
 
   &__icon-border3 img {
     position: relative;
-    left: -5.5px;
-    top: 4px;
+    left: 0;
+    top: 0;
   }
 
   &__icon-border4 img {
     position: relative;
-    left: -4px;
-    top: 4px;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
   }
 
   &__telegram-link {

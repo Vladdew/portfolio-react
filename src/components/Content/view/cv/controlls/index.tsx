@@ -1,0 +1,97 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
+import { switchLanguage } from "./languageSlice";
+import { Tooltip } from "react-tooltip";
+
+import print from "../../../../../icons/print.png";
+import en from "../../../../../icons/en.png";
+import de from "../../../../../icons/de.png";
+import "./index.scss";
+
+function Controlls() {
+  const { t, i18n } = useTranslation();
+  const dispatch = useDispatch();
+  const [lang, setLang] = useState("de");
+  const [menuFlag, setMenuFlag] = useState(false);
+
+  const changeLanguage = (language: "en" | "de") => {
+    setLang(language);
+    i18n.changeLanguage(language);
+    dispatch(switchLanguage(language));
+  };
+
+  function printPDF() {
+    const iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    iframe.src = "portfolio.pdf";
+    document.body.appendChild(iframe);
+
+    iframe.onload = function () {
+      iframe.contentWindow!.focus();
+      iframe.contentWindow!.print();
+    };
+  }
+
+  function toggleMenu() {
+    setMenuFlag(!menuFlag);
+  }
+
+  return (
+    <>
+      <div
+        className={`controlls__tools-container ${
+          menuFlag ? "controlls__tools-container-expanded" : ""
+        }`}
+      >
+        {menuFlag && (
+          <>
+            <span
+              data-tooltip-id="tooltip"
+              data-tooltip-content="Drucken Sie das gesamte Portfolio aus"
+              title="Print to PDF"
+              onClick={() => printPDF()}
+              className="controlls__print controlls__iconWrap"
+            >
+              <img alt="print" src={print} />
+            </span>
+            <span
+              data-tooltip-id="tooltip"
+              data-tooltip-content="Hier können Sie die Sprache ändern"
+              title={lang === "en" ? "English" : "Deutsch"}
+              className={`controlls__switchLang controlls__iconWrap ${
+                lang === "en"
+                  ? "controlls__switchLang-en"
+                  : "controlls__switchLang-de"
+              }`}
+            >
+              <img
+                src={lang === "en" ? en : de}
+                onClick={() => changeLanguage(lang === "en" ? "de" : "en")}
+                alt={lang === "en" ? "change language" : "Sprache ändern"}
+              />
+            </span>
+          </>
+        )}
+        <span
+          data-tooltip-id="tooltip"
+          onClick={() => toggleMenu()}
+          className={`controlls__menu-button ${
+            menuFlag ? "controlls__menu-button-expanded" : ""
+          }`}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <Tooltip
+        place="bottom-end"
+        id="tooltip"
+        content={menuFlag ? "Schließ das Menü" : "Öffne das Menü"}
+      />
+    </>
+  );
+}
+
+export default Controlls;

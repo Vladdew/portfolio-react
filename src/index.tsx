@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
+import "react-tooltip/dist/react-tooltip.css";
 import "./index.scss";
 import App from "./components/App/App";
 import { Provider } from "react-redux";

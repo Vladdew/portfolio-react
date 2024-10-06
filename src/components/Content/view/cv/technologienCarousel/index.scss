@@ -1,0 +1,58 @@
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  animation: scroll 15s linear infinite;
+  margin-top: 10px;
+  height: 120px;
+
+  &__decor {
+    width: 100%;
+    height: 30px;
+    padding: 1px 0;
+    color: #ffe66b;
+    position: relative;
+    top: 0px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 12px;
+    background: linear-gradient(90deg, #555555 0%, black 50%, #555555);
+    border-top: 3px solid #f4dc64;
+  }
+
+  &__titel {
+    font-family: "Cinzel";
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: 400;
+  }
+
+  &__icon img {
+    width: 75px;
+    height: 75px;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &__icon:hover img {
+    transform: scale(1.2); /* Увеличиваем иконку при ховере */
+  }
+}
+
+/* Анимация для бесконечной прокрутки */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Сдвиг на 50% для повторяющихся иконок */
+  }
+}

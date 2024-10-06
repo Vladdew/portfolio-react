@@ -1,0 +1,27 @@
+.languages {
+  padding-left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2px;
+
+  & li {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 100%;
+  }
+  &__heading {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+  }
+  &__information {
+    margin: 0;
+  }
+}

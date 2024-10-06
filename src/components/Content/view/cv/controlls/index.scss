@@ -1,0 +1,155 @@
+.controlls {
+  padding-left: 50px;
+  position: relative;
+
+  &__tools-container {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    align-items: center;
+    width: 30px;
+    padding: 3px 4px 7px 1px;
+    height: 24px;
+    background: linear-gradient(336deg, #555555 0%, #272727 50%, #555555 100%);
+    transition: all 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
+  }
+
+  &__tools-container-expanded {
+    gap: 20px;
+    padding: 4px 0 6px 4px;
+    height: 24px;
+    background: linear-gradient(336deg, #555555 0%, #272727 50%, #555555 100%);
+    width: 130px;
+  }
+
+  &__iconWrap {
+    height: 34px;
+    width: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__iconWrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  &__print {
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
+    cursor: pointer;
+    margin-right: 6px;
+  }
+
+  &__opencv {
+    border: 1px solid #16304d;
+    //order: 1;
+    border-radius: 50px;
+    background-color: #b1c0d9;
+    margin-bottom: 3px;
+    // height: auto;
+    // width: auto;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  &__switchLang {
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
+    cursor: pointer;
+    transform: scale(1);
+    width: 20px;
+    border-radius: 50px;
+  }
+
+  &__menu-button {
+    margin-right: -4px;
+    border-radius: 50px;
+    width: 20px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #f4d644;
+    gap: 4px;
+    cursor: pointer;
+    padding-top: 1.5px;
+    transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
+    //transition: all 0.3s ease;
+  }
+
+  &__menu-button span {
+    width: 3px;
+    height: 3px;
+    background-color: #f4d644;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  &__menu-button-expanded span {
+    width: 24px;
+    height: 1px; /* Изменил точки на линии */
+    background-color: #ff3f3f;
+    margin: 0;
+    transition: all 0.3s ease;
+  }
+
+  &__menu-button-expanded span:nth-child(1) {
+    transform: rotate(45deg) translate(2px, 4px);
+  }
+
+  &__menu-button-expanded span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &__menu-button-expanded span:nth-child(3) {
+    transform: rotate(-45deg) translate(3px, -5px);
+  }
+
+  &__tools-container img {
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.275);
+  }
+
+  &__tools-container .controlls__print {
+    box-shadow: none;
+  }
+
+  &__opencv:hover {
+    transform: scale(1.1);
+  }
+
+  &__opencv:active {
+    transform: scale(0.9);
+  }
+
+  &__switchLang:hover {
+    transform: scale(1.1);
+  }
+
+  &__switchLang:active {
+    transform: scale(0.9);
+  }
+
+  &__print:hover {
+    transform: scale(1.1);
+  }
+  &__print:active {
+    transform: scale(0.9);
+  }
+
+  &__menu-button:hover {
+    transform: scale(1.3);
+  }
+  &__menu-button:active {
+    transform: scale(0.9);
+  }
+}
