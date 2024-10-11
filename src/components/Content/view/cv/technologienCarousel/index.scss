@@ -6,14 +6,23 @@
 
 .carousel {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  gap: 40px;
-  animation: scroll 15s linear infinite;
-  margin-top: 10px;
-  height: 120px;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+  padding-top: 8px;
+  gap: 20px;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+  }
 
   &__decor {
+    font-family: "Cormorant Infant";
+    letter-spacing: 2px;
+    text-transform: uppercase;
     width: 100%;
     height: 30px;
     padding: 1px 0;
@@ -29,21 +38,57 @@
     border-top: 3px solid #f4dc64;
   }
 
-  &__titel {
+  &__icon-title {
     font-family: "Cinzel";
     text-transform: uppercase;
-    letter-spacing: 10px;
-    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    padding-top: 10px;
+    border-top: 1px solid #d0ab26;
+    transition: letter-spacing 0.3s;
+  }
+
+  &__icon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    background: bisque;
+    padding: 10px;
+    border: 4px solid rgba(42, 14, 12, 0.6);
+    text-align: center;
+    margin: 0 auto;
+    background: #28bfff;
+    background: linear-gradient(90deg, #28bfff 0%, #c3ffdd 49%, #82cefd 100%);
+    background: #d4c698;
+    background: linear-gradient(90deg, #d4c698 0%, #fff6da 49%, #decb8e 100%);
+    box-shadow: 0px 4px 6px 1px rgba(34, 60, 80, 0.33);
+    width: 100px;
+    height: 130px;
+    transition: background 0.3s;
+    &:hover {
+      background: transparent;
+    }
   }
 
   &__icon img {
-    width: 75px;
-    height: 75px;
-    transition: transform 0.2s ease-in-out;
+    width: auto;
+    height: 60px;
+    transition: transform 0.3s;
   }
 
   &__icon:hover img {
-    transform: scale(1.2); /* Увеличиваем иконку при ховере */
+    transform: scale(1.07);
+  }
+
+  &__icon:hover .carousel__icon-title {
+    letter-spacing: 1px;
   }
 }
 
@@ -53,6 +98,6 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Сдвиг на 50% для повторяющихся иконок */
+    transform: translateX(-50%); /* Сдвигаем на половину ширины дубликата */
   }
 }

@@ -1,19 +1,20 @@
-import MainPhoto from "./main-photo";
+import Sidebar from "./sidebar";
 import MainInfo from "./main-info";
 import ProfileTitle from "./profile-title";
 import ProfileDescription from "./profile-description";
-import Exp from "./exp";
-import Education from "./education";
 import AboutMe from "./aboutMe";
 import Contacts from "./contacts";
 import Languages from "./languages";
 import ContactLinks from "./contactLinks";
-import Controlls from "./controlls";
+import Header from "./header";
 import TechnologienCarousel from "./technologienCarousel";
 
-const CV = (props: { onClick: () => void; isCv: boolean | "1" }) => {
+const CV = (props: {
+  onClick: (e: React.MouseEvent<Element>) => void;
+  isCv: boolean | "1";
+}) => {
   return (
-    <div
+    <main
       id="cv"
       className={
         props.isCv === "1"
@@ -23,28 +24,28 @@ const CV = (props: { onClick: () => void; isCv: boolean | "1" }) => {
           : "cv animate-out"
       }
     >
-      <div className="cv__sidebar"></div>
+      <Header />
 
-      <div className="cv__block-fon">
-        <TechnologienCarousel />
-      </div>
       <MainInfo />
-      <Controlls />
-      <div className="cv__lebenslauf">Lebenslauf</div>
-      <div className="cv__sections">
+      <section className="cv__sections">
         <Contacts />
         <AboutMe />
-      </div>
-      <div
-        onClick={() => {
-          props.onClick();
-        }}
-        className="overlay"
-      ></div>
-      <div className="cv__footer">
+      </section>
+
+      <section className="cv__block-fon">
+        <TechnologienCarousel />
+      </section>
+      <section className="cv__footer">
         <ContactLinks />
-      </div>
-    </div>
+      </section>
+      <Sidebar />
+      <div
+        onClick={e => {
+          props.onClick(e);
+        }}
+        className="overlay overlay-cv"
+      ></div>
+    </main>
   );
 };
 export default CV;

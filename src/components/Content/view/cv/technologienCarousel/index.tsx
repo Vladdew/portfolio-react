@@ -46,7 +46,7 @@ const TechnologienCarousel = () => {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (carouselRef.current) {
-        const speed = (e.clientX / window.innerWidth) * 20 - 50;
+        const speed = (e.clientX / window.innerWidth) * 10 - 5; // Уменьшил диапазон скорости
         carouselRef.current.style.animationDuration = `${15 - speed}s`;
       }
     };
@@ -58,19 +58,21 @@ const TechnologienCarousel = () => {
   return (
     <div className="carousel-wrapper">
       <div className="carousel__decor">
-        <h2 className="carousel__titel">Technologien</h2>
+        <h2 className="carousel__title">Technologien</h2>
       </div>
 
       <div ref={carouselRef} className="carousel">
         {icons.map((icon, index) => (
           <div key={index} className="carousel__icon">
             <img src={icon.src} alt={icon.alt} />
+            <span className="carousel__icon-title">{icon.alt}</span>
           </div>
         ))}
         {/* Дублируем иконки для бесконечной прокрутки */}
         {icons.map((icon, index) => (
           <div key={index + icons.length} className="carousel__icon">
             <img src={icon.src} alt={icon.alt} />
+            <span className="carousel__icon-title">{icon.alt}</span>
           </div>
         ))}
       </div>

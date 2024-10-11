@@ -36,7 +36,11 @@ const Contacts = () => {
           }}
         >
           <div className="sections-wrap__icon-border sections-wrap__icon-border2">
-            <img src={flag2 ? done : phone} alt="icon-copy-phone number" />
+            <img
+              className={`sections-wrap__icon-img ${flag2 ? "rotate" : ""}`}
+              src={flag2 ? done : phone}
+              alt="icon-copy-phone number"
+            />
           </div>
           {!flag2 ? (
             <a
@@ -73,7 +77,11 @@ const Contacts = () => {
           }
         >
           <span className="sections-wrap__icon-border sections-wrap__icon-border1">
-            <img src={flag ? done : email} alt="icon-copy-email" />
+            <img
+              className="sections-wrap__icon-img"
+              src={flag ? done : email}
+              alt="icon-copy-email"
+            />
           </span>
           {!flag ? (
             <span className="sections-wrap__contact-title sections-wrap__contact-title-email">

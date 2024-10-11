@@ -15,7 +15,7 @@ const ContactLinks = () => {
         <div className="sections-wrap__contact-link">
           <a
             data-tooltip-id="contact-tt"
-            data-tooltip-content="Schreib mir durch WatsApp"
+            data-tooltip-content="Schreiben mir per WatsApp"
             className="sections-wrap__telegram-link"
             href="https://wa.me/380991177577"
           >
@@ -25,7 +25,7 @@ const ContactLinks = () => {
         <div className="sections-wrap__contact-link">
           <a
             data-tooltip-id="contact-tt"
-            data-tooltip-content="Schreib mir durch Telegram"
+            data-tooltip-content="Schreiben mir per Telegram"
             className="sections-wrap__telegram-link"
             href="tg://resolve?domain=vladdew"
           >

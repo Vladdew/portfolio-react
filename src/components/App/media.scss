@@ -310,18 +310,10 @@
     width: 100%;
     height: auto;
     margin: 0;
-    order: -1;
+
     z-index: 2;
     transform: none;
     background: transparent;
-    grid-template: 247px 0 420px 310px 322px 605px / 40% 60%;
-    grid-template-areas:
-      "foto info "
-      "title title"
-      "description description"
-      "contacts contacts"
-      "education education"
-      "exp exp";
   }
 
   .pen {
@@ -454,32 +446,6 @@
     }
   }
 
-  .education {
-    &__education-title {
-      font-family: "Orbitron", sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 1.3px;
-    }
-    &__vuz {
-      font-family: "Cormorant", sans-serif;
-      letter-spacing: 1.5px;
-      margin-top: 20px;
-      padding: 12px 20px;
-
-      &:nth-child(even) {
-        background-color: rgba(0, 0, 0, 0.2);
-      }
-    }
-
-    &__qualify {
-      font-family: "Orbitron", sans-serif;
-      line-height: 17px;
-      letter-spacing: 1.6px;
-      background-color: rgba(255, 238, 5, 0.04);
-    }
-  }
-
   .sections-wrap {
     &__contacts-title {
       font-family: "Cormorant", sans-serif;
@@ -503,60 +469,6 @@
       font-family: "Orbitron", sans-serif;
       letter-spacing: 1.2px;
       font-weight: 500;
-    }
-  }
-
-  .exp {
-    &__accent-gray {
-      left: 20px;
-    }
-
-    &__accent-gray2 {
-      top: 142px;
-    }
-
-    &__pe-title {
-      margin: 0 0 10px 20px;
-    }
-
-    &__pe-description {
-      font-family: "Cormorant", sans-serif;
-      font-size: 9px;
-      height: 27px;
-      letter-spacing: 0.9px;
-      margin: 0 0 0 45px;
-      padding-bottom: 0px;
-      text-align: left;
-    }
-
-    &__experience {
-      padding: 23px 0;
-      background-color: #ecc93e;
-      margin-bottom: 25px;
-    }
-
-    &__skillset {
-      margin-left: 117px;
-    }
-
-    &__skill {
-      padding: 0 0 0 110px;
-    }
-
-    &__item {
-      width: 70px;
-      left: 23px;
-      padding-left: 10px;
-    }
-
-    &__item-wrap {
-      left: -105px;
-      width: 286px;
-    }
-
-    &__hr {
-      width: 180px;
-      left: 104px;
     }
   }
 }
@@ -593,7 +505,6 @@
   .sections-wrap__home-link,
   .sections-wrap__contact-title,
   .sections-wrap__telegram-link,
-  .education,
   .sections-wrap .sections-wrap__call-link {
     color: black !important;
   }
@@ -620,14 +531,6 @@
   div.main-info__status {
     color: black;
     padding: 0;
-  }
-
-  .exp__pe-title {
-    border-bottom: none;
-  }
-
-  p.education__vuz-de {
-    padding: 1px 20px 0;
   }
 }
 

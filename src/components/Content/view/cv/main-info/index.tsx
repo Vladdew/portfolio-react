@@ -4,7 +4,7 @@ import "./index.scss";
 
 function MainInfo() {
   return (
-    <div className="main-info">
+    <section className="main-info">
       <MainPhoto />
       <div className="main-info__name-block">
         <h2 className="main-info__name">
@@ -15,7 +15,7 @@ function MainInfo() {
         </h2>
         <span className="main-info__specialitat">JavaScript developer</span>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -4,18 +4,19 @@
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  left: 0px;
+  left: -300px;
   top: 0px;
   text-align: center;
-  width: 580px;
-  height: 930px;
+  width: 780px;
+  height: 937px;
   transform: rotate(0);
   z-index: 1;
   border-radius: 14px;
   background-size: 100%;
   background-position-x: center;
   background-repeat: no-repeat;
-  transform: scale(0.2) translate(-597px, -700px) rotate(-42deg);
+  transform: scale(0.2) translate(400px, -1000px) rotate(-42deg);
+  overflow: hidden;
 
   &__magnifier-img-container {
     position: relative;
@@ -37,23 +38,70 @@
   & .overlay {
     position: absolute;
     transform: rotate(-0.2deg);
-    width: 93%;
+    width: 88%;
     height: 81%;
-    top: 116px;
-    left: 23px;
+    top: 147px;
+    left: 35px;
     transition: box-shadow 0.3s;
     box-shadow: none;
     visibility: visible;
     cursor: pointer;
+    visibility: visible;
+    opacity: 1;
+    background-color: #fffbee;
+    transition: transform 0.3s ease;
+  }
+
+  &__span {
+    font-family: "Mr De Haviland", cursive;
+    font-size: 8em;
+    text-shadow: none;
+    letter-spacing: 6px;
+    width: 206px;
+    height: 10px;
+    width: 92%;
+    padding: 0;
+    height: auto;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 20%;
+    z-index: 1;
+  }
+
+  & img {
+    width: 70%;
+    position: relative;
+    top: 10px;
+  }
+
+  & .image-part-bottom {
+    position: absolute;
+    transform: rotate(-0.2deg);
+    width: 100.5%;
+    height: 200px;
+    bottom: -154px;
+    left: 0px;
+    transition: box-shadow 0.3s;
+    box-shadow: none;
+    visibility: visible;
+    cursor: pointer;
+    background-image: url("/img/heft2.png");
+    visibility: visible;
+    opacity: 1;
+    background-size: 99%;
+    background-position: -2px -1105px;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
   }
 
   & .viewer {
     position: absolute;
     transform: rotate(-0.2deg);
-    width: 91%;
-    height: 80%;
-    top: 116px;
-    left: 18px;
+    width: 88%;
+    height: 87%;
+    top: 143px;
+    left: 36px;
     background: #fff;
     overflow: hidden;
 
@@ -64,11 +112,11 @@
   }
 
   &.animate-out {
-    animation: rotare-heft-out 1s forwards;
+    animation: rotare-heft-out 0.75s forwards;
   }
 
   &.animate-in {
-    animation: rotare-heft-in 1.5s forwards;
+    animation: rotare-heft-in 1s forwards;
 
     .cls {
       display: block;
@@ -98,26 +146,27 @@
   @keyframes rotare-heft-out {
     from {
       //transform: translate(-0, -200px);
-      transform: scale(1);
+      transform: scale(1) translate(-0, -200px);
 
-      animation-timing-function: cubic-bezier(0.88, 0.38, 0.99, 0.83);
+      animation-timing-function: cubic-bezier(0.88, 0.38, 0.99, 0.93);
     }
 
-    50% {
-      transform: scale(0.2) translate(-430px, -587px) rotate(-10deg);
+    75% {
+      transform: scale(0.2) translate(400px, -800px) rotate(-32deg);
     }
+    //rotate()
 
     to {
-      transform: scale(0.2) translate(-597px, -700px) rotate(-42deg);
+      transform: scale(0.19) translate(400px, -1000px) rotate(-45deg);
     }
   }
 
   .cls {
     cursor: pointer;
     display: none;
-    top: 70px;
+    top: 100px;
     position: absolute;
-    right: 15px;
+    right: 27px;
     font-size: 18px;
     border: 1px groove #717171;
     border-radius: 4px;

@@ -64,10 +64,11 @@
       position: absolute;
       transition: transform 0.3s;
     }
+
     .sections-wrap__icon-border:hover img {
       transform: scaleX(-1);
-      filter: sepia(0.5) saturate(100%) hue-rotate(90deg) brightness(1)
-        contrast(1);
+      filter: invert(35%) sepia(100%) saturate(1500%) hue-rotate(17deg)
+        brightness(1.2) contrast(1);
     }
   }
 
@@ -136,8 +137,8 @@
   &__icon-border {
     border: 1px solid;
     border-radius: 50px;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     margin-top: 13px;
     display: flex;
     cursor: pointer;
@@ -148,6 +149,16 @@
     &:hover {
       border: 1px solid #f4d644;
     }
+  }
+
+  &__icon-img {
+    height: 15px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  &__icon-img.rotate {
+    transform: rotate(360deg);
+    opacity: 0.7;
   }
 
   &__icon-border1 img {

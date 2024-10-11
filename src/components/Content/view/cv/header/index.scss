@@ -1,0 +1,23 @@
+.header {
+  position: relative;
+  padding-left: 300px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  z-index: 2;
+
+  &__lebenslauf {
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    right: 140px;
+    top: 0px;
+    width: 170px;
+    height: 34px;
+    box-sizing: border-box;
+    padding: 10px;
+    background: linear-gradient(336deg, #555555 0%, #272727 50%, #555555 100%);
+    color: #f4d644;
+    font-family: "Cormorant Infant", serif;
+    font-size: 12px;
+  }
+}

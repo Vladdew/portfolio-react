@@ -16,7 +16,7 @@
   }
 
   &__contact-link {
-    transition: all 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
+    transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
     cursor: pointer;
   }
 

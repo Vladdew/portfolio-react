@@ -57,7 +57,7 @@ function Controlls() {
             </span>
             <span
               data-tooltip-id="tooltip"
-              data-tooltip-content="Hier können Sie die Sprache ändern"
+              data-tooltip-content={"Hier können Sie die Sprache ändern"}
               title={lang === "en" ? "English" : "Deutsch"}
               className={`controlls__switchLang controlls__iconWrap ${
                 lang === "en"
@@ -75,6 +75,7 @@ function Controlls() {
         )}
         <span
           data-tooltip-id="tooltip"
+          data-tooltip-delay-show={1000}
           onClick={() => toggleMenu()}
           className={`controlls__menu-button ${
             menuFlag ? "controlls__menu-button-expanded" : ""
@@ -85,11 +86,7 @@ function Controlls() {
           <span></span>
         </span>
       </div>
-      <Tooltip
-        place="bottom-end"
-        id="tooltip"
-        content={menuFlag ? "Schließ das Menü" : "Öffne das Menü"}
-      />
+      <Tooltip place="bottom-end" id="tooltip" />
     </>
   );
 }
