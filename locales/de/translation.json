@@ -3,33 +3,6 @@
     "status": "React entwikler",
     "address": "Goslar, Deutschland"
   },
-  "exp": {
-    "pe-title": "BERUFSERFAHRUNG",
-    "pe-title1": "PROFESSIONELLE FÄHIGKEITEN",
-    "pe-description": "Einige Jahre Erfahrung als Freelancer. Zwei Jahre kommerzielle Erfahrung als React-Entwickler in einem IT-Unternehmen.",
-    "skills": {
-      "html": "HTML5 Pixel-perfekte Entwicklung, Bootstrap 4",
-      "css": "Responsives Webdesign, SASS, BEM, CSS-Übergänge, Flexbox, Grid, Kenntnisse in der Kompatibilität mit verschiedenen Browsern, Semantic UI",
-      "version": "Versions-",
-      "control": "kontrolle:"
-    }
-  },
-  "education": {
-    "title": "Ausbildung",
-    "vuz1": {
-      "qualify": "Junior-Spezialist",
-      "name": "Hochschule mit dem Schwerpunkt Computertechnologien"
-    },
-    "vuz2": {
-      "qualify1": "Master of Computer- wissenschaften",
-      "qualify2": "Ingenieur-Forscher",
-      "name": "Ostukrainische Nationaluniversität. Automatisierte technologische Prozesssteuerung."
-    },
-    "vuz3": {
-      "qualify": "React-Entwickler",
-      "name": "Mate Academy Online"
-    }
-  },
   "contacts": {
     "title": "Kontakte",
     "phone": "Telefon",

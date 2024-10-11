@@ -3,33 +3,7 @@
     "status": "React developer",
     "address": "Goslar, Germany"
   },
-  "exp": {
-    "pe-title": "PROFESSIONAL EXPERIENCE",
-    "pe-title1": "PROFESSIONAL SKILLSET",
-    "pe-description": "A couple of years of experience in freelance. Two years of commercial experience as a react developer in IT company",
-    "skills": {
-      "html": "HTML5 Pixel Perfect development, Bootstrap 4",
-      "css": "Responsive web design, SASS, BEM, CSS transitions, flexBox, grid, cross-browser compatibility knowledge, semantic UI",
-      "version": "Version",
-      "control": "control:"
-    }
-  },
-  "education": {
-    "title": "Education",
-    "vuz1": {
-      "qualify": "Junior Specialist",
-      "name": "College by specialty computer technologies"
-    },
-    "vuz2": {
-      "qualify1": "Master of computer science",
-      "qualify2": "Engineer researcher",
-      "name": "East Ukrainian National University. Automated technological process control."
-    },
-    "vuz3": {
-      "qualify": "React developer",
-      "name": "Mate Academy online"
-    }
-  },
+
   "contacts": {
     "title": "Contacts",
     "phone": "Phone",
