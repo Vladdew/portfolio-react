@@ -22,17 +22,16 @@ const CvPDF = (props: CvPDFTypes) => {
     const loadPDF = () => {
       setLoading(true);
       try {
-        // Предположим, что PDF файл находится в папке public
-        const file = "/cv.pdf";
+        const file = "./cv.pdf";
         if (!file) throw new Error("PDF file not found");
 
         setPdfFile(file);
-        setError(null); // Сбрасываем ошибку, если файл успешно загружен
+        setError(null);
       } catch (err) {
         console.error("Ошибка при загрузке PDF:", err);
         setError("Ошибка при загрузке PDF-файла");
       } finally {
-        setLoading(false); // Сбрасываем состояние загрузки
+        setLoading(false);
       }
     };
 
