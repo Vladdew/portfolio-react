@@ -1,12 +1,11 @@
 {
   "files": {
-    "main.css": "./static/css/main.c1b244db.css",
-    "main.js": "./static/js/main.92bda245.js",
+    "main.css": "./static/css/main.7ae3720f.css",
+    "main.js": "./static/js/main.95b271e2.js",
     "static/media/gpt.png": "./static/media/gpt.f1a7d34fd4e3005656d1.png",
     "static/media/heft2.png": "./static/media/heft2.68ae3d4e0cd67bf1d5ca.png",
     "static/media/gazon.jpg": "./static/media/gazon.0b8cb9de8e1bc64ccc71.jpg",
     "static/media/photo2.jpg": "./static/media/photo2.367b03d0e70e6ff3af51.jpg",
-    "static/media/fon-mobile.jpg": "./static/media/fon-mobile.f5b0db18763877d5aac8.jpg",
     "static/media/fon.jpg": "./static/media/fon.bd2cba954d22613c1e2b.jpg",
     "static/media/i-keys.png": "./static/media/i-keys.5804bacb614894f1e5d9.png",
     "static/media/cup.png": "./static/media/cup.47601470062b1edcb7ea.png",
@@ -24,11 +23,11 @@
     "static/media/d3.jpg": "./static/media/d3.3f4e5b06a6eb8f8ae23f.jpg",
     "index.html": "./index.html",
     "static/media/getFetch.cjs": "./static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.c1b244db.css.map": "./static/css/main.c1b244db.css.map",
-    "main.92bda245.js.map": "./static/js/main.92bda245.js.map"
+    "main.7ae3720f.css.map": "./static/css/main.7ae3720f.css.map",
+    "main.95b271e2.js.map": "./static/js/main.95b271e2.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1b244db.css",
-    "static/js/main.92bda245.js"
+    "static/css/main.7ae3720f.css",
+    "static/js/main.95b271e2.js"
   ]
 }
