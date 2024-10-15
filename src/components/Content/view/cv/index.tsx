@@ -1,7 +1,5 @@
 import Sidebar from "./sidebar";
 import MainInfo from "./main-info";
-import ProfileTitle from "./profile-title";
-import ProfileDescription from "./profile-description";
 import AboutMe from "./aboutMe";
 import Contacts from "./contacts";
 import Languages from "./languages";

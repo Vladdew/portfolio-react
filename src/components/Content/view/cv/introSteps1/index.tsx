@@ -38,7 +38,6 @@ const IntroSteps1: React.FC<IntroStepsProps> = ({
     if (onComplete) onComplete();
     setShowIntro(false);
   };
-  console.log("stepsJSON", stepsJSON, "showIntro1", showIntro1);
 
   return (
     <Steps

@@ -14,7 +14,7 @@
   }
 
   .heft {
-    left: -56px;
+    left: -356px;
     top: -40px;
   }
 
@@ -205,332 +205,142 @@
 }
 
 @media screen and (max-width: 633px) {
-  & .cv.animate-in {
-    animation: rotare-cv-i 1s forwards;
-  }
-
-  @keyframes rotare-cv-i {
-    from {
-      transform: skew(-10deg, 10deg) scale(0.3) translate(1200px, -350px)
-        rotate(48deg);
-    }
-    50% {
-      transform: scale(0.3);
-      //
-    }
-
-    to {
-      transform: skew(0deg, 0deg) scale(1);
-    }
-  }
-
-  .heft.animate-in {
-    animation: rotare-heft-i 1.5s forwards;
-    top: 0;
+  .pen,
+  .cup,
+  .iphone,
+  .projects {
+    display: none;
   }
   .heft {
-    left: 0;
-    top: 0;
-    width: 100%;
-    position: sticky 20px;
+    display: none;
   }
 
-  .heft .viewer {
-    width: 88%;
-    height: 58%;
-    top: 72px;
-    left: 18px;
-  }
-
-  .heft .cls {
-    top: 47px;
-    font-size: 12px;
-    padding: 3px 5px 2px 5px;
-  }
-  .cv .main-info__tools-container {
-    right: -28px;
-    top: -5px;
-  }
-
-  @keyframes rotare-heft-i {
-    from {
-      //box-shadow: 13px 13px 2px -9px rgba(34, 60, 80, 0.29);
-    }
-    50% {
-      //transform: scale(0.2) translate(1200px, -350px);
-      //
-    }
-
-    to {
-      transform: scale(1) translate(-0px, 0);
-      //box-shadow: -2px 4px 100px 16px rgba(34, 60, 80, 0.11);
-    }
-  }
-  .profile-title__cwars {
-    width: 126px;
-    right: 24px;
-    height: 22px;
+  .App {
     position: absolute;
   }
 
-  .main-info__print {
-    display: none;
-  }
-
-  img.main-info__switchLang-en {
-    top: -5px;
-    right: 3px;
-  }
-
-  img.main-info__switchLang {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-
-  .profile-title__cwars-t2 {
-    width: 80px;
-    padding-top: 2px;
-  }
-  .App {
-    background: url(/img/fon-mobile.jpg);
-    background-size: 100% 2590px;
-    background-repeat: no-repeat;
-  }
-
+  .App,
   .flex-wrap {
-    justify-content: center;
+    margin: 0;
     padding: 0;
-    flex-wrap: wrap;
-    border-radius: 0;
-    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.59);
-    background: transparent;
-    height: 2570px;
+    width: 100%;
+    height: 100%;
   }
 
   .cv {
     width: 100%;
-    height: auto;
+    height: 100vh;
     margin: 0;
-
-    z-index: 2;
     transform: none;
-    background: transparent;
+
+    & .header {
+      position: relative;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: end;
+      width: 100%;
+      gap: 8vw;
+      height: 35px;
+      justify-self: left;
+      z-index: 2;
+      padding-left: 0;
+    }
+
+    & .sections-wrap h3 span {
+      margin-left: -40px;
+    }
+
+    & .sidebar {
+      width: 196px;
+    }
+
+    & .sections-wrap {
+      //left: -4px;
+    }
+
+    & .sections-wrap__contacts {
+      font-size: 8px;
+      left: -38px;
+    }
+    & .sections-wrap__contactme {
+      width: 178px;
+    }
+
+    & .sections-wrap__contact-styles {
+      font-size: 8px;
+    }
+
+    & .sections-wrap h3 {
+      width: 90px;
+    }
+
+    &__sections {
+      padding-left: 20px;
+    }
+
+    & .sections-wrap h3 span {
+      margin-left: -64px;
+    }
+
+    & .aboutMe2 {
+      display: none;
+    }
+    & .aboutMe {
+      gap: 0;
+    }
+
+    & div.sections-wrap-about {
+      margin-left: 0;
+    }
+
+    &__block-fon {
+      position: relative;
+      top: 0;
+      height: 200px;
+    }
+
+    &__footer {
+      position: relative;
+    }
   }
 
-  .pen {
-    left: 267px;
-    top: unset;
-    width: 16px;
-    bottom: -97px;
-  }
-
-  .cup {
-    display: none;
-  }
-
-  .iphone {
-    display: none;
-  }
-
-  .projects {
-    display: block;
-    left: 125px;
-    bottom: 0px;
-    top: unset;
-    transform: scale(0.75);
-    perspective: 500px;
+  .cv .main-info {
+    height: auto;
+    padding-left: 28px;
+    box-sizing: border-box;
+    margin-top: -10px;
+    position: relative;
     z-index: 1;
 
-    &__getImg {
-      top: 180px;
-      left: 130px;
-      opacity: 0;
-      z-index: -1;
+    &__main-photo {
+      width: 200px;
+      height: 165px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: 2px solid white;
+      background-position: 0px -12px;
     }
 
-    &__container {
-      transform: rotate(34deg);
-      top: -31px;
-      left: 99px;
-    }
-    &__getFromGit {
-      top: 176px;
-      left: 22px;
-      transition: opacity 0.3s 2s, z-index 0.1s 2.5s;
-
-      &:hover {
-        transform: rotate(0deg);
-      }
-
-      --disabled {
-        opacity: 0;
-        z-index: -1;
-      }
-    }
-  }
-
-  .project {
-    background-size: 100%;
-    perspective: 200px;
-    transform: rotate(-13deg);
-    margin-top: -90px;
-    opacity: 0;
-
-    &--animated {
-      display: block;
-      transition: transform 1s 1s, top 0.3s, opacity 0.2s 0.8s, margin 0.5s 2s;
-      margin-top: -28px;
-      opacity: 1;
-      top: 260px;
-    }
-
-    &__container {
-      box-shadow: 2px 1px 1px 1px rgba(0, 0, 0, 0.45);
-    }
-    transform: rotate3d(81, -47, 17, 38deg);
-  }
-
-  .main-info {
-    padding-left: 24px;
-  }
-
-  h2.main-info {
     &__name {
-      letter-spacing: 1px;
-      margin: 0;
-      margin-top: 16px;
-      margin-bottom: 10px;
-      font-size: 1.3em;
+      letter-spacing: 4px;
+      font-size: 22px;
+      margin: -10px 0 0 20px;
+      line-height: 22px;
     }
 
-    &__status {
-      height: auto;
-      padding: 4px 0 4px 7px;
+    &__name-block {
+      width: 400px;
+      height: 114px;
+      position: relative;
+    }
+
+    &__specialitat {
       font-size: 12px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      transform: none;
     }
-  }
-
-  .profile-title {
-    margin-top: -95px;
-    padding: 10px 24px;
-    height: auto;
-    font-family: "Cormorant", sans-serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-    font-weight: 700;
-
-    &__square {
-      width: 53px;
-    }
-  }
-
-  .profile-description {
-    margin: 0;
-    height: auto;
-    text-align: center;
-    color: #e6c522;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 26px;
-    letter-spacing: 1.8px;
-    padding: 20px 27px 0;
-    background: #464646;
-    font-family: "Orbitron", sans-serif;
-
-    &__br {
-      display: block;
-    }
-
-    &__hr {
-      background: #e6c522;
-      border: 0.5px solid transparent;
-    }
-  }
-
-  .sections-wrap {
-    &__contacts-title {
-      font-family: "Cormorant", sans-serif;
-      letter-spacing: 2px;
-    }
-
-    &__contactme {
-      margin-top: 20px;
-      &:nth-child(odd) {
-        background-color: rgba(255, 255, 255, 0.034);
-      }
-    }
-
-    &__contact-styles {
-      font-family: "Orbitron", sans-serif;
-      margin-bottom: -4px;
-      background-color: rgba(255, 255, 0, 0.089);
-    }
-
-    & h3 {
-      font-family: "Orbitron", sans-serif;
-      letter-spacing: 1.2px;
-      font-weight: 500;
-    }
-  }
-}
-
-@media print {
-  .App {
-    visibility: hidden;
-  }
-
-  .profile-title__cwars {
-    visibility: hidden;
-  }
-
-  .sections-wrap h3 {
-    color: black;
-    border-bottom: none;
-  }
-
-  .main-info__status {
-    color: white;
-  }
-
-  .cv {
-    visibility: visible;
-    top: 50px;
-    left: -300px;
-    transform: scale(1.2);
-    box-shadow: none;
-    color: black !important;
-  }
-
-  .profile-description,
-  .profile-title,
-  .sections-wrap__home-link,
-  .sections-wrap__contact-title,
-  .sections-wrap__telegram-link,
-  .sections-wrap .sections-wrap__call-link {
-    color: black !important;
-  }
-
-  .sections-wrap__contacts {
-    position: relative;
-    left: 44px;
-  }
-
-  .sections-wrap__icon-border,
-  .sections-wrap__icon-border1 {
-    visibility: hidden;
-  }
-
-  .main-info__switchLang-container {
-    visibility: hidden;
-  }
-
-  div.sections-wrap h3 {
-    color: black;
-    border-bottom: none;
-  }
-
-  div.main-info__status {
-    color: black;
-    padding: 0;
   }
 }
 

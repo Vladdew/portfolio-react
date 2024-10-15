@@ -36,7 +36,21 @@ const icons = [
   { src: cata, alt: "Code wars" },
   { src: wp, alt: "WordPress" },
   { src: mongo, alt: "MongoDB" },
-  { src: mysql, alt: "MySQL" },
+  { src: html, alt: "HTML" },
+  { src: css, alt: "CSS" },
+  { src: js, alt: "JavaScript" },
+  { src: ts, alt: "TypeScript" },
+  { src: react, alt: "React" },
+  { src: next, alt: "Next" },
+  { src: d3, alt: "DDD" },
+  { src: konva, alt: "Konva.js" },
+  { src: node, alt: "Node.js" },
+  { src: figma, alt: "Figma" },
+  { src: gh, alt: "Github" },
+  { src: ps, alt: "Photoshop" },
+  { src: cata, alt: "Code wars" },
+  { src: wp, alt: "WordPress" },
+  { src: mongo, alt: "MongoDB" },
 ];
 
 const TechnologienCarousel = () => {
@@ -46,8 +60,9 @@ const TechnologienCarousel = () => {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (carouselRef.current) {
-        const speed = (e.clientX / window.innerWidth) * 10 - 5; // Уменьшил диапазон скорости
+        const speed = (e.clientX / window.innerWidth) * 10 - 15; // Уменьшил диапазон скорости
         carouselRef.current.style.animationDuration = `${15 - speed}s`;
+        console.log(e.clientX);
       }
     };
 

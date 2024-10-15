@@ -23,11 +23,8 @@
 
   &__name {
     font-family: "Cinzel", serif;
-    /* font-family: "Quattrocento", serif; */
-    /* font-family: "Cormorant Infant", serif; */
     font-weight: 400;
     letter-spacing: 4px;
-    margin: 10px 0 10px;
     font-size: 36px;
     margin: -20px 0 0 50px;
     line-height: 40px;
@@ -40,19 +37,17 @@
   }
 
   &__specialitat {
-    position: relative;
-    font-family: "Merienda", cursive;
-    font-family: "Mr De Haviland", cursive;
-    right: -120px;
-    top: -10px;
-    font-size: 26px;
-    color: #1a3f8e;
-    font-weight: bold;
-    letter-spacing: 3.4px;
+    color: #3f3f3f;
     display: block;
-    transform: rotate3d(126, 16, 76, -10deg);
+    font-family: Merienda, cursive;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
     line-height: 1.2;
-    text-shadow: 1px 1px 2px rgb(255, 225, 38 / 64%);
+    position: relative;
+    right: -120px;
+    bottom: -20px;
+    transform: none;
   }
 
   &__print {

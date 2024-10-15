@@ -11,13 +11,13 @@ const Content = () => {
   const onClick = () => {
     setIsCV(!Boolean(isCV));
   };
-
+  console.log("Render");
   return (
     <>
       <Projects />
       <Heft isCv={isCV} onClick={onClick} />
       <CV isCv={isCV} onClick={onClick} />
-      <Intro steps={stepsMain} />
+      {/* <Intro steps={stepsMain} /> */}
     </>
   );
 };

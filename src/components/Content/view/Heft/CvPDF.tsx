@@ -119,9 +119,6 @@ const CvPDF = (props: CvPDFTypes) => {
               fileUrl={pdfFile} // Убедитесь, что pdfFile не null
               defaultScale={SpecialZoomLevel.PageWidth}
               plugins={[toolbarPluginInstance]}
-              onDocumentLoad={e => {
-                console.log("PDF загружен успешно", e);
-              }}
             />
           </Worker>
         </>
