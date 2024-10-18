@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Steps } from "intro.js-react";
 
 import "intro.js/introjs.css";
+import "./index.scss";
 
 type Step = {
   element: string;

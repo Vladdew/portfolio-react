@@ -36,47 +36,44 @@ const icons = [
   { src: cata, alt: "Code wars" },
   { src: wp, alt: "WordPress" },
   { src: mongo, alt: "MongoDB" },
-  { src: html, alt: "HTML" },
-  { src: css, alt: "CSS" },
-  { src: js, alt: "JavaScript" },
-  { src: ts, alt: "TypeScript" },
-  { src: react, alt: "React" },
-  { src: next, alt: "Next" },
-  { src: d3, alt: "DDD" },
-  { src: konva, alt: "Konva.js" },
-  { src: node, alt: "Node.js" },
-  { src: figma, alt: "Figma" },
-  { src: gh, alt: "Github" },
-  { src: ps, alt: "Photoshop" },
-  { src: cata, alt: "Code wars" },
-  { src: wp, alt: "WordPress" },
-  { src: mongo, alt: "MongoDB" },
 ];
 
-const TechnologienCarousel = () => {
+const TechnologienCarousel = (props: { isCv: boolean | "1" }) => {
   const { t } = useTranslation();
   const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (carouselRef.current) {
-        const speed = (e.clientX / window.innerWidth) * 10 - 15; // Уменьшил диапазон скорости
+        const speed = (e.clientX / window.innerWidth) * 10 - 15;
         carouselRef.current.style.animationDuration = `${15 - speed}s`;
-        console.log(e.clientX);
       }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    // Добавляем или удаляем обработчик события в зависимости от isCv
+    if (props.isCv) {
+      window.addEventListener("mousemove", handleMouseMove);
+    } else {
+      if (carouselRef.current) {
+        // Если анимация должна остановиться, сбрасываем её продолжительность
+        carouselRef.current.style.animationDuration = "15s";
+      }
+    }
+
+    // Удаляем обработчик при размонтировании компонента или если isCv изменяется на false
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [props.isCv]);
 
   return (
     <div className="carousel-wrapper">
       <div className="carousel__decor">
-        <h2 className="carousel__title">Technologien</h2>
+        <h2 className="carousel__title">{t("tech.title")}</h2>
       </div>
 
-      <div ref={carouselRef} className="carousel">
+      <div
+        ref={carouselRef}
+        className={`carousel ${props.isCv ? "" : "paused"}`}
+      >
         {icons.map((icon, index) => (
           <div key={index} className="carousel__icon">
             <img src={icon.src} alt={icon.alt} />

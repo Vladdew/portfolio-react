@@ -1,8 +1,11 @@
 import MainPhoto from "../main-photo";
+import { useTranslation } from "react-i18next";
 
 import "./index.scss";
 
 function MainInfo() {
+  const { t } = useTranslation();
+
   return (
     <section className="main-info">
       <MainPhoto />
@@ -13,7 +16,7 @@ function MainInfo() {
           <br />
           Vlad
         </h2>
-        <span className="main-info__specialitat">JavaScript developer</span>
+        <span className="main-info__specialitat">{t("main-info.status")}</span>
       </div>
     </section>
   );

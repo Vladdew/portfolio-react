@@ -1,6 +1,6 @@
 {
   "main-info": {
-    "status": "React entwikler",
+    "status": "JavaScript Entwickler",
     "address": "Goslar, Deutschland"
   },
   "contacts": {
@@ -10,25 +10,52 @@
     "tel-copied": "Numer kopiert!",
     "or_write_here": "Hier eingeben",
     "address-title": "Adresse",
-    "address": "Goslar, Deutschland"
+    "address": "Goslar, Deutschland",
+    "clickto": "zum Kopieren klicken"
   },
-  "profile-description": {
-    "part1": "Ich widme mich mutig dem Studium neuer Technologien. Mein Fortschritt beim Lösen von Aufgaben ist auf Codewars ersichtlich.",
-    "part2": "Ich strebe danach, in einem Team von Menschen zu arbeiten,mit denen gemeinsam",
-    "part3": "wir Wert schaffen können. Ich bin zielstrebig, kommunikativ und humorvoll. Die Arbeit im Team bereitet mir Freude.",
-    "part4": "Mein Englisch ist auf mittlerem Niveau, mein Deutsch entspricht dem B2-Level."
-  },
-  "profile-title": {
-    "professional": "Berufliches",
-    "profile": "Profil",
-    "more_than_100_solved": "Über hundert gelöste",
-    "problems": "Probleme"
+  "header": {
+    "title": "Lebenslauf"
   },
   "about": {
-    "title": "Über mich"
+    "title": "Über mich",
+    "birth": "Geburstdatum",
+    "nation": "Staatsangehörigkeit",
+    "lingua": "Sprachen",
+    "lingua2": "De B2, En B1. Ru, Ua- Muttersprachen",
+    "education": "Studium",
+    "education2": "Master in Computerwissenschaften, Forschungsingenieur",
+    "ae": "Arbeitserlaubnis",
+    "ae2": "Vorhanden",
+    "married": "Familienstand",
+    "married2": "Verheiratet(1 Sohn 4 Jahre alt)",
+    "mob": "Mobilität",
+    "mob2": "Eigener PKW vorhanden",
+    "weiter": "Weiterbildung",
+    "weiter2": "React Entwickler"
+  },
+
+  "tech": {
+    "title": "Technologien"
+  },
+
+  "tooltip": {
+    "write": "Schreiben mir per",
+    "look": "Schauen Sie mein LinkedIn-Profil an",
+    "gh": "Das ist mein GitHub-Profil",
+    "cw": "Problemlösung bei CodeWars"
+  },
+
+  "controlls": {
+    "print": "Drucken Sie das gesamte Portfolio aus",
+    "lingua": "Sprache ändern",
+    "ll": "Lebenslauf öffnen"
   },
 
   "languages": {
     "title": "Sprachen"
+  },
+
+  "heft": {
+    "over": "Lebenslauf"
   }
 }

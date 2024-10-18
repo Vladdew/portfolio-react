@@ -63,3 +63,17 @@
     width: 24px;
   }
 }
+
+#contact-tt {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 240, 208, 1) 0%,
+    rgba(255, 246, 224, 1) 47%,
+    rgba(255, 243, 216, 1) 100%
+  );
+  opacity: 1;
+  letter-spacing: 1.5px;
+  color: rgb(92, 92, 92);
+  border-left: 1px solid #e8cfc7;
+  border-bottom: 1px solid #e4cac1;
+}

@@ -6,7 +6,10 @@ import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/toolbar/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import Intro1 from "../cv/introSteps1";
-import { stepsPDF } from "../cv/introSteps1/steps";
+import { useTranslation } from "react-i18next";
+
+import { stepsPDF_en } from "../cv/introSteps1/steps";
+import { stepsPDF_de } from "../cv/introSteps1/steps";
 
 type CvPDFTypes = {
   isCv: boolean | "1";
@@ -38,6 +41,8 @@ const CvPDF = (props: CvPDFTypes) => {
     loadPDF();
   }, []);
 
+  const { i18n } = useTranslation();
+
   const toolbarPluginInstance = toolbarPlugin({
     getFilePlugin: {
       fileNameGenerator: file => {
@@ -59,11 +64,12 @@ const CvPDF = (props: CvPDFTypes) => {
     return <div>Загрузка PDF...</div>; // Индикатор загрузки
   }
 
-  //console.log("showIntro1", props.showIntro1);
-
   return (
     <div className="viewer">
-      <Intro1 steps={stepsPDF} enabled={props.showIntro1} />
+      <Intro1
+        steps={i18n.language === "de" ? stepsPDF_de : stepsPDF_en}
+        enabled={props.showIntro1}
+      />
       {error ? (
         <div
           className="error-message"

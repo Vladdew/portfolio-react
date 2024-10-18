@@ -14,54 +14,51 @@ const AboutMe = () => {
       <div className="aboutMe__ul-container">
         <ul className="aboutMe">
           <li>
-            <span className="aboutMe__heading">Geburstdatum:</span>
+            <span className="aboutMe__heading">{t("about.birth")}:</span>
             <br />
             <span className="aboutMe__information">
               30.06.1986 in Luhansk/Ukraine
             </span>
           </li>
           <li>
-            <span className="aboutMe__heading">Staatsangehörigkeit:</span>
+            <span className="aboutMe__heading">{t("about.nation")}:</span>
             <br />
             <span className="aboutMe__information">Ukraine</span>
           </li>
+
           <li>
-            <span className="aboutMe__heading">Familienstand:</span>
+            <span className="aboutMe__heading">{t("about.lingua")}:</span>
             <br />
-            <span className="aboutMe__information">
-              Verheiratet(1 Sohn 4 Jahre alt)
-            </span>
+            <span className="aboutMe__information">{t("about.lingua2")}</span>
           </li>
           <li>
-            <span className="aboutMe__heading">Studium:</span>
+            <span className="aboutMe__heading">{t("about.education")}:</span>
             <br />
             <span className="aboutMe__information">
-              Master in Computerwissenschaften, Forschungsingenieur
+              {t("about.education2")}
             </span>
           </li>
         </ul>
         <ul className="aboutMe aboutMe2">
           <li>
-            <span className="aboutMe__heading">Arbeitserlaubnis:</span>
+            <span className="aboutMe__heading">{t("about.ae")}:</span>
             <br />
-            <span className="aboutMe__information">Vorhanden</span>
+            <span className="aboutMe__information">{t("about.ae2")}</span>
           </li>
           <li>
-            <span className="aboutMe__heading">Sprachen:</span>
+            <span className="aboutMe__heading">{t("about.married")}:</span>
             <br />
-            <span className="aboutMe__information">
-              De B2, En B1. Ru, Ua- Muttersprachen
-            </span>
+            <span className="aboutMe__information">{t("about.married2")}</span>
           </li>
           <li>
-            <span className="aboutMe__heading">Mobilitat:</span>
+            <span className="aboutMe__heading">{t("about.mob")}:</span>
             <br />
-            <span className="aboutMe__information">Eigener PKW vorhanden</span>
+            <span className="aboutMe__information">{t("about.mob2")}</span>
           </li>
           <li>
-            <span className="aboutMe__heading">Weiterbildung:</span>
+            <span className="aboutMe__heading">{t("about.weiter")}:</span>
             <br />
-            <span className="aboutMe__information">React Entwickler</span>
+            <span className="aboutMe__information">{t("about.weiter2")}</span>
           </li>
         </ul>
       </div>

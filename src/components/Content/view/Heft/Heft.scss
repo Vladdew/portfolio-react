@@ -42,19 +42,34 @@
     height: 81%;
     top: 147px;
     left: 35px;
-    transition: box-shadow 0.3s;
     box-shadow: none;
-    visibility: visible;
     cursor: pointer;
     visibility: visible;
     opacity: 1;
     background-color: #fffbee;
-    transition: transform 0.3s ease;
+    transition: color 0.3s, box-shadow 0.3s;
+    color: #6b6b6b;
+  }
+
+  & .overlay:hover {
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 25px 5px rgba(255, 255, 255, 1);
+  }
+
+  & .overlay img {
+    filter: invert(35%) sepia(100%) saturate(100%) hue-rotate(17deg)
+      brightness(1.2) contrast(1);
+    transition: filter 0.3s;
+  }
+
+  & .overlay:hover img {
+    filter: invert(35%) sepia(100%) saturate(1500%) hue-rotate(17deg)
+      brightness(0) contrast(1);
   }
 
   &__span {
-    font-family: "Mr De Haviland", cursive;
-    font-size: 8em;
+    font-family: cursive;
+    font-size: 5em;
     text-shadow: none;
     letter-spacing: 6px;
     width: 206px;
@@ -72,7 +87,7 @@
   & img {
     width: 70%;
     position: relative;
-    top: 10px;
+    top: 50px;
   }
 
   & .image-part-bottom {

@@ -15,16 +15,6 @@ div.intro-tooltip {
   min-height: 0;
 }
 
-.introjs-tooltiptext label {
-  padding: 6px;
-  border-radius: 5px;
-}
-
-#dont-show-again {
-  position: relative;
-  top: 2px;
-}
-
 .introjs-tooltip-title {
   display: none;
 }
@@ -110,15 +100,15 @@ div.introjs-tooltip div.introjs-arrow {
 }
 
 .introjs-bullets ul li a {
-  background-color: #866b4b;
+  background-color: #f4d644;
 }
 
 .introjs-bullets ul li a.active {
-  background-color: #7c5332;
+  background-color: #ffea7f;
 }
 
 .introjs-bullets ul li a:hover {
-  background: #3f2619;
+  background: #ffea7f;
 }
 
 .intro-highlight {

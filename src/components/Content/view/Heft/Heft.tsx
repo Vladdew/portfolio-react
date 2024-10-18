@@ -1,9 +1,11 @@
 import { useState } from "react";
 import CvPDF from "./CvPDF";
 import Hr1 from "../../../../img/hr1.png";
+import { useTranslation } from "react-i18next";
 
 const Heft = (props: { onClick: () => void; isCv: boolean | "1" }) => {
   const [showIntro1, setShowIntro1] = useState<boolean>(false);
+  const { t, i18n } = useTranslation();
 
   return (
     <div
@@ -27,7 +29,7 @@ const Heft = (props: { onClick: () => void; isCv: boolean | "1" }) => {
         }}
         className="overlay"
       >
-        <span className="heft__span">Anschreiben</span>
+        <span className="heft__span">{t("heft.over")}</span>
         <img src={Hr1} alt="" />
       </div>
       <div className="image-part-bottom"></div>

@@ -4,10 +4,12 @@ import telega from "../../../../../icons/telega.png";
 import linkedin from "../../../../../icons/linkedin.png";
 import cata from "../../../../../icons/cata.png";
 import gh from "../../../../../icons/gh.png";
+import { useTranslation } from "react-i18next";
 
 import "./index.scss";
 
 const ContactLinks = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Tooltip id="contact-tt" />
@@ -15,7 +17,7 @@ const ContactLinks = () => {
         <div className="sections-wrap__contact-link">
           <a
             data-tooltip-id="contact-tt"
-            data-tooltip-content="Schreiben mir per WatsApp"
+            data-tooltip-content={t("tooltip.write") + " WatsApp"}
             className="sections-wrap__telegram-link"
             href="https://wa.me/380991177577"
           >
@@ -25,7 +27,7 @@ const ContactLinks = () => {
         <div className="sections-wrap__contact-link">
           <a
             data-tooltip-id="contact-tt"
-            data-tooltip-content="Schreiben mir per Telegram"
+            data-tooltip-content={t("tooltip.write") + " Telegram"}
             className="sections-wrap__telegram-link"
             href="tg://resolve?domain=vladdew"
           >
@@ -35,7 +37,7 @@ const ContactLinks = () => {
 
         <a
           data-tooltip-id="contact-tt"
-          data-tooltip-content="Schauen Sie mein LinkedIn-Profil an"
+          data-tooltip-content={t("tooltip.look")}
           className="sections-wrap__contact-link"
           href="https://www.linkedin.com/in/vlad-presnyakov/"
         >
@@ -43,7 +45,7 @@ const ContactLinks = () => {
         </a>
         <a
           data-tooltip-id="contact-tt"
-          data-tooltip-content="Das ist mein GitHub-Profil"
+          data-tooltip-content={t("tooltip.gh")}
           className="sections-wrap__contact-link"
           href="https://github.com/Vladdew"
         >
@@ -51,7 +53,7 @@ const ContactLinks = () => {
         </a>
         <a
           data-tooltip-id="contact-tt"
-          data-tooltip-content="Hier können Sie meine Fortschritte bei der Lösung von Problemen bei Cod Wars sehen"
+          data-tooltip-content={t("tooltip.cw")}
           className="sections-wrap__contact-link"
           href="https://www.codewars.com/users/%3CVladok%2F%3E"
         >

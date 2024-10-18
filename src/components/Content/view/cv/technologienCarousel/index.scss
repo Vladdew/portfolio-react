@@ -8,10 +8,14 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  animation: scroll 30s linear infinite;
+  animation: scroll 60s linear infinite;
   white-space: nowrap;
   padding-top: 8px;
   gap: 20px;
+
+  &.paused {
+    animation-play-state: paused; // Останавливает анимацию
+  }
 
   &:after {
     content: "";

@@ -3,6 +3,7 @@ import phone from "../../../../../icons/phone.png";
 import done from "../../../../../icons/done.png";
 import email from "../../../../../icons/email.png";
 import home from "../../../../../icons/home.png";
+import { Tooltip } from "react-tooltip";
 
 import { useTranslation } from "react-i18next";
 import { isMobile } from "react-device-detect";
@@ -35,19 +36,23 @@ const Contacts = () => {
             navigator.clipboard.writeText("+49015156852622");
           }}
         >
-          <div className="sections-wrap__icon-border sections-wrap__icon-border2">
+          <span className="sections-wrap__icon-border sections-wrap__icon-border2">
             <img
               className={`sections-wrap__icon-img ${flag2 ? "rotate" : ""}`}
               src={flag2 ? done : phone}
               alt="icon-copy-phone number"
             />
-          </div>
+          </span>
           {!flag2 ? (
             <a
               className="sections-wrap__call-link"
               href={isMobile ? "tel:+49015156852622" : "#!"}
             >
-              <span className="sections-wrap__contact-title">
+              <span
+                data-tooltip-id="tooltip1"
+                data-tooltip-content={isMobile ? "" : t("contacts.clickto")}
+                className="sections-wrap__contact-title"
+              >
                 <span className="sections-wrap__contact-styles">
                   {t("contacts.phone")}
                 </span>
@@ -56,9 +61,11 @@ const Contacts = () => {
               </span>
             </a>
           ) : (
-            <div className="sections-wrap__contact-title sections-wrap__contact-title-tel-copied">
-              {t("contacts.tel-copied")}
-            </div>
+            <a className="sections-wrap__call-link" href={"#!"}>
+              <span className="sections-wrap__contact-title sections-wrap__contact-title-email-copied">
+                {t("contacts.tel-copied")}
+              </span>
+            </a>
           )}
         </li>
         <li
@@ -67,7 +74,7 @@ const Contacts = () => {
             setTimeout(() => {
               setFlag(false);
             }, 3000);
-            navigator.clipboard.writeText("vladyslav223@gmail.com");
+            navigator.clipboard.writeText("presnyakov.vladyslav@gmail");
           }}
           title="Copy to clipboard"
           className={
@@ -84,7 +91,11 @@ const Contacts = () => {
             />
           </span>
           {!flag ? (
-            <span className="sections-wrap__contact-title sections-wrap__contact-title-email">
+            <span
+              data-tooltip-id="tooltip1"
+              data-tooltip-content={isMobile ? "" : t("contacts.clickto")}
+              className="sections-wrap__contact-title sections-wrap__contact-title-email"
+            >
               <span className="sections-wrap__contact-styles">Email</span>
               <br />
               presnyakov.vladyslav <br />
@@ -117,6 +128,7 @@ const Contacts = () => {
           </a>
         </li>
       </ul>
+      <Tooltip place="top" id="tooltip1" />
     </div>
   );
 };

@@ -1,9 +1,17 @@
+#tooltip1,
 #tooltip {
-  background: linear-gradient(180deg, #ffe66b 0%, #ffec8f 50%, #ffe35b 100%);
-  color: #555555;
-  border-left: 1px solid #ffb876;
-  border-bottom: 1px solid #ffb876;
-  box-shadow: -2px 2px 3px -3px rgba(0, 0, 0, 1);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 240, 208, 1) 0%,
+    rgba(255, 246, 224, 1) 47%,
+    rgba(255, 243, 216, 1) 100%
+  );
+  opacity: 1;
+  letter-spacing: 1.5px;
+  color: rgb(92, 92, 92);
+  border-left: 1px solid #e8cfc7;
+  border-bottom: 1px solid #e4cac1;
+  box-shadow: -2px 2px 3px -3px rgba(0, 0, 0, 0.5);
 }
 
 .controlls {
@@ -53,17 +61,10 @@
   }
 
   &__opencv {
-    border: 1px solid #16304d;
-    //order: 1;
-    border-radius: 50px;
-    background-color: #b1c0d9;
-    margin-bottom: 3px;
-    // height: auto;
-    // width: auto;
-    cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
-    position: relative;
-    box-sizing: border-box;
+    width: 24px;
+    padding-top: 4px;
+    padding-left: 6px;
+    display: none;
   }
 
   &__switchLang {
@@ -128,11 +129,11 @@
   }
 
   &__opencv:hover {
-    transform: scale(1.1);
+    // transform: scale(1.1);
   }
 
   &__opencv:active {
-    transform: scale(0.9);
+    //transform: scale(0.9);
   }
 
   &__switchLang:hover {

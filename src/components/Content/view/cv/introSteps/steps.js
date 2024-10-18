@@ -1,12 +1,17 @@
 export const stepsMain = [
   {
     element: ".controlls__tools-container",
-    intro:
-      "Dies ist das Menü. Hier können Sie die vollständigen Bewerbungsunterlagen ausdrucken und die Seitensprache ändern.",
+    intro: "Es gibt Menü",
   },
   {
     element: ".heft",
-    intro:
-      "Dies sind meine Bewerbungsunterlagen, die Sie durch Anklicken einsehen können.",
+    intro: "Meine Bewerbungsunterlagen.",
+  },
+];
+
+export const stepsMain_mobile = [
+  {
+    element: ".controlls__tools-container",
+    intro: "Es gibt Menü",
   },
 ];

@@ -106,24 +106,38 @@
     right: -20px;
     letter-spacing: 2px;
     width: 170px;
+    transition: letter-spacing 0.3s;
   }
 
   &__contact-title-email-copied {
-    top: 13px;
-    font-size: 12px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    top: 12px;
+    font-size: 10px;
     padding: 5px;
     border-radius: 4px;
     color: #282727;
     background: white;
+    width: 65%;
+    left: 28px;
+    color: #19a619;
+    letter-spacing: 3px;
+    transition: letter-spacing 0.3s;
   }
 
   &__contact-title-tel-copied {
-    top: 13px;
-    font-size: 12px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    top: 12px;
+    font-size: 10px;
     padding: 5px;
     border-radius: 4px;
     color: #282727;
     background: white;
+    width: 65%;
+    left: 28px;
+    color: #19a619;
+    letter-spacing: 3px;
   }
 
   &__contact-styles {

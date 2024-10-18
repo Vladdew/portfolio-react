@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Steps } from "intro.js-react";
-
 import "intro.js/introjs.css";
 import "./index.scss";
 
@@ -22,23 +21,66 @@ const IntroSteps: React.FC<IntroStepsProps> = ({
 }) => {
   const [stepsJSON, setStepsJSON] = useState<Step[]>([]);
   const [showIntro, setShowIntro] = useState(false);
+  const [dontShowAgain, setDontShowAgain] = useState(false);
 
+  // Проверяем localStorage и обновляем состояние
   useEffect(() => {
-    if (steps.length > 0) {
+    const dontShow = localStorage.getItem("dontShowIntroAgain") === "true";
+    setDontShowAgain(dontShow);
+
+    // Если интро нужно показать, загружаем шаги
+    if (!dontShow) {
       setStepsJSON(steps);
     }
   }, [steps]);
 
+  // Показываем интро, если есть шаги и оно еще не показывалось
   useEffect(() => {
-    if (stepsJSON.length > 0 && !showIntro) {
+    if (stepsJSON.length > 0 && !dontShowAgain) {
       setShowIntro(true);
     }
-  }, [stepsJSON]);
+  }, [stepsJSON, dontShowAgain]);
 
   const onExit = () => {
     if (onComplete) onComplete();
     setShowIntro(false);
+
+    // Сохраняем состояние в localStorage при завершении интро
+    if (dontShowAgain) {
+      localStorage.setItem("dontShowIntroAgain", "true");
+    }
   };
+
+  // Обрабатываем изменение чекбокса
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const checked = e.target.checked;
+    setDontShowAgain(checked);
+    //localStorage.setItem("dontShowIntroAgain", checked.toString());
+  };
+
+  // Добавляем чекбокс на последний шаг
+  useEffect(() => {
+    const lastStepIndex = stepsJSON.length - 1;
+    if (stepsJSON[lastStepIndex]) {
+      stepsJSON[lastStepIndex].intro = `
+      ${stepsJSON[lastStepIndex].intro}
+      <br /><br />
+      <label>
+        <input 
+          type="checkbox" 
+          id="dont-show-again" 
+          ${dontShowAgain ? "checked" : ""} 
+          onchange="handleCheckboxChange(event)" 
+        /> 
+        Don't show this again
+      </label>`;
+    }
+  }, [stepsJSON, dontShowAgain]);
+
+  // Делаем функцию глобальной, чтобы использовать её в инлайне
+  useEffect(() => {
+    (window as any).handleCheckboxChange = handleCheckboxChange;
+  }, []);
 
   return (
     <Steps

@@ -1,7 +1,11 @@
 {
   "main-info": {
-    "status": "React developer",
+    "status": "JavaScript developer",
     "address": "Goslar, Germany"
+  },
+
+  "header": {
+    "title": "Profile"
   },
 
   "contacts": {
@@ -11,25 +15,48 @@
     "tel-copied": "Phone copied!",
     "or_write_here": "Or write here",
     "address-title": "Address",
-    "address": "Goslar, Germany"
+    "address": "Goslar, Germany",
+    "clickto": "Click to copy"
   },
-  "profile-description": {
-    "part1": "I confidently devote myself to studying new technologies. My progress in solving problems is evident on Codewars.",
-    "part2": "I aspire to work in a team of individuals with whom we can collectively create value.",
-    "part3": "I am goal-oriented, communicative, and have a sense of humor. Collaborating within a team brings me great pleasure.",
-    "part4": "My English is at an intermediate level, and my German is at the B2 level."
-  },
-  "profile-title": {
-    "professional": "Professional",
-    "profile": "Profile",
-    "more_than_100_solved": "more than 100 solved",
-    "problems": "problems"
-  },
+
   "about": {
-    "title": "About me"
+    "title": "About me",
+    "birth": "Birthdate",
+    "nation": "Nationality",
+    "lingua": "Languages",
+    "lingua2": "De B2, En B1. Ru, Ua- Native",
+    "education": "Education",
+    "education2": "Master in computerscience, reserch engineer",
+    "ae": "Workpermition",
+    "ae2": "Available",
+    "married": "Family status",
+    "married2": "Married (1 Son 4 Years old)",
+    "mob": "Mobility",
+    "mob2": "Own car available",
+    "weiter": "Speciality",
+    "weiter2": "React developer"
+  },
+
+  "tech": {
+    "title": "Technologies"
+  },
+  "tooltip": {
+    "write": "Write to me via",
+    "look": "Check out my LinkedIn profile",
+    "gh": "This is my GitHub profil",
+    "cw": "Troubleshooting at CodeWars"
+  },
+
+  "controlls": {
+    "print": "Print the entire portfolio",
+    "lingua": "Switch language",
+    "ll": "Open CV"
   },
 
   "languages": {
     "title": "Languages"
+  },
+  "heft": {
+    "over": "CV"
   }
 }

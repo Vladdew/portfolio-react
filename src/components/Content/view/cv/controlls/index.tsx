@@ -7,9 +7,14 @@ import { Tooltip } from "react-tooltip";
 import print from "../../../../../icons/print.png";
 import en from "../../../../../icons/en.png";
 import de from "../../../../../icons/de.png";
+import cv from "../../../../../icons/cv.png";
+
 import "./index.scss";
 
-function Controlls() {
+function Controlls(props: {
+  onClick: (e: React.MouseEvent<Element>) => void;
+  isCv: boolean | "1";
+}) {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const [lang, setLang] = useState("de");
@@ -48,7 +53,7 @@ function Controlls() {
           <>
             <span
               data-tooltip-id="tooltip"
-              data-tooltip-content="Drucken Sie das gesamte Portfolio aus"
+              data-tooltip-content={t("controlls.print")}
               title="Print to PDF"
               onClick={() => printPDF()}
               className="controlls__print controlls__iconWrap"
@@ -57,7 +62,7 @@ function Controlls() {
             </span>
             <span
               data-tooltip-id="tooltip"
-              data-tooltip-content={"Hier können Sie die Sprache ändern"}
+              data-tooltip-content={t("controlls.lingua")}
               title={lang === "en" ? "English" : "Deutsch"}
               className={`controlls__switchLang controlls__iconWrap ${
                 lang === "en"
@@ -70,6 +75,15 @@ function Controlls() {
                 onClick={() => changeLanguage(lang === "en" ? "de" : "en")}
                 alt={lang === "en" ? "change language" : "Sprache ändern"}
               />
+            </span>
+
+            <span
+              data-tooltip-id="tooltip"
+              data-tooltip-content={t("controlls.ll")}
+              title={lang === "en" ? "Professional experience" : "Lebenslauf"}
+              className="controlls__opencv"
+            >
+              <img src={cv} onClick={props.onClick} alt="Open cv" />
             </span>
           </>
         )}

@@ -22,7 +22,7 @@ const CV = (props: {
           : "cv animate-out"
       }
     >
-      <Header />
+      <Header onClick={props.onClick} isCv={props.isCv} />
 
       <MainInfo />
       <section className="cv__sections">
@@ -31,7 +31,7 @@ const CV = (props: {
       </section>
 
       <section className="cv__block-fon">
-        <TechnologienCarousel />
+        <TechnologienCarousel isCv={props.isCv} />
       </section>
       <section className="cv__footer">
         <ContactLinks />

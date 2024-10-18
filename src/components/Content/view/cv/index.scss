@@ -1,3 +1,7 @@
+.flex-wrap div.heft .viewer__toolbar-slot .zoom {
+  display: flex;
+}
+
 .cv {
   position: relative;
   display: block;
@@ -51,11 +55,11 @@
   }
 
   &.animate-in {
-    animation: rotare-cv-in 1.5s forwards;
+    animation: rotate-cv-in 1.5s forwards;
   }
 
   &.animate-out {
-    animation: rotare-cv-out 1s forwards;
+    animation: rotate-cv-out 1s forwards;
 
     & .overlay {
       visibility: visible;
@@ -77,7 +81,7 @@
   }
 }
 
-@keyframes rotare-cv-in {
+@keyframes rotate-cv-in {
   from {
     transform: skew(-10deg, 10deg) scale(0.3) translate(1200px, -350px)
       rotate(48deg);
@@ -93,11 +97,11 @@
   }
 }
 
-@keyframes rotare-cv-out {
+@keyframes rotate-cv-out {
   from {
     transform: skew(0deg, 0deg) scale(1);
     //box-shadow: -2px 4px 100px 16px rgba(34, 60, 80, 0.11);
-    animation-timing-function: cubic-bezier(0.88, 0.38, 0.99, 0.83);
+    animation-timing-function: cubic-bezier(0.88, 0.3, 0.99, 0.83);
   }
 
   25% {
@@ -105,11 +109,12 @@
 
   50% {
     //box-shadow: 13px 13px 2px -9px rgba(34, 60, 80, 0.29);
-    transform: skew(-25deg, 25deg) scale(0.3) translate(810px, -320px);
+
     //
   }
 
   75% {
+    transform: skew(-25deg, 25deg) scale(0.3) translate(810px, -320px);
   }
 
   to {
