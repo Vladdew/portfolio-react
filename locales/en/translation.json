@@ -50,7 +50,8 @@
   "controlls": {
     "print": "Print the entire portfolio",
     "lingua": "Switch language",
-    "ll": "Open CV"
+    "ll": "Open CV",
+    "download": "Portfolio download in PDF"
   },
 
   "languages": {

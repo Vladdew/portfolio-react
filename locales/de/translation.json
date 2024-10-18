@@ -48,7 +48,8 @@
   "controlls": {
     "print": "Drucken Sie das gesamte Portfolio aus",
     "lingua": "Sprache ändern",
-    "ll": "Lebenslauf öffnen"
+    "ll": "Lebenslauf öffnen",
+    "download": "Lebenslauf herunterladen in PDF"
   },
 
   "languages": {
