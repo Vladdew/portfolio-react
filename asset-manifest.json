@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.7ae3720f.css",
-    "main.js": "./static/js/main.95b271e2.js",
+    "main.css": "./static/css/main.7ae04aa9.css",
+    "main.js": "./static/js/main.e87c393f.js",
     "static/media/gpt.png": "./static/media/gpt.f1a7d34fd4e3005656d1.png",
     "static/media/heft2.png": "./static/media/heft2.68ae3d4e0cd67bf1d5ca.png",
     "static/media/gazon.jpg": "./static/media/gazon.0b8cb9de8e1bc64ccc71.jpg",
@@ -23,11 +23,11 @@
     "static/media/d3.jpg": "./static/media/d3.3f4e5b06a6eb8f8ae23f.jpg",
     "index.html": "./index.html",
     "static/media/getFetch.cjs": "./static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.7ae3720f.css.map": "./static/css/main.7ae3720f.css.map",
-    "main.95b271e2.js.map": "./static/js/main.95b271e2.js.map"
+    "main.7ae04aa9.css.map": "./static/css/main.7ae04aa9.css.map",
+    "main.e87c393f.js.map": "./static/js/main.e87c393f.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ae3720f.css",
-    "static/js/main.95b271e2.js"
+    "static/css/main.7ae04aa9.css",
+    "static/js/main.e87c393f.js"
   ]
 }
