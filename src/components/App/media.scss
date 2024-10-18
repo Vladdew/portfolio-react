@@ -180,6 +180,11 @@
     background-position: center 100px;
   }
 
+  span.sections-wrap__contact-title-email-copied,
+  span.sections-wrap__contact-title-tel-copied {
+    left: 30px;
+  }
+
   .flex-wrap div.heft .overlay {
     width: 93%;
     height: 62%;
@@ -294,7 +299,7 @@
     }
 
     & .controlls__tools-container-expanded {
-      width: 176px;
+      width: 220px;
       z-index: 1;
     }
 

@@ -106,7 +106,6 @@
     right: -20px;
     letter-spacing: 2px;
     width: 170px;
-    transition: letter-spacing 0.3s;
   }
 
   &__contact-title-email-copied {
@@ -119,7 +118,7 @@
     color: #282727;
     background: white;
     width: 65%;
-    left: 28px;
+    left: 40px;
     color: #19a619;
     letter-spacing: 3px;
     transition: letter-spacing 0.3s;
@@ -135,9 +134,10 @@
     color: #282727;
     background: white;
     width: 65%;
-    left: 28px;
+    left: 40px;
     color: #19a619;
     letter-spacing: 3px;
+    transition: letter-spacing 0.3s;
   }
 
   &__contact-styles {

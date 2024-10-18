@@ -91,11 +91,7 @@ const Contacts = () => {
             />
           </span>
           {!flag ? (
-            <span
-              data-tooltip-id="tooltip1"
-              data-tooltip-content={isMobile ? "" : t("contacts.clickto")}
-              className="sections-wrap__contact-title sections-wrap__contact-title-email"
-            >
+            <span className="sections-wrap__contact-title sections-wrap__contact-title-email">
               <span className="sections-wrap__contact-styles">Email</span>
               <br />
               presnyakov.vladyslav <br />

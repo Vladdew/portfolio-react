@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { switchLanguage } from "./languageSlice";
 import { Tooltip } from "react-tooltip";
-
+import download from "../../../../../icons/download.png";
 import print from "../../../../../icons/print.png";
 import en from "../../../../../icons/en.png";
 import de from "../../../../../icons/de.png";
@@ -51,6 +51,17 @@ function Controlls(props: {
       >
         {menuFlag && (
           <>
+            <a
+              data-tooltip-id="tooltip"
+              data-tooltip-content={t("controlls.download")}
+              title="Herunterladen"
+              className="controlls__print controlls__iconWrap"
+              href="/cv.pdf"
+              download="lebenslauf-presniakov.pdf"
+            >
+              <img alt="print" src={download} />
+            </a>
+
             <span
               data-tooltip-id="tooltip"
               data-tooltip-content={t("controlls.print")}
@@ -91,13 +102,17 @@ function Controlls(props: {
           data-tooltip-id="tooltip"
           data-tooltip-delay-show={1000}
           onClick={() => toggleMenu()}
-          className={`controlls__menu-button ${
-            menuFlag ? "controlls__menu-button-expanded" : ""
-          }`}
+          className="controlls__menu-button-wrapper"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span
+            className={`controlls__menu-button ${
+              menuFlag ? "controlls__menu-button-expanded" : ""
+            }`}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
         </span>
       </div>
       <Tooltip place="bottom-end" id="tooltip" />
