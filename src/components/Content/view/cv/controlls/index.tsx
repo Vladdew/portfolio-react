@@ -56,7 +56,8 @@ function Controlls(props: {
               data-tooltip-content={t("controlls.download")}
               title="Herunterladen"
               className="controlls__print controlls__iconWrap"
-              href="/cv.pdf"
+              //href="/cv.pdf"
+              href="/portfolio-react/cv.pdf"
               download="lebenslauf-presniakov.pdf"
             >
               <img alt="print" src={download} />
