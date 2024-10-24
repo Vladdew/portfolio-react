@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 const Heft = (props: { onClick: () => void; isCv: boolean | "1" }) => {
   const [showIntro1, setShowIntro1] = useState<boolean>(false);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div

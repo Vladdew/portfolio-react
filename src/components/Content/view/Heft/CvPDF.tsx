@@ -7,6 +7,7 @@ import "@react-pdf-viewer/toolbar/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import Intro1 from "../cv/introSteps1";
 import { useTranslation } from "react-i18next";
+import packageJson from "../../../../../package.json";
 
 import { stepsPDF_en } from "../cv/introSteps1/steps";
 import { stepsPDF_de } from "../cv/introSteps1/steps";
@@ -20,6 +21,7 @@ const CvPDF = (props: CvPDFTypes) => {
   const [pdfFile, setPdfFile] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const pdfjsVersion = packageJson.dependencies["pdfjs-dist"];
 
   useEffect(() => {
     const loadPDF = () => {
@@ -88,9 +90,9 @@ const CvPDF = (props: CvPDFTypes) => {
           <Toolbar>
             {(props: ToolbarSlot) => {
               const {
-                Download,
+                //Download,
                 EnterFullScreen,
-                Print,
+                //Print,
                 Zoom,
                 ZoomIn,
                 ZoomOut,
@@ -126,7 +128,10 @@ const CvPDF = (props: CvPDFTypes) => {
             }}
           </Toolbar>
 
-          <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+          <Worker
+            workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjsVersion}/build/pdf.worker.min.js`}
+          >
+            ;
             <Viewer
               fileUrl={pdfFile} // Убедитесь, что pdfFile не null
               defaultScale={SpecialZoomLevel.PageWidth}

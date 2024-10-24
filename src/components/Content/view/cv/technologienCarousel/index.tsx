@@ -15,7 +15,6 @@ import cata from "../../../../../icons/tech/cw.png";
 import gh from "../../../../../icons/tech/gh.png";
 import ps from "../../../../../icons/tech/ps.png";
 import wp from "../../../../../icons/tech/wp.png";
-import mysql from "../../../../../icons/tech/mysql.png";
 import mongo from "../../../../../icons/tech/mongo.png";
 
 import "./index.scss";
@@ -41,39 +40,74 @@ const icons = [
 const TechnologienCarousel = (props: { isCv: boolean | "1" }) => {
   const { t } = useTranslation();
   const carouselRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let isHovering = false;
+
     const handleMouseMove = (e: MouseEvent) => {
+      if (
+        !isHovering ||
+        !carouselRef.current ||
+        !wrapperRef.current ||
+        !props.isCv
+      )
+        return;
+
+      const speed = (e.clientX / window.innerWidth) * 10 - 15;
+      carouselRef.current.style.animationDuration = `${8 - speed}s`;
+    };
+
+    const handleMouseEnter = () => {
+      isHovering = true;
       if (carouselRef.current) {
-        const speed = (e.clientX / window.innerWidth) * 10 - 15;
-        carouselRef.current.style.animationDuration = `${15 - speed}s`;
+        carouselRef.current.style.animationPlayState = "paused"; // Останавливаем анимацию при ховере
       }
     };
 
-    // Добавляем или удаляем обработчик события в зависимости от isCv
-    if (props.isCv) {
-      window.addEventListener("mousemove", handleMouseMove);
+    const handleMouseLeave = () => {
+      isHovering = false;
+      if (carouselRef.current) {
+        //carouselRef.current.style.transition = ""; // Убираем плавность на выходе
+        carouselRef.current.style.animationDuration = `160s`;
+        carouselRef.current.style.animationPlayState = "running"; // Возвращаем стандартную анимацию
+      }
+    };
+
+    const wrapper = wrapperRef.current;
+    if (wrapper) {
+      wrapper.addEventListener("mousemove", handleMouseMove);
+      wrapper.addEventListener("mouseenter", handleMouseEnter);
+      wrapper.addEventListener("mouseleave", handleMouseLeave);
+    }
+
+    return () => {
+      if (wrapper) {
+        wrapper.removeEventListener("mousemove", handleMouseMove);
+        wrapper.removeEventListener("mouseenter", handleMouseEnter);
+        wrapper.removeEventListener("mouseleave", handleMouseLeave);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (carouselRef.current && props.isCv) {
+      carouselRef.current.style.animationPlayState = "running";
     } else {
       if (carouselRef.current) {
         // Если анимация должна остановиться, сбрасываем её продолжительность
-        carouselRef.current.style.animationDuration = "15s";
+        carouselRef.current.style.animationPlayState = "paused";
       }
     }
-
-    // Удаляем обработчик при размонтировании компонента или если isCv изменяется на false
-    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [props.isCv]);
 
   return (
-    <div className="carousel-wrapper">
+    <div ref={wrapperRef} className="carousel-wrapper">
       <div className="carousel__decor">
         <h2 className="carousel__title">{t("tech.title")}</h2>
       </div>
 
-      <div
-        ref={carouselRef}
-        className={`carousel ${props.isCv ? "" : "paused"}`}
-      >
+      <div ref={carouselRef} className="carousel">
         {icons.map((icon, index) => (
           <div key={index} className="carousel__icon">
             <img src={icon.src} alt={icon.alt} />
