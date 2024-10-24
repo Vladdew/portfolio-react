@@ -25,7 +25,7 @@ const CvPDF = (props: CvPDFTypes) => {
     const loadPDF = () => {
       setLoading(true);
       try {
-        const file = "./cv.pdf";
+        const file = "./pres_de_nofoto.pdf";
         if (!file) throw new Error("PDF file not found");
 
         setPdfFile(file);
@@ -42,6 +42,12 @@ const CvPDF = (props: CvPDFTypes) => {
   }, []);
 
   const { i18n } = useTranslation();
+
+  useEffect(() => {
+    const file =
+      i18n.language === "de" ? "./pres_de_nofoto.pdf" : "./pres_en_nofoto.pdf";
+    setPdfFile(file);
+  }, [i18n.language]);
 
   const toolbarPluginInstance = toolbarPlugin({
     getFilePlugin: {
@@ -77,7 +83,7 @@ const CvPDF = (props: CvPDFTypes) => {
         >
           {error}
         </div>
-      ) : pdfFile ? ( // Проверка на наличие pdfFile
+      ) : pdfFile ? (
         <>
           <Toolbar>
             {(props: ToolbarSlot) => {

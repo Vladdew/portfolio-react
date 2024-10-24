@@ -29,7 +29,7 @@ function Controlls(props: {
   function printPDF() {
     const iframe = document.createElement("iframe");
     iframe.style.display = "none";
-    iframe.src = "portfolio.pdf";
+    iframe.src = lang === "de" ? "pres_de.pdf" : "pres_en.pdf";
     document.body.appendChild(iframe);
 
     iframe.onload = function () {
@@ -56,9 +56,11 @@ function Controlls(props: {
               data-tooltip-content={t("controlls.download")}
               title="Herunterladen"
               className="controlls__print controlls__iconWrap"
-              //href="/cv.pdf"
-              href="/portfolio-react/cv.pdf"
-              download="lebenslauf-presniakov.pdf"
+              href={lang === "de" ? "pres_de.pdf" : "pres_en.pdf"}
+              //href={lang === "de" ? "/portfolio-react/pres_de_nofoto.pdf" : "/portfolio-react/pres_en_nofoto.pdf"}
+              download={
+                lang === "de" ? "presniakov_de.pdf" : "presniakov_en.pdf"
+              }
             >
               <img alt="print" src={download} />
             </a>
