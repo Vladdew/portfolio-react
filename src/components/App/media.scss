@@ -229,10 +229,6 @@
     display: flex;
   }
 
-  .App {
-    position: absolute;
-  }
-
   .App,
   .flex-wrap {
     margin: 0;
@@ -245,14 +241,30 @@
     display: block;
   }
 
+  div.introjs-tooltip {
+    right: 100% !important;
+    width: 380px !important;
+  }
+
+  div.custom-intro-class.custom-intro-class-last-step
+    div.introjs-arrow.top-middle {
+    border-bottom-color: #fff6da;
+    border-top-color: #fff6da;
+    border-bottom-color: #fff6da;
+    border-right-color: transparent;
+    left: 94%;
+  }
+
+  .introjs-tooltip {
+  }
+
   .cv {
     width: 100%;
-    height: 100vh;
     margin: 0;
     transform: none;
     display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
+    flex-direction: column;
+    min-height: 100vh;
 
     &.animate-in {
       animation: rotate-cv-in_mobile 1s forwards;
@@ -272,15 +284,14 @@
       justify-self: left;
       z-index: 2;
       padding-left: 0;
+      flex: 0 0 auto;
     }
 
     & .header__lebenslauf {
       position: absolute;
       left: 210px;
       font-size: 10px;
-      width: 92px;
-      height: 24px;
-      padding: 6px;
+      width: 120px;
     }
 
     & .controlls__opencv {
@@ -311,6 +322,10 @@
       width: 196px;
     }
 
+    .carousel-wrapper {
+      overflow: scroll;
+    }
+
     & .sections-wrap {
       //left: -4px;
     }
@@ -333,7 +348,9 @@
 
     &__sections {
       padding-left: 20px;
-      top: -50px;
+      top: 0px;
+
+      flex: 1 0 auto;
     }
 
     & .sections-wrap h3 span {
@@ -353,31 +370,38 @@
 
     &__block-fon {
       position: relative;
-      top: -70px;
+      top: 0;
+      bottom: unset;
       height: 200px;
+      flex: 0 0 auto;
+      overflow-y: auto;
     }
 
     &__footer {
       position: relative;
+      flex: 0 0 auto;
     }
   }
 
   .cv .main-info {
     height: auto;
-    padding-left: 28px;
+    padding-left: 20px;
     box-sizing: border-box;
-    top: -40px;
+    top: -15px;
     margin: 0;
     position: relative;
     z-index: 1;
 
     &__main-photo {
-      width: 260px;
-      height: 165px;
+      width: 100%;
+      max-width: 150px;
+      height: auto;
       background-size: 100%;
       background-repeat: no-repeat;
       border: 2px solid white;
       background-position: 0px -12px;
+      flex-shrink: 0;
+      aspect-ratio: 1 / 1.25;
     }
 
     &__name {

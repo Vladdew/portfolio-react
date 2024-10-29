@@ -93,8 +93,12 @@ const IntroSteps: React.FC<IntroStepsProps> = ({
         prevLabel: "Zurück",
         doneLabel: "Fertig",
         overlayOpacity: 0.8,
-        tooltipClass: "intro-tooltip",
+        tooltipClass: "custom-intro-class",
         highlightClass: "intro-highlight",
+        showBullets: false,
+        autoPosition: true,
+
+        //showStepNumbers: true,
       }}
     />
   );

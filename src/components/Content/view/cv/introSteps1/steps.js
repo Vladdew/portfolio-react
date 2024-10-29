@@ -8,6 +8,6 @@ export const stepsPDF_en = [
 export const stepsPDF_de = [
   {
     element: "#full",
-    intro: "Wechseln Sie in den Vollbildmodus",
+    intro: "In den Vollbildmodus wechseln",
   },
 ];

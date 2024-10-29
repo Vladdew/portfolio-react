@@ -1,133 +1,156 @@
-div.intro-tooltip {
-  // background: linear-gradient(135deg, #292828 0%, #454545 50%, #272626 100%);
-  // background: linear-gradient(90deg, #ffe66b 0%, #ffec8f 50%, #ffe35b 100%);
+div.custom-intro-class {
   background-color: #f9eecd;
-  //color: #f4d644;
   color: #444444;
+  min-width: unset;
+  width: 400px;
+  max-width: 600px;
 
-  min-width: none;
-  width: 330px;
-}
+  &.custom-intro-class-last-step {
+    width: 500px;
 
-.introjs-tooltip-header {
-  position: static;
-  padding: 0;
-  min-height: 0;
-}
+    & div.introjs-arrow {
+      border-bottom-color: transparent;
+      border-top-color: transparent;
+      border-right-color: #f9eecd;
+    }
 
-.introjs-tooltiptext label {
-  padding: 6px;
-  border-radius: 5px;
-}
+    & .introjs-tooltiptext {
+      padding: 20px 10px 0;
+      height: 126px;
+    }
+  }
 
-#dont-show-again {
-  position: relative;
-  top: 2px;
-}
+  & .introjs-tooltip-header {
+    position: static;
+    padding: 0;
+    min-height: 0;
+  }
 
-.introjs-tooltip-title {
-  display: none;
-}
+  & .introjs-tooltiptext {
+    padding: 30px 10px 30px;
+    font-family: "Prompt";
+    line-height: 50px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+    height: auto;
+  }
 
-.introjs-skipbutton {
-  top: -5px;
-  right: 5px;
-  color: #480a0a;
-  transition: transform 0.3s, color 0.3s;
-  width: auto;
-  height: auto;
-  line-height: normal;
-}
+  & .introjs-tooltiptext label {
+    position: absolute;
+    bottom: -7px;
+    left: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    gap: 5px;
+    letter-spacing: 1.5px;
+    font-size: 11px;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
-.introjs-skipbutton:hover {
-  transform: scale(1.1);
-  color: #d75221;
-}
+  & #dont-show-again {
+    position: relative;
+    top: 3px;
+  }
 
-.introjs-tooltipbuttons a.introjs-nextbutton {
-  background: #444444;
-  color: #e1e1e1;
-  text-shadow: none;
-  border: 1px solid #fff6da;
-  font-family: "Cinzel", serif;
-  text-transform: lowercase;
-  padding: 4px 21px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  transition: border 0.3s cubic-bezier(0, 1.84, 0.73, 0.81), color 0.3s,
-    background-color 0.3s;
-  outline: none;
-  box-shadow: none;
+  & .introjs-tooltip-title {
+    display: none;
+  }
 
-  &:hover {
-    border: 1px solid #151515;
-    color: #444;
+  & .introjs-skipbutton {
+    top: -5px;
+    right: 5px;
+    color: #480a0a;
+    transition: transform 0.3s, color 0.3s;
+    width: auto;
+    height: auto;
+    line-height: normal;
+  }
+
+  & .introjs-skipbutton:hover {
+    transform: scale(1.1);
+    color: #d75221;
+  }
+
+  & .introjs-tooltipbuttons a.introjs-nextbutton {
     background: #fff6da;
-  }
-
-  &:focus {
+    color: #444;
+    text-shadow: none;
+    border: 1px solid #444;
+    font-family: "Cinzel", serif;
+    text-transform: lowercase;
+    padding: 4px 21px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: border 0.3s cubic-bezier(0, 1.84, 0.73, 0.81), color 0.3s,
+      background-color 0.3s;
     outline: none;
+    box-shadow: none;
+
+    &:hover {
+      border: 1px solid #fff6da;
+      color: #fff6da;
+      background: #444444;
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
-}
 
-.introjs-tooltipbuttons a.introjs-donebutton:hover {
-  border: 1px solid #58be0e;
-  color: #fff6da;
-  background: #1c9e5b;
-}
+  & .introjs-tooltipbuttons a.introjs-donebutton:hover {
+    border: 1px solid #4f983eb9;
+    color: #a0d494;
+    background: #444444;
+  }
 
-.introjs-tooltiptext {
-  padding: 20px 16px 0px;
-  font-family: "Prompt";
-  line-height: 16px;
-  letter-spacing: 1.5px;
-  font-weight: 400;
-  font-size: 11px;
-  text-align: center;
-}
+  & div.introjs-arrow {
+    border-bottom-color: #fff6da;
+    border-top-color: #fff6da;
+  }
 
-div.introjs-tooltip div.introjs-arrow {
-  border-bottom-color: #454545;
-  border-top-color: #454545;
-}
+  & .introjs-tooltipbuttons {
+    border-top: 1px solid #9e850e;
+    padding: 16px;
+    text-align: right;
+    white-space: nowrap;
+  }
 
-.introjs-tooltipbuttons {
-  border-top: 1px solid #9e850e;
-  padding: 16px;
-  text-align: center;
-  white-space: nowrap;
-}
+  & .introjs-prevbutton {
+    display: none;
+  }
 
-.introjs-prevbutton {
-  display: none;
-}
+  & .introjs-nextbutton {
+    float: none;
+  }
 
-.introjs-nextbutton {
-  float: none;
-}
+  .introjs-prevbutton {
+  }
 
-.introjs-prevbutton {
-}
+  & .introjs-bullets ul li a {
+    background-color: #866b4b;
+  }
 
-.introjs-bullets ul li a {
-  background-color: #866b4b;
-}
+  & .introjs-bullets ul li a.active {
+    background-color: #7c5332;
+  }
 
-.introjs-bullets ul li a.active {
-  background-color: #7c5332;
-}
+  & .introjs-bullets ul li a:hover {
+    background: #3f2619;
+  }
 
-.introjs-bullets ul li a:hover {
-  background: #3f2619;
-}
+  & .intro-highlight {
+    border-radius: 6px;
+  }
 
-.intro-highlight {
-  border-radius: 6px;
-}
-
-.zoom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
+  & .zoom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
 }

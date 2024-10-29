@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { isMobile } from "react-device-detect";
 
 import html from "../../../../../icons/tech/html.png";
 import css from "../../../../../icons/tech/css.png";
@@ -44,6 +45,7 @@ const TechnologienCarousel = (props: { isCv: boolean | "1" }) => {
 
   useEffect(() => {
     let isHovering = false;
+    if (isMobile) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       if (
@@ -56,6 +58,7 @@ const TechnologienCarousel = (props: { isCv: boolean | "1" }) => {
 
       const speed = (e.clientX / window.innerWidth) * 10 - 15;
       carouselRef.current.style.animationDuration = `${8 - speed}s`;
+      console.log(carouselRef.current.style.animationDuration);
     };
 
     const handleMouseEnter = () => {
@@ -93,6 +96,9 @@ const TechnologienCarousel = (props: { isCv: boolean | "1" }) => {
   useEffect(() => {
     if (carouselRef.current && props.isCv) {
       carouselRef.current.style.animationPlayState = "running";
+      if (isMobile) {
+        carouselRef.current.style.animationDuration = `30s`;
+      }
     } else {
       if (carouselRef.current) {
         // Если анимация должна остановиться, сбрасываем её продолжительность
@@ -102,27 +108,28 @@ const TechnologienCarousel = (props: { isCv: boolean | "1" }) => {
   }, [props.isCv]);
 
   return (
-    <div ref={wrapperRef} className="carousel-wrapper">
+    <>
       <div className="carousel__decor">
         <h2 className="carousel__title">{t("tech.title")}</h2>
       </div>
-
-      <div ref={carouselRef} className="carousel">
-        {icons.map((icon, index) => (
-          <div key={index} className="carousel__icon">
-            <img src={icon.src} alt={icon.alt} />
-            <span className="carousel__icon-title">{icon.alt}</span>
-          </div>
-        ))}
-        {/* Дублируем иконки для бесконечной прокрутки */}
-        {icons.map((icon, index) => (
-          <div key={index + icons.length} className="carousel__icon">
-            <img src={icon.src} alt={icon.alt} />
-            <span className="carousel__icon-title">{icon.alt}</span>
-          </div>
-        ))}
+      <div ref={wrapperRef} className="carousel-wrapper">
+        <div ref={carouselRef} className="carousel">
+          {icons.map((icon, index) => (
+            <div key={index} className="carousel__icon">
+              <img src={icon.src} alt={icon.alt} />
+              <span className="carousel__icon-title">{icon.alt}</span>
+            </div>
+          ))}
+          {/* Дублируем иконки для бесконечной прокрутки */}
+          {icons.map((icon, index) => (
+            <div key={index + icons.length} className="carousel__icon">
+              <img src={icon.src} alt={icon.alt} />
+              <span className="carousel__icon-title">{icon.alt}</span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

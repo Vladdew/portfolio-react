@@ -15,6 +15,7 @@ function Controlls(props: {
   onClick: (e: React.MouseEvent<Element>) => void;
   isCv: boolean | "1";
 }) {
+  //const basePath = process.env.REACT_APP_BASE_PATH || "/";
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const [lang, setLang] = useState("de");
