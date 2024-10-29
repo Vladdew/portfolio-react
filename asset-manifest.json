@@ -1,33 +1,24 @@
 {
   "files": {
-    "main.css": "./static/css/main.b4bf91bb.css",
-    "main.js": "./static/js/main.b1b6ecf3.js",
-    "static/media/gpt.png": "./static/media/gpt.f1a7d34fd4e3005656d1.png",
+    "main.css": "./static/css/main.cf204067.css",
+    "main.js": "./static/js/main.cb8acc4d.js",
     "static/media/heft2.png": "./static/media/heft2.68ae3d4e0cd67bf1d5ca.png",
     "static/media/gazon.jpg": "./static/media/gazon.0b8cb9de8e1bc64ccc71.jpg",
     "static/media/photo2.jpg": "./static/media/photo2.367b03d0e70e6ff3af51.jpg",
     "static/media/fon.jpg": "./static/media/fon.bd2cba954d22613c1e2b.jpg",
     "static/media/i-keys.png": "./static/media/i-keys.5804bacb614894f1e5d9.png",
     "static/media/cup.png": "./static/media/cup.47601470062b1edcb7ea.png",
-    "static/media/logo-big.png": "./static/media/logo-big.d875f0c6b17f1d18859e.png",
     "static/media/projects-main.jpg": "./static/media/projects-main.d875f0c6b17f1d18859e.jpg",
     "static/media/get.jpg": "./static/media/get.5e002f89c3ef401bc790.jpg",
-    "static/media/lepestok.jpg": "./static/media/lepestok.66f523e7386f7b8dadc2.jpg",
     "static/media/pen.png": "./static/media/pen.79ce24524619d206ed60.png",
     "static/media/hr1.png": "./static/media/hr1.c5df3b89c14fe9311770.png",
-    "static/media/vip.jpg": "./static/media/vip.8fd15ebf4a0f83791cb3.jpg",
-    "static/media/dia.jpg": "./static/media/dia.e9d573df235811d071ff.jpg",
-    "static/media/mock.jpg": "./static/media/mock.8622a6c1eb9001ab96f1.jpg",
-    "static/media/uber.jpg": "./static/media/uber.63341e2c14e73f38fa66.jpg",
-    "static/media/miami.jpg": "./static/media/miami.e44ad5048bb50a3512c6.jpg",
-    "static/media/d3.jpg": "./static/media/d3.3f4e5b06a6eb8f8ae23f.jpg",
     "index.html": "./index.html",
-    "static/media/getFetch.cjs": "./static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.b4bf91bb.css.map": "./static/css/main.b4bf91bb.css.map",
-    "main.b1b6ecf3.js.map": "./static/js/main.b1b6ecf3.js.map"
+    "static/media/getFetch.cjs": "./static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
+    "main.cf204067.css.map": "./static/css/main.cf204067.css.map",
+    "main.cb8acc4d.js.map": "./static/js/main.cb8acc4d.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4bf91bb.css",
-    "static/js/main.b1b6ecf3.js"
+    "static/css/main.cf204067.css",
+    "static/js/main.cb8acc4d.js"
   ]
 }
