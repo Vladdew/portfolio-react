@@ -17,6 +17,7 @@
 .controlls {
   padding-left: 50px;
   position: relative;
+  user-select: none;
 
   &__tools-container {
     display: flex;
@@ -36,6 +37,10 @@
     height: 24px;
     background: linear-gradient(336deg, #555555 0%, #272727 50%, #555555 100%);
     width: 170px;
+    user-select: none;
+    & span {
+      user-select: none;
+    }
   }
 
   &__iconWrap {
@@ -102,6 +107,7 @@
   &__menu-button-wrapper {
     width: 24px;
     height: 24px;
+    user-select: none;
   }
 
   &__menu-button span {
@@ -110,6 +116,7 @@
     background-color: #f4d644;
     border-radius: 50%;
     transition: transform 0.3s ease;
+    user-select: none;
   }
 
   &__menu-button-expanded span {
@@ -118,6 +125,7 @@
     background-color: #ff3f3f;
     margin: 0;
     transition: transform 0.3s ease;
+    user-select: none;
   }
 
   &__menu-button-expanded span:nth-child(1) {

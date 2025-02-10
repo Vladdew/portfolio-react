@@ -59,6 +59,10 @@
     margin-left: 38px;
     width: 184px;
 
+    & span {
+      user-select: none;
+    }
+
     & img {
       height: 15px;
       position: absolute;

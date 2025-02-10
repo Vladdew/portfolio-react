@@ -1,11 +1,11 @@
 export const stepsMain = [
   {
     element: ".controlls__tools-container",
-    intro: "Es gibt ein Menü",
+    intro: "Menü",
   },
   {
     element: ".heft",
-    intro: "Das sind meine Bewerbungsunterlagen.",
+    intro: "Bewerbungsunterlagen",
     tooltipClass: "custom-intro-class custom-intro-class-last-step",
   },
 ];
@@ -13,7 +13,7 @@ export const stepsMain = [
 export const stepsMain_mobile = [
   {
     element: ".controlls__tools-container",
-    intro: "Es gibt ein Menü",
+    intro: "Menü",
     tooltipClass: "custom-intro-class custom-intro-class-last-step",
   },
 ];
