@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.c9f27786.css",
-    "main.js": "./static/js/main.e103cd6e.js",
+    "main.css": "./static/css/main.0872aab4.css",
+    "main.js": "./static/js/main.7d923d97.js",
     "static/media/heft2.png": "./static/media/heft2.68ae3d4e0cd67bf1d5ca.png",
     "static/media/gazon.jpg": "./static/media/gazon.0b8cb9de8e1bc64ccc71.jpg",
     "static/media/photo2.jpg": "./static/media/photo2.367b03d0e70e6ff3af51.jpg",
@@ -11,14 +11,13 @@
     "static/media/projects-main.jpg": "./static/media/projects-main.d875f0c6b17f1d18859e.jpg",
     "static/media/get.jpg": "./static/media/get.5e002f89c3ef401bc790.jpg",
     "static/media/pen.png": "./static/media/pen.79ce24524619d206ed60.png",
-    "static/media/hr1.png": "./static/media/hr1.c5df3b89c14fe9311770.png",
     "index.html": "./index.html",
     "static/media/getFetch.cjs": "./static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
-    "main.c9f27786.css.map": "./static/css/main.c9f27786.css.map",
-    "main.e103cd6e.js.map": "./static/js/main.e103cd6e.js.map"
+    "main.0872aab4.css.map": "./static/css/main.0872aab4.css.map",
+    "main.7d923d97.js.map": "./static/js/main.7d923d97.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9f27786.css",
-    "static/js/main.e103cd6e.js"
+    "static/css/main.0872aab4.css",
+    "static/js/main.7d923d97.js"
   ]
 }
