@@ -36,6 +36,7 @@ div.custom-intro1-class {
     text-shadow: none;
     border: 1px solid #444;
     font-family: "Cinzel", serif;
+    font-weight: 600;
     text-transform: lowercase;
     padding: 4px 21px;
     font-size: 12px;
@@ -91,9 +92,6 @@ div.custom-intro1-class {
 
   & .introjs-nextbutton {
     float: none;
-  }
-
-  & .introjs-prevbutton {
   }
 
   & .introjs-bullets ul li a {
