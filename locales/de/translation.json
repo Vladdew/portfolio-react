@@ -58,5 +58,6 @@
 
   "heft": {
     "over": "Lebenslauf"
-  }
+  },
+  "introSteps": {"dontshow": "Nicht mehr anzeigen"}
 }
