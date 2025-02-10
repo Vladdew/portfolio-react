@@ -101,8 +101,6 @@ const IntroSteps: React.FC<IntroStepsProps> = ({
         highlightClass: "intro-highlight",
         showBullets: false,
         autoPosition: true,
-
-        //showStepNumbers: true,
       }}
     />
   );
