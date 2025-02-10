@@ -85,12 +85,24 @@
     top: 20%;
     z-index: 1;
     user-select: none;
+    text-rendering: optimizeLegibility;
+    filter: blur(0);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   & img {
     width: 70%;
     position: relative;
     top: 50px;
+    text-rendering: optimizeLegibility;
+    filter: blur(0);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   & .image-part-bottom {
