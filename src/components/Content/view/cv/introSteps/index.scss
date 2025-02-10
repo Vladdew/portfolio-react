@@ -2,7 +2,7 @@ div.custom-intro-class {
   background-color: #f9eecd;
   color: #444444;
   min-width: unset;
-  width: 400px;
+  width: 300px;
   max-width: 600px;
 
   &.custom-intro-class-last-step {
@@ -16,7 +16,7 @@ div.custom-intro-class {
 
     & .introjs-tooltiptext {
       padding: 20px 10px 0;
-      height: 126px;
+      height: 80px;
     }
   }
 
@@ -27,7 +27,7 @@ div.custom-intro-class {
   }
 
   & .introjs-tooltiptext {
-    padding: 30px 10px 30px;
+    padding: 10px 10px;
     font-family: "Prompt";
     line-height: 50px;
     letter-spacing: 2px;
@@ -83,6 +83,7 @@ div.custom-intro-class {
     border: 1px solid #444;
     font-family: "Cinzel", serif;
     text-transform: lowercase;
+    font-weight: 600;
     padding: 4px 21px;
     font-size: 12px;
     letter-spacing: 2px;

@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+
+import { useTranslation } from "react-i18next";
+
 import { Steps } from "intro.js-react";
 import "intro.js/introjs.css";
 import "./index.scss";
@@ -23,6 +26,7 @@ const IntroSteps: React.FC<IntroStepsProps> = ({
   const [showIntro, setShowIntro] = useState(false);
   const [dontShowAgain, setDontShowAgain] = useState(false);
 
+  const { t } = useTranslation();
   // Проверяем localStorage и обновляем состояние
   useEffect(() => {
     const dontShow = localStorage.getItem("dontShowIntroAgain") === "true";
@@ -72,10 +76,10 @@ const IntroSteps: React.FC<IntroStepsProps> = ({
           ${dontShowAgain ? "checked" : ""} 
           onchange="handleCheckboxChange(event)" 
         /> 
-        Don't show this again
+        ${t("introSteps.dontshow")}
       </label>`;
     }
-  }, [stepsJSON, dontShowAgain]);
+  }, [stepsJSON, dontShowAgain, t]);
 
   // Делаем функцию глобальной, чтобы использовать её в инлайне
   useEffect(() => {

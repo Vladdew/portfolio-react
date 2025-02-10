@@ -117,12 +117,6 @@ const CvPDF = (props: CvPDFTypes) => {
                   >
                     <EnterFullScreen />
                   </div>
-                  {/* <div id="download" style={{ padding: "0px 2px" }}>
-                    <Download />
-                  </div>
-                  <div id="print" style={{ padding: "0px 2px" }}>
-                    <Print />
-                  </div> */}
                 </div>
               );
             }}
@@ -131,7 +125,6 @@ const CvPDF = (props: CvPDFTypes) => {
           <Worker
             workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjsVersion}/build/pdf.worker.min.js`}
           >
-            ;
             <Viewer
               fileUrl={pdfFile} // Убедитесь, что pdfFile не null
               defaultScale={SpecialZoomLevel.PageWidth}
