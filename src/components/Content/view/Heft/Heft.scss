@@ -37,10 +37,12 @@
     }
 
     &__img {
-      width: 98px;
+      width: 83px;
       position: absolute;
       left: 26px;
       top: 30px;
+      image-rendering: crisp-edges; /* или -webkit-optimize-contrast */
+      -ms-interpolation-mode: nearest-neighbor; /* для IE */
     }
   }
 
