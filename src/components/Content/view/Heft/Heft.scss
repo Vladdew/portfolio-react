@@ -46,8 +46,9 @@
     visibility: visible;
     opacity: 1;
     background-color: #fffbee;
-    transform: scale(5) rotate(-0.2deg);
+    transform: scale(5) rotate(-0.2deg) translate3d(0, 0, 0);
     color: #6b6b6b;
+    will-change: transform;
   }
 
   &__span {
@@ -66,6 +67,8 @@
     z-index: 1;
     -webkit-user-select: none;
     user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   & img {
@@ -73,6 +76,8 @@
     position: absolute;
     left: 32px;
     top: 30px;
+    image-rendering: crisp-edges; /* или -webkit-optimize-contrast */
+    -ms-interpolation-mode: nearest-neighbor; /* для IE */
   }
 
   & .image-part-bottom {
