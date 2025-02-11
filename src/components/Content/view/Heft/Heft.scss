@@ -17,6 +17,7 @@
     z-index: 1;
     transform: rotate(-42.5deg);
     transition: opacity 0.5s;
+    user-select: none;
 
     &__span {
       font-family: "Waterfall", serif;
@@ -35,9 +36,9 @@
     }
 
     &__img {
-      width: 76px;
+      width: 98px;
       position: absolute;
-      left: 32px;
+      left: 26px;
       top: 30px;
     }
   }
