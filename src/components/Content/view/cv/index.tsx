@@ -2,7 +2,6 @@ import Sidebar from "./sidebar";
 import MainInfo from "./main-info";
 import AboutMe from "./aboutMe";
 import Contacts from "./contacts";
-import Languages from "./languages";
 import ContactLinks from "./contactLinks";
 import Header from "./header";
 import TechnologienCarousel from "./technologienCarousel";
@@ -11,6 +10,7 @@ const CV = (props: {
   onClick: (e: React.MouseEvent<Element>) => void;
   isCv: boolean | "1";
 }) => {
+  console.log("CV");
   return (
     <main
       id="cv"

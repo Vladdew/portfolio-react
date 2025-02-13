@@ -15,7 +15,6 @@ function Controlls(props: {
   onClick: (e: React.MouseEvent<Element>) => void;
   isCv: boolean | "1";
 }) {
-  //const basePath = process.env.REACT_APP_BASE_PATH || "/";
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const [lang, setLang] = useState("de");
@@ -58,7 +57,6 @@ function Controlls(props: {
               title="Herunterladen"
               className="controlls__print controlls__iconWrap"
               href={lang === "de" ? "pres_de.pdf" : "pres_en.pdf"}
-              //href={lang === "de" ? "/portfolio-react/pres_de_nofoto.pdf" : "/portfolio-react/pres_en_nofoto.pdf"}
               download={
                 lang === "de" ? "presniakov_de.pdf" : "presniakov_en.pdf"
               }

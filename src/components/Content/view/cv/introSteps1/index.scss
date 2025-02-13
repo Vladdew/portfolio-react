@@ -2,8 +2,12 @@ div.custom-intro1-class {
   background-color: #f9eecd;
   color: #444444;
   min-width: unset;
-  width: 450px;
+  width: 350px;
   max-width: 600px;
+
+  & .introjs-arrow.top {
+    border-top-color: #ffffffd8;
+  }
 
   & .introjs-tooltip-header {
     position: static;

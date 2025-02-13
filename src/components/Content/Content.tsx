@@ -13,6 +13,7 @@ const Content = () => {
   const onClick = () => {
     setIsCV(!Boolean(isCV));
   };
+  console.log("content");
   return (
     <>
       <Projects />

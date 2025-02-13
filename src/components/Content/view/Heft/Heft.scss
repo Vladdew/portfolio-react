@@ -1,7 +1,7 @@
 .heftContainer {
   position: absolute;
-  height: auto;
-  width: 300px;
+  height: 100%;
+  width: 100%;
 
   & .overlay {
     position: absolute;
@@ -11,13 +11,20 @@
     left: 108px;
     box-shadow: none;
     cursor: pointer;
+    transition: transform 0.3s, opacity 1s;
     opacity: 1;
     background-color: #fffbee;
     color: #6b6b6b;
-    z-index: 1;
+    z-index: 99999999;
     transform: rotate(-42.5deg);
-    transition: opacity 0.5s;
+
+    &:hover {
+      transform: rotate(-42.5deg) scale(1.05);
+    }
+
     user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 
     &__span {
       font-family: "Waterfall", serif;
@@ -47,6 +54,7 @@
   }
 
   & .overlay.overlay-hidden {
+    transition: none;
     opacity: 0;
   }
 }

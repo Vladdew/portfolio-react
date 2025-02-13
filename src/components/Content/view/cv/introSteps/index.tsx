@@ -59,7 +59,6 @@ const IntroSteps: React.FC<IntroStepsProps> = ({
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const checked = e.target.checked;
     setDontShowAgain(checked);
-    //localStorage.setItem("dontShowIntroAgain", checked.toString());
   };
 
   // Добавляем чекбокс на последний шаг
