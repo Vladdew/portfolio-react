@@ -15,56 +15,93 @@
     border: 1px solid #4ea3ee47;
   }
 
-  &__contact-link {
+  &__contact-link img {
     transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
     cursor: pointer;
+    will-change: transform;
+    transform-origin: center;
   }
 
-  &__contact-link:hover {
-    transform: scale(1.3);
+  &__contact-link:hover img {
+    transform: scale(1.2);
   }
 
-  &__contact-link:active {
+  &__contact-link:active img {
     transform: scale(1);
   }
 
   &__contact-link:nth-child(1) img {
-    width: 22px;
+    width: 21px;
+    position: relative;
+    top: 2px;
   }
 
   &__contact-link:nth-child(2) img {
     width: 25px;
+    position: relative;
+    top: 1px;
   }
 
   &__contact-link:nth-child(3) img {
-    width: 26px;
+    width: 28px;
   }
 
   &__contact-link:nth-child(4) img {
     width: 21px;
+    position: relative;
+    top: 3px;
   }
 
   &__contact-link:last-child {
     background: white;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    top: -2px;
+    top: 0px;
   }
-
   &__contact-link:last-child img {
-    width: 27px;
+    width: 28px;
+    height: 28px;
   }
 
-  &__contact-link img {
-    width: 24px;
+  &__contact-link-anchor {
+    display: block;
+    height: 28px;
+    width: 28px;
   }
+
+  // &__contact-link:last-child img {
+  //   width: 27px;
+  // }
+
+  // &__contact-link img {
+  //   width: 24px;
+  // }
+  .icon-wrapper {
+    width: 40px; // Фиксированный размер
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // .icon-wrapper img {
+  //   width: 100%;
+  //   height: 100%;
+  //   transition: transform 0.3s ease;
+  // }
+
+  // .icon-wrapper:hover img {
+  //   transform: scale(1.2);
+  // }
 }
 
 #contact-tt {
+  position: absolute;
+
   background: linear-gradient(
     90deg,
     rgba(255, 240, 208, 1) 0%,

@@ -5,6 +5,7 @@ import linkedin from "../../../../../icons/linkedin.png";
 import cata from "../../../../../icons/cata.png";
 import gh from "../../../../../icons/gh.png";
 import { useTranslation } from "react-i18next";
+import { isMobile } from "react-device-detect";
 
 import "./index.scss";
 
@@ -12,53 +13,44 @@ const ContactLinks = () => {
   const { t } = useTranslation();
   return (
     <>
-      <Tooltip id="contact-tt" />
+      {isMobile ? "" : <Tooltip id="contact-tt" />}
       <div className="sections-wrap__contact-links">
-        <div className="sections-wrap__contact-link">
-          <a
-            data-tooltip-id="contact-tt"
-            data-tooltip-content={t("tooltip.write") + " WatsApp"}
-            className="sections-wrap__telegram-link"
-            href="https://wa.me/380991177577"
-          >
-            <img src={wa} alt="icon" />
-          </a>
-        </div>
-        <div className="sections-wrap__contact-link">
-          <a
-            data-tooltip-id="contact-tt"
-            data-tooltip-content={t("tooltip.write") + " Telegram"}
-            className="sections-wrap__telegram-link"
-            href="tg://resolve?domain=vladdew"
-          >
-            <img src={telega} alt="icon" />
-          </a>
-        </div>
-
-        <a
-          data-tooltip-id="contact-tt"
-          data-tooltip-content={t("tooltip.look")}
-          className="sections-wrap__contact-link"
-          href="https://www.linkedin.com/in/vlad-presnyakov/"
-        >
-          <img src={linkedin} alt="icon" />
-        </a>
-        <a
-          data-tooltip-id="contact-tt"
-          data-tooltip-content={t("tooltip.gh")}
-          className="sections-wrap__contact-link"
-          href="https://github.com/Vladdew"
-        >
-          <img src={gh} alt="icon" />
-        </a>
-        <a
-          data-tooltip-id="contact-tt"
-          data-tooltip-content={t("tooltip.cw")}
-          className="sections-wrap__contact-link"
-          href="https://www.codewars.com/users/%3CVladok%2F%3E"
-        >
-          <img src={cata} alt="icon" />
-        </a>
+        {[
+          {
+            img: wa,
+            text: "tooltip.write WatsApp",
+            link: "https://wa.me/380991177577",
+          },
+          {
+            img: telega,
+            text: "tooltip.write Telegram",
+            link: "tg://resolve?domain=vladdew",
+          },
+          {
+            img: linkedin,
+            text: "tooltip.look",
+            link: "https://www.linkedin.com/in/vlad-presnyakov/",
+          },
+          { img: gh, text: "tooltip.gh", link: "https://github.com/Vladdew" },
+          {
+            img: cata,
+            text: "tooltip.cw",
+            link: "https://www.codewars.com/users/%3CVladok%2F%3E",
+          },
+        ].map(({ img, text, link }, index) => (
+          <div key={index} className="sections-wrap__contact-link">
+            <a
+              data-tooltip-id="contact-tt"
+              data-tooltip-content={t(text)}
+              className="sections-wrap__contact-link-anchor"
+              href={link}
+            >
+              <span className="icon-wrapper">
+                <img src={img} alt="icon" />
+              </span>
+            </a>
+          </div>
+        ))}
       </div>
     </>
   );

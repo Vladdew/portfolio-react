@@ -30,7 +30,7 @@
     "ae": "Workpermition",
     "ae2": "Available",
     "married": "Family status",
-    "married2": "Married (1 Son 4 Years old)",
+    "married2": "Single",
     "mob": "Mobility",
     "mob2": "Own car available",
     "weiter": "Speciality",
@@ -60,5 +60,5 @@
   "heft": {
     "over": "CV"
   },
-  "introSteps": {"dontshow": "Don't show again"}
+  "introSteps": { "dontshow": "Don't show again" }
 }

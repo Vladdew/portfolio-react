@@ -24,16 +24,18 @@ const Contacts = () => {
       <ul className="sections-wrap__contacts">
         <li
           className={
-            flag2
+            isMobile && flag2
               ? "sections-wrap__contactme copied-tel"
               : "sections-wrap__contactme"
           }
           onClick={() => {
-            setFlag2(true);
-            setTimeout(() => {
-              setFlag2(false);
-            }, 3000);
-            navigator.clipboard.writeText("+49015156852622");
+            if (!isMobile) {
+              setFlag2(true);
+              setTimeout(() => {
+                setFlag2(false);
+              }, 3000);
+              navigator.clipboard.writeText("+49015156852622");
+            }
           }}
         >
           <span className="sections-wrap__icon-border sections-wrap__icon-border2">
@@ -124,7 +126,7 @@ const Contacts = () => {
           </a>
         </li>
       </ul>
-      <Tooltip place="top" id="tooltip1" />
+      {isMobile ? "" : <Tooltip place="top" id="tooltip1" />}
     </div>
   );
 };

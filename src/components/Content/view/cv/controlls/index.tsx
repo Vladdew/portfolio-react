@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { switchLanguage } from "./languageSlice";
 import { Tooltip } from "react-tooltip";
+import { isMobile } from "react-device-detect";
 import download from "../../../../../icons/download.png";
 import print from "../../../../../icons/print.png";
 import en from "../../../../../icons/en.png";
@@ -117,7 +118,7 @@ function Controlls(props: {
           </span>
         </span>
       </div>
-      <Tooltip place="bottom-end" id="tooltip" />
+      {isMobile ? "" : <Tooltip place="bottom-end" id="tooltip" />}
     </>
   );
 }
