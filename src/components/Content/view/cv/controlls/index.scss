@@ -1,5 +1,6 @@
+#tooltip,
 #tooltip1,
-#tooltip {
+#tooltip2 {
   background: linear-gradient(
     90deg,
     rgba(255, 240, 208, 1) 0%,
@@ -44,6 +45,7 @@
   }
 
   &__iconWrap {
+    position: relative;
     height: 34px;
     width: 22px;
     display: flex;
@@ -55,12 +57,11 @@
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
   }
 
   &__print {
     position: relative;
-    transform: scale(1);
-    transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
     cursor: pointer;
     margin-right: 6px;
   }
@@ -74,11 +75,15 @@
 
   &__switchLang {
     position: relative;
-    transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
     cursor: pointer;
-    transform: scale(1);
     width: 20px;
     border-radius: 50px;
+  }
+
+  &__download img {
+    top: 2px;
+    left: -5px;
+    position: relative;
   }
 
   &__menu-button {
@@ -140,27 +145,8 @@
     transform: rotate(-45deg) translate(3px, -5px);
   }
 
-  &__tools-container img {
-    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.275);
-  }
-
   &__tools-container .controlls__print {
     box-shadow: none;
-  }
-
-  &__switchLang:hover {
-    transform: scale(1.1);
-  }
-
-  &__switchLang:active {
-    transform: scale(0.9);
-  }
-
-  &__print:hover {
-    transform: scale(1.1);
-  }
-  &__print:active {
-    transform: scale(0.9);
   }
 
   &__menu-button:hover {
@@ -178,4 +164,19 @@
   &__menu-button:active {
     transform: scale(0.9);
   }
+}
+
+.controlls__iconWrap img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s cubic-bezier(0, 1.84, 0.73, 0.81);
+  cursor: pointer;
+}
+
+.controlls__iconWrap:hover img {
+  transform: scale(1.2);
+}
+
+#tooltip {
+  position: absolute; // Исправление дергания Tooltip
 }

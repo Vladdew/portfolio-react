@@ -177,6 +177,10 @@
   &__icon-img.rotate {
     transform: rotate(360deg);
     opacity: 0.7;
+    filter: invert(26%) sepia(96%) saturate(537%) hue-rotate(92deg)
+      brightness(91%) contrast(91%);
+    width: 10px;
+    height: 10px;
   }
 
   &__icon-border1 img {
@@ -187,12 +191,20 @@
     height: 16px;
   }
 
+  &__icon-border1-green {
+    border: 1px solid rgb(17, 150, 17);
+  }
+
   &__icon-border2 img {
     position: relative;
     left: 0;
     top: 0;
     width: 10px;
     height: 10px;
+  }
+
+  &__icon-border2-green {
+    border: 1px solid rgb(17, 150, 17);
   }
 
   &__icon-border3 img {

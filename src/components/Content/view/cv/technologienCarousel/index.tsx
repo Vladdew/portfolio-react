@@ -43,61 +43,149 @@ const TechnologienCarousel = (props: { isCv: boolean | "1" }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
+  const accumulatedX = useRef(0);
+  const lastMouseX = useRef(0);
+  const isHovering = useRef(false);
+
+  const lastTouchX = useRef(0);
+  const isSwiping = useRef(false);
+
+  const getCurrentTranslateX = (el: HTMLElement): number => {
+    const style = window.getComputedStyle(el);
+    const transform = style.transform;
+    if (transform && transform !== "none") {
+      const match = transform.match(/matrix\(([^)]+)\)/);
+      if (match) {
+        const values = match[1].split(", ");
+        return parseFloat(values[4]);
+      }
+    }
+    return 0;
+  };
+
   useEffect(() => {
-    let isHovering = false;
-    if (isMobile) return;
+    if (!props.isCv) return;
+    const carousel = carouselRef.current;
+    const wrapper = wrapperRef.current;
+    if (!carousel || !wrapper) return;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      if (
-        !isHovering ||
-        !carouselRef.current ||
-        !wrapperRef.current ||
-        !props.isCv
-      )
-        return;
+    const speedFactor = 2;
+    const touchSpeedFactor = 2; // Теперь положительный, чтобы не было реверса
 
-      const speed = (e.clientX / window.innerWidth) * 10 - 15;
-      carouselRef.current.style.animationDuration = `${8 - speed}s`;
-      console.log(carouselRef.current.style.animationDuration);
+    const handleMouseEnter = (e: MouseEvent) => {
+      isHovering.current = true;
+      lastMouseX.current = e.clientX;
+      accumulatedX.current = getCurrentTranslateX(carousel);
+      carousel.style.animation = "none";
     };
 
-    const handleMouseEnter = () => {
-      isHovering = true;
-      if (carouselRef.current) {
-        carouselRef.current.style.animationPlayState = "paused"; // Останавливаем анимацию при ховере
-      }
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isHovering.current) return;
+
+      const deltaX = e.clientX - lastMouseX.current;
+      lastMouseX.current = e.clientX;
+
+      accumulatedX.current -= deltaX * speedFactor;
+
+      const w = carousel.offsetWidth;
+      const minX = w * -1.6;
+      const maxX = w * 0.01;
+
+      accumulatedX.current = Math.max(
+        minX,
+        Math.min(accumulatedX.current, maxX)
+      );
+
+      carousel.style.transform = `translateX(${accumulatedX.current}px)`;
     };
 
     const handleMouseLeave = () => {
-      isHovering = false;
-      if (carouselRef.current) {
-        //carouselRef.current.style.transition = ""; // Убираем плавность на выходе
-        carouselRef.current.style.animationDuration = `160s`;
-        carouselRef.current.style.animationPlayState = "running"; // Возвращаем стандартную анимацию
-      }
+      isHovering.current = false;
+
+      const w = carousel.offsetWidth;
+      const minX = w * -1.6;
+      const maxX = w * 0.01;
+
+      const progress = (maxX - accumulatedX.current) / (maxX - minX);
+      const animationDuration = 160;
+      const negativeDelay = -progress * animationDuration;
+
+      carousel.style.animation = `scroll ${animationDuration}s linear infinite alternate`;
+      carousel.style.animationDelay = `${negativeDelay}s`;
     };
 
-    const wrapper = wrapperRef.current;
-    if (wrapper) {
-      wrapper.addEventListener("mousemove", handleMouseMove);
+    const handleTouchStart = (e: TouchEvent) => {
+      isSwiping.current = true;
+      lastTouchX.current = e.touches[0].clientX;
+      accumulatedX.current = getCurrentTranslateX(carousel);
+      carousel.style.animation = "none";
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isSwiping.current) return;
+
+      const deltaX = e.touches[0].clientX - lastTouchX.current;
+      lastTouchX.current = e.touches[0].clientX;
+
+      accumulatedX.current += deltaX * touchSpeedFactor; // Теперь движение естественное
+
+      const w = carousel.offsetWidth;
+      const minX = w * -1.6;
+      const maxX = w * 0.01;
+
+      accumulatedX.current = Math.max(
+        minX,
+        Math.min(accumulatedX.current, maxX)
+      );
+
+      carousel.style.transform = `translateX(${accumulatedX.current}px)`;
+    };
+
+    const handleTouchEnd = () => {
+      isSwiping.current = false;
+
+      const w = carousel.offsetWidth;
+      const minX = w * -1.6;
+      const maxX = w * 0.01;
+
+      const progress = (maxX - accumulatedX.current) / (maxX - minX);
+      const animationDuration = 160;
+      const negativeDelay = -progress * animationDuration;
+
+      carousel.style.animation = `scroll ${animationDuration}s linear infinite alternate`;
+      carousel.style.animationDelay = `${negativeDelay}s`;
+    };
+
+    if (!isMobile) {
       wrapper.addEventListener("mouseenter", handleMouseEnter);
+      wrapper.addEventListener("mousemove", handleMouseMove);
       wrapper.addEventListener("mouseleave", handleMouseLeave);
+    } else {
+      wrapper.addEventListener("touchstart", handleTouchStart);
+      wrapper.addEventListener("touchmove", handleTouchMove);
+      wrapper.addEventListener("touchend", handleTouchEnd);
     }
 
-    return () => {
-      if (wrapper) {
-        wrapper.removeEventListener("mousemove", handleMouseMove);
+    if (!isMobile) {
+      return () => {
         wrapper.removeEventListener("mouseenter", handleMouseEnter);
+        wrapper.removeEventListener("mousemove", handleMouseMove);
         wrapper.removeEventListener("mouseleave", handleMouseLeave);
-      }
-    };
+      };
+    } else {
+      return () => {
+        wrapper.removeEventListener("touchstart", handleTouchStart);
+        wrapper.removeEventListener("touchmove", handleTouchMove);
+        wrapper.removeEventListener("touchend", handleTouchEnd);
+      };
+    }
   }, []);
 
   useEffect(() => {
     if (carouselRef.current && props.isCv) {
       carouselRef.current.style.animationPlayState = "running";
       if (isMobile) {
-        carouselRef.current.style.animationDuration = `30s`;
+        carouselRef.current.style.animationDuration = "160s";
       }
     } else {
       if (carouselRef.current) {
@@ -116,13 +204,6 @@ const TechnologienCarousel = (props: { isCv: boolean | "1" }) => {
         <div ref={carouselRef} className="carousel">
           {icons.map((icon, index) => (
             <div key={index} className="carousel__icon">
-              <img src={icon.src} alt={icon.alt} />
-              <span className="carousel__icon-title">{icon.alt}</span>
-            </div>
-          ))}
-          {/* Дублируем иконки для бесконечной прокрутки */}
-          {icons.map((icon, index) => (
-            <div key={index + icons.length} className="carousel__icon">
               <img src={icon.src} alt={icon.alt} />
               <span className="carousel__icon-title">{icon.alt}</span>
             </div>

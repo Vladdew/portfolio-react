@@ -8,11 +8,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  animation: scroll 160s linear infinite;
+  animation: scroll 160s linear infinite alternate;
   white-space: nowrap;
   padding-top: 8px;
   gap: 20px;
-  transition: animation-duration 0.5s ease, animation-play-state 0.5s ease;
+  //transition: animation-duration 0.5s ease, animation-play-state 0.5s ease;
 
   &:after {
     content: "";
@@ -96,9 +96,9 @@
 /* Анимация для бесконечной прокрутки */
 @keyframes scroll {
   0% {
-    transform: translateX(0);
+    transform: translateX(1%);
   }
   100% {
-    transform: translateX(-200%); /* Сдвигаем на половину ширины дубликата */
+    transform: translateX(-160%); /* Сдвигаем на половину ширины дубликата */
   }
 }

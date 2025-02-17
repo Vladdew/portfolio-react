@@ -114,9 +114,6 @@
     z-index: 1;
   }
 
-  & .cv.animate-in {
-  }
-
   .flex-wrap {
     max-width: none;
     justify-content: end;
@@ -332,11 +329,11 @@
     }
 
     .carousel-wrapper {
-      overflow: scroll;
+      overflow: auto;
     }
-
-    & .sections-wrap {
-      //left: -4px;
+    //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+    .carousel {
+      animation: scroll-mobile 160s linear infinite alternate;
     }
 
     & .sections-wrap__contacts {
@@ -381,9 +378,8 @@
       position: relative;
       top: 0;
       bottom: unset;
-      height: 200px;
+      height: 180px;
       flex: 0 0 auto;
-      overflow-y: auto;
     }
 
     &__footer {
@@ -427,7 +423,7 @@
     }
 
     &__specialitat {
-      font-size: 12px;
+      font-size: 16px;
       position: absolute;
       bottom: 10px;
       right: 10px;
@@ -505,6 +501,15 @@
   to {
     //box-shadow: 13px 13px 2px -9px rgba(34, 60, 80, 0.29);
     transform: skew(-25deg, 25deg) scale(0.3) translate(810px, -320px);
+  }
+}
+
+@keyframes scroll-mobile {
+  0% {
+    transform: translateX(1%);
+  }
+  100% {
+    transform: translateX(-338%);
   }
 }
 

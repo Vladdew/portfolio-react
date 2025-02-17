@@ -1,19 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import phone from "../../../../../icons/phone.png";
 import done from "../../../../../icons/done.png";
 import email from "../../../../../icons/email.png";
 import home from "../../../../../icons/home.png";
 import { Tooltip } from "react-tooltip";
-
 import { useTranslation } from "react-i18next";
 import { isMobile } from "react-device-detect";
 
 import "./index.scss";
 
 const Contacts = () => {
-  const [flag, setFlag] = useState(false);
-  const [flag2, setFlag2] = useState(false);
+  const [copyEmail, setCopyEmail] = useState(false);
+  const [copyTel, setCopyTel] = useState(false);
+  const [isHoveringTel, setIsHoveringTel] = useState(false);
+  const [isHoveringEmail, setIsHoveringEmail] = useState(false);
+
   const { t } = useTranslation();
+
+  const telRef = useRef<HTMLSpanElement | null>(null);
+  const emailRef = useRef<HTMLSpanElement | null>(null);
+
+  useEffect(() => {
+    const telElement = telRef.current;
+    const emailElement = emailRef.current;
+
+    if (!telElement || !emailElement) return; // Проверяем, что ссылки не null
+
+    const handleMouseEnterTel = () => setIsHoveringTel(true);
+    const handleMouseLeaveTel = () => setIsHoveringTel(false);
+    const handleMouseEnterEmail = () => setIsHoveringEmail(true);
+    const handleMouseLeaveEmail = () => setIsHoveringEmail(false);
+
+    telElement.addEventListener("mouseenter", handleMouseEnterTel);
+    telElement.addEventListener("mouseleave", handleMouseLeaveTel);
+    emailElement.addEventListener("mouseenter", handleMouseEnterEmail);
+    emailElement.addEventListener("mouseleave", handleMouseLeaveEmail);
+
+    return () => {
+      telElement.removeEventListener("mouseenter", handleMouseEnterTel);
+      telElement.removeEventListener("mouseleave", handleMouseLeaveTel);
+      emailElement.removeEventListener("mouseenter", handleMouseEnterEmail);
+      emailElement.removeEventListener("mouseleave", handleMouseLeaveEmail);
+    };
+  }, []);
 
   return (
     <div className="sections-wrap">
@@ -24,33 +53,36 @@ const Contacts = () => {
       <ul className="sections-wrap__contacts">
         <li
           className={
-            isMobile && flag2
+            isMobile && copyTel
               ? "sections-wrap__contactme copied-tel"
               : "sections-wrap__contactme"
           }
           onClick={() => {
             if (!isMobile) {
-              setFlag2(true);
-              setTimeout(() => {
-                setFlag2(false);
-              }, 3000);
+              setCopyTel(true);
+              setTimeout(() => setCopyTel(false), 3000);
               navigator.clipboard.writeText("+49015156852622");
             }
           }}
         >
-          <span className="sections-wrap__icon-border sections-wrap__icon-border2">
+          <span
+            className={`sections-wrap__icon-border sections-wrap__icon-border2 ${
+              copyTel ? "sections-wrap__icon-border2-green" : ""
+            }`}
+          >
             <img
-              className={`sections-wrap__icon-img ${flag2 ? "rotate" : ""}`}
-              src={flag2 ? done : phone}
+              className={`sections-wrap__icon-img ${copyTel ? "rotate" : ""}`}
+              src={copyTel ? done : phone}
               alt="icon-copy-phone number"
             />
           </span>
-          {!flag2 ? (
+          {!copyTel ? (
             <a
               className="sections-wrap__call-link"
               href={isMobile ? "tel:+49015156852622" : "#!"}
             >
               <span
+                ref={telRef}
                 data-tooltip-id="tooltip1"
                 data-tooltip-content={isMobile ? "" : t("contacts.clickto")}
                 className="sections-wrap__contact-title"
@@ -70,30 +102,37 @@ const Contacts = () => {
             </a>
           )}
         </li>
+
         <li
           onClick={() => {
-            setFlag(true);
-            setTimeout(() => {
-              setFlag(false);
-            }, 3000);
+            setCopyEmail(true);
+            setTimeout(() => setCopyEmail(false), 3000);
             navigator.clipboard.writeText("presnyakov.vladyslav@gmail");
           }}
-          title="Copy to clipboard"
           className={
-            flag
+            copyEmail
               ? "sections-wrap__contactme copied"
               : "sections-wrap__contactme"
           }
         >
-          <span className="sections-wrap__icon-border sections-wrap__icon-border1">
+          <span
+            className={`sections-wrap__icon-border sections-wrap__icon-border1 ${
+              copyEmail ? "sections-wrap__icon-border1-green" : ""
+            }`}
+          >
             <img
-              className="sections-wrap__icon-img"
-              src={flag ? done : email}
+              className={`sections-wrap__icon-img ${copyEmail ? "rotate" : ""}`}
+              src={copyEmail ? done : email}
               alt="icon-copy-email"
             />
           </span>
-          {!flag ? (
-            <span className="sections-wrap__contact-title sections-wrap__contact-title-email">
+          {!copyEmail ? (
+            <span
+              ref={emailRef}
+              className="sections-wrap__contact-title sections-wrap__contact-title-email"
+              data-tooltip-id="tooltip2"
+              data-tooltip-content={isMobile ? "" : t("contacts.clickto")}
+            >
               <span className="sections-wrap__contact-styles">Email</span>
               <br />
               presnyakov.vladyslav <br />
@@ -126,7 +165,8 @@ const Contacts = () => {
           </a>
         </li>
       </ul>
-      {isMobile ? "" : <Tooltip place="top" id="tooltip1" />}
+      {isMobile ? "" : isHoveringTel && <Tooltip place="top" id="tooltip1" />}
+      {isMobile ? "" : isHoveringEmail && <Tooltip place="top" id="tooltip2" />}
     </div>
   );
 };

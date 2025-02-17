@@ -18,12 +18,12 @@ const ContactLinks = () => {
         {[
           {
             img: wa,
-            text: "tooltip.write WatsApp",
+            text: "tooltip.writeWA",
             link: "https://wa.me/380991177577",
           },
           {
             img: telega,
-            text: "tooltip.write Telegram",
+            text: "tooltip.writeTG",
             link: "tg://resolve?domain=vladdew",
           },
           {
@@ -44,6 +44,8 @@ const ContactLinks = () => {
               data-tooltip-content={t(text)}
               className="sections-wrap__contact-link-anchor"
               href={link}
+              target="_blank"
+              rel="noreferrer"
             >
               <span className="icon-wrapper">
                 <img src={img} alt="icon" />

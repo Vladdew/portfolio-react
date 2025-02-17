@@ -45,6 +45,7 @@ function Controlls(props: {
 
   return (
     <>
+      {!isMobile && <Tooltip id="tooltip" data-tooltip-place="top" />}
       <div
         className={`controlls__tools-container ${
           menuFlag ? "controlls__tools-container-expanded" : ""
@@ -52,53 +53,58 @@ function Controlls(props: {
       >
         {menuFlag && (
           <>
-            <a
-              data-tooltip-id="tooltip"
-              data-tooltip-content={t("controlls.download")}
-              title="Herunterladen"
-              className="controlls__print controlls__iconWrap"
-              href={lang === "de" ? "pres_de.pdf" : "pres_en.pdf"}
-              download={
-                lang === "de" ? "presniakov_de.pdf" : "presniakov_en.pdf"
-              }
-            >
-              <img alt="print" src={download} />
-            </a>
-
-            <span
-              data-tooltip-id="tooltip"
-              data-tooltip-content={t("controlls.print")}
-              title="Print to PDF"
-              onClick={() => printPDF()}
-              className="controlls__print controlls__iconWrap"
-            >
-              <img alt="print" src={print} />
-            </span>
-            <span
-              data-tooltip-id="tooltip"
-              data-tooltip-content={t("controlls.lingua")}
-              title={lang === "en" ? "English" : "Deutsch"}
-              className={`controlls__switchLang controlls__iconWrap ${
-                lang === "en"
-                  ? "controlls__switchLang-en"
-                  : "controlls__switchLang-de"
-              }`}
-            >
-              <img
-                src={lang === "en" ? en : de}
-                onClick={() => changeLanguage(lang === "en" ? "de" : "en")}
-                alt={lang === "en" ? "change language" : "Sprache ändern"}
-              />
-            </span>
-
-            <span
-              data-tooltip-id="tooltip"
-              data-tooltip-content={t("controlls.ll")}
-              title={lang === "en" ? "Professional experience" : "Lebenslauf"}
-              className="controlls__opencv"
-            >
-              <img src={cv} onClick={props.onClick} alt="Open cv" />
-            </span>
+            {[
+              {
+                img: download,
+                text: t("controlls.download"),
+                title: isMobile ? "Herunterladen" : "",
+                link: lang === "de" ? "pres_de.pdf" : "pres_en.pdf",
+                download:
+                  lang === "de" ? "presniakov_de.pdf" : "presniakov_en.pdf",
+                className: "controlls__download",
+              },
+              {
+                img: print,
+                text: t("controlls.print"),
+                onClick: printPDF,
+                className: "controlls__print",
+              },
+              {
+                img: lang === "en" ? en : de,
+                text: t("controlls.lingua"),
+                onClick: () => changeLanguage(lang === "en" ? "de" : "en"),
+                className: "controlls__switchLang",
+              },
+              {
+                img: cv,
+                text: t("controlls.ll"),
+                onClick: props.onClick,
+                className: "controlls__opencv",
+              },
+            ].map(
+              (
+                { img, text, title, link, download, className, onClick },
+                index
+              ) => (
+                <span
+                  key={index}
+                  data-tooltip-id="tooltip"
+                  data-tooltip-content={text}
+                  title={title}
+                  className={`controlls__iconWrap ${className}`}
+                  onClick={onClick}
+                  style={{ position: "relative" }} // Фиксация положения Tooltip
+                >
+                  {link ? (
+                    <a href={link} download={download}>
+                      <img src={img} alt={title} />
+                    </a>
+                  ) : (
+                    <img src={img} alt={title} />
+                  )}
+                </span>
+              )
+            )}
           </>
         )}
         <span
@@ -118,7 +124,6 @@ function Controlls(props: {
           </span>
         </span>
       </div>
-      {isMobile ? "" : <Tooltip place="bottom-end" id="tooltip" />}
     </>
   );
 }

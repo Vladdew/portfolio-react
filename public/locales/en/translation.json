@@ -41,7 +41,8 @@
     "title": "Technologies"
   },
   "tooltip": {
-    "write": "Write to me via",
+    "writeWA": "Write to me via WhatsApp",
+    "writeTG": "Write to me viaTelegram",
     "look": "Check out my LinkedIn profile",
     "gh": "This is my GitHub profil",
     "cw": "Troubleshooting at CodeWars"
