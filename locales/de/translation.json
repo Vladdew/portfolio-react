@@ -23,7 +23,7 @@
     "lingua": "Sprachen",
     "lingua2": "De B2, En B1. Ru, Ua- Muttersprachen",
     "education": "Studium",
-    "education2": "Master in Computerwissenschaften, Forschungsingenieur",
+    "education2": "Master in Informatik, Forschungsingenieur",
     "ae": "Arbeitserlaubnis",
     "ae2": "Vorhanden",
     "married": "Familienstand",
@@ -39,10 +39,11 @@
   },
 
   "tooltip": {
-    "write": "Schreiben mir per",
+    "writeWA": "Schreiben mir per WhatsApp",
+    "writeTG": "Schreiben mir per Telegram",
     "look": "Schauen Sie mein LinkedIn-Profil an",
     "gh": "Das ist mein GitHub-Profil",
-    "cw": "Problemlösung bei CodeWars"
+    "cw": "Problemlösung beim CodeWars"
   },
 
   "controlls": {
