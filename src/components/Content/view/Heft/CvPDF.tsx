@@ -89,14 +89,7 @@ const CvPDF = (props: CvPDFTypes) => {
         <>
           <Toolbar>
             {(props: ToolbarSlot) => {
-              const {
-                //Download,
-                EnterFullScreen,
-                //Print,
-                Zoom,
-                ZoomIn,
-                ZoomOut,
-              } = props;
+              const { EnterFullScreen, Zoom, ZoomIn, ZoomOut } = props;
               return (
                 <div className="viewer__toolbar-slot">
                   <div className="zoom">
