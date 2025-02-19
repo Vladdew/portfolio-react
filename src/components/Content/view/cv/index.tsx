@@ -10,7 +10,6 @@ const CV = (props: {
   onClick: (e: React.MouseEvent<Element>) => void;
   isCv: boolean | "1";
 }) => {
-  console.log("CV");
   return (
     <main
       id="cv"
