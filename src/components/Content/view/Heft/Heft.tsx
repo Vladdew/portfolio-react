@@ -10,7 +10,7 @@ type Props = {
 
 const Heft = (props: Props) => {
   const [showIntro1, setShowIntro1] = useState<boolean>(false);
-  const [showOverlay, setShowOverlay] = useState(false);
+  const [showOverlay, setShowOverlay] = useState<boolean>(false);
   const { t } = useTranslation();
 
   useEffect(() => {

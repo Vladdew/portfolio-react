@@ -84,7 +84,7 @@ const Contacts = () => {
               <span
                 ref={telRef}
                 data-tooltip-id="tooltip1"
-                data-tooltip-content={isMobile ? "" : t("contacts.clickto")}
+                data-tooltip-content={t("contacts.clickto")}
                 className="sections-wrap__contact-title"
               >
                 <span className="sections-wrap__contact-styles">
@@ -131,7 +131,7 @@ const Contacts = () => {
               ref={emailRef}
               className="sections-wrap__contact-title sections-wrap__contact-title-email"
               data-tooltip-id="tooltip2"
-              data-tooltip-content={isMobile ? "" : t("contacts.clickto")}
+              data-tooltip-content={t("contacts.clickto")}
             >
               <span className="sections-wrap__contact-styles">Email</span>
               <br />
