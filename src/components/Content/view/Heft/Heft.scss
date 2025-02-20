@@ -215,38 +215,13 @@
     &__inner-page {
       background: transparent;
     }
-
-    &__page-layer--single::after {
-      content: none;
-    }
   }
 }
 
-.pdf-container {
-  width: auto;
-  height: auto;
-}
-
-div.rpv-full-screen__exit-button {
-  right: 1px;
-  top: 1px;
-  border: 1px solid;
-  height: 20px;
-  width: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  box-shadow: (0, 2, 2, 1);
-  box-shadow: 0px 0px 20px -8px rgba(0, 0, 0, 0.75);
+#full div button {
   overflow: hidden;
-  transition: transform 0.3s cubic-bezier(0, 1.84, 0.73, 0.81);
+  position: relative;
 
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  /* Создаем псевдоэлемент для блика */
   &:before {
     content: "";
     position: absolute;
@@ -257,16 +232,29 @@ div.rpv-full-screen__exit-button {
     background: rgb(255, 255, 255);
     background: linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0) 14%,
-      rgba(255, 255, 255, 1) 42%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 1) 73%,
-      rgba(255, 255, 255, 0) 75%
+      rgba(255, 255, 255, 0) 2%,
+      rgba(255, 255, 255, 1) 33%,
+      rgba(255, 255, 255, 0) 45%,
+      rgba(255, 255, 255, 1) 68%,
+      rgba(255, 255, 255, 1) 100%
     );
     transition: transform 0.3s;
     transform: skewX(-45deg); /* Наклоняем */
     animation: move-light 4s infinite linear; /* Запускаем анимацию */
   }
+}
+
+.pdf-container {
+  width: auto;
+  height: auto;
+}
+
+div.rpv-full-screen__exit-button {
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  /* Создаем псевдоэлемент для блика */
 }
 
 @keyframes move-light {
