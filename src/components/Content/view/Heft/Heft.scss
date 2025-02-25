@@ -250,6 +250,7 @@
 }
 
 div.rpv-full-screen__exit-button {
+  bottom: unset;
   &:hover {
     transform: scale(1.1);
   }
