@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Steps } from "intro.js-react";
+import { useTranslation } from "react-i18next";
 
 import "intro.js/introjs.css";
 import "./index.scss";
@@ -22,6 +23,9 @@ const IntroSteps1: React.FC<IntroStepsProps> = ({
 }) => {
   const [stepsJSON, setStepsJSON] = useState<Step[]>([]);
   const [showIntro1, setShowIntro] = useState(false);
+
+  const { t } = useTranslation();
+  const fertigLocale = t("introSteps.done");
 
   useEffect(() => {
     if (steps.length > 0) {
@@ -49,7 +53,7 @@ const IntroSteps1: React.FC<IntroStepsProps> = ({
       options={{
         nextLabel: "Weiter",
         prevLabel: "Zurück",
-        doneLabel: "Fertig",
+        doneLabel: "Ok",
         overlayOpacity: 0.8,
         tooltipClass: "custom-intro1-class",
         highlightClass: "intro-highlight",

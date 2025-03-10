@@ -94,7 +94,7 @@ const IntroSteps: React.FC<IntroStepsProps> = ({
       options={{
         nextLabel: "Weiter",
         prevLabel: "Zurück",
-        doneLabel: "Fertig",
+        doneLabel: "Ok",
         overlayOpacity: 0.8,
         tooltipClass: "custom-intro-class",
         highlightClass: "intro-highlight",
