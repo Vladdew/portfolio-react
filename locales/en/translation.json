@@ -61,5 +61,5 @@
   "heft": {
     "over": "CV"
   },
-  "introSteps": { "dontshow": "Don't show again" }
+  "introSteps": { "dontshow": "Don't show again", "done": "Done" }
 }
