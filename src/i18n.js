@@ -19,9 +19,9 @@ i18n
       escapeValue: false,
     },
     backend: {
-      //loadPath: "/portfolio-react/locales/{{lng}}/{{ns}}.json",
+      loadPath: "/portfolio-react/locales/{{lng}}/{{ns}}.json",
       //loadPath: "/locales/{{lng}}/{{ns}}.json",
-      loadPath: `${basePath}locales/{{lng}}/{{ns}}.json`,
+      //loadPath: `${basePath}locales/{{lng}}/{{ns}}.json`,
     },
     react: {
       useSuspense: false,
