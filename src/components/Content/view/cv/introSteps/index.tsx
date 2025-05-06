@@ -75,7 +75,7 @@ const IntroSteps: React.FC<IntroStepsProps> = ({
           ${dontShowAgain ? "checked" : ""} 
           onchange="handleCheckboxChange(event)" 
         /> 
-        ${t("introSteps.dontshow")}
+       Nicht mehr anzeigen
       </label>`;
     }
   }, [stepsJSON, dontShowAgain, t]);
