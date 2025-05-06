@@ -151,32 +151,25 @@
 
   @keyframes rotare-heft-in {
     from {
-      //box-shadow: 13px 13px 2px -9px rgba(34, 60, 80, 0.29);
     }
     50% {
       transform: scale(0.2) translate(1200px, -350px);
-      //
     }
 
     to {
       transform: translate(40%, -6%);
-      //box-shadow: -2px 4px 100px 16px rgba(34, 60, 80, 0.11);
     }
   }
 
   @keyframes rotare-heft-out {
     from {
-      //transform: translate(-0, -200px);
       transform: scale(1) translate(-0, -200px);
-
       animation-timing-function: cubic-bezier(0.88, 0.38, 0.99, 0.93);
     }
 
     75% {
       transform: scale(0.21) translate(400px, -800px) rotate(-32deg);
     }
-    //rotate()
-
     to {
       transform: scale(0.2) translate(400px, -1000px) rotate(-42.5deg);
     }
@@ -274,14 +267,16 @@ div.rpv-full-screen__exit-button {
   /* Создаем псевдоэлемент для блика */
 }
 
+// Animated full screen button
+
 @keyframes move-light {
   0% {
-    left: -3em; /* Начинаем за кнопкой */
+    left: -3em;
   }
   50% {
-    left: 3em; /* Двигаем через кнопку */
+    left: 3em;
   }
   100% {
-    left: 8em; /* Заканчиваем за кнопкой */
+    left: 8em;
   }
 }
