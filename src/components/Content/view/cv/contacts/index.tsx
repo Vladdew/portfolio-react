@@ -1,48 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import phone from "../../../../../icons/phone.png";
 import done from "../../../../../icons/done.png";
 import email from "../../../../../icons/email.png";
 import home from "../../../../../icons/home.png";
-import { Tooltip } from "react-tooltip";
 import { useTranslation } from "react-i18next";
 import { isMobile } from "react-device-detect";
+import Tooltip from "../TooltipComponent";
 
 import "./index.scss";
 
 const Contacts = () => {
   const [copyEmail, setCopyEmail] = useState(false);
   const [copyTel, setCopyTel] = useState(false);
-  const [isHoveringTel, setIsHoveringTel] = useState(false);
-  const [isHoveringEmail, setIsHoveringEmail] = useState(false);
 
   const { t } = useTranslation();
-
-  const telRef = useRef<HTMLSpanElement | null>(null);
-  const emailRef = useRef<HTMLSpanElement | null>(null);
-
-  useEffect(() => {
-    const telElement = telRef.current;
-    const emailElement = emailRef.current;
-
-    if (!telElement || !emailElement) return; // Проверяем, что ссылки не null
-
-    const handleMouseEnterTel = () => setIsHoveringTel(true);
-    const handleMouseLeaveTel = () => setIsHoveringTel(false);
-    const handleMouseEnterEmail = () => setIsHoveringEmail(true);
-    const handleMouseLeaveEmail = () => setIsHoveringEmail(false);
-
-    telElement.addEventListener("mouseenter", handleMouseEnterTel);
-    telElement.addEventListener("mouseleave", handleMouseLeaveTel);
-    emailElement.addEventListener("mouseenter", handleMouseEnterEmail);
-    emailElement.addEventListener("mouseleave", handleMouseLeaveEmail);
-
-    return () => {
-      telElement.removeEventListener("mouseenter", handleMouseEnterTel);
-      telElement.removeEventListener("mouseleave", handleMouseLeaveTel);
-      emailElement.removeEventListener("mouseenter", handleMouseEnterEmail);
-      emailElement.removeEventListener("mouseleave", handleMouseLeaveEmail);
-    };
-  }, []);
 
   return (
     <div className="sections-wrap">
@@ -81,18 +52,15 @@ const Contacts = () => {
               className="sections-wrap__call-link"
               href={isMobile ? "tel:+49015156852622" : "#!"}
             >
-              <span
-                ref={telRef}
-                data-tooltip-id="tooltip1"
-                data-tooltip-content={t("contacts.clickto")}
-                className="sections-wrap__contact-title"
-              >
-                <span className="sections-wrap__contact-styles">
-                  {t("contacts.phone")}
+              <Tooltip text={t("contacts.clickto")} position="top">
+                <span className="sections-wrap__contact-title">
+                  <span className="sections-wrap__contact-styles">
+                    {t("contacts.phone")}
+                  </span>
+                  <br />
+                  +49 (0151) 5685 2622
                 </span>
-                <br />
-                +49 (0151) 5685 2622
-              </span>
+              </Tooltip>
             </a>
           ) : (
             <a className="sections-wrap__call-link" href={"#!"}>
@@ -127,17 +95,14 @@ const Contacts = () => {
             />
           </span>
           {!copyEmail ? (
-            <span
-              ref={emailRef}
-              className="sections-wrap__contact-title sections-wrap__contact-title-email"
-              data-tooltip-id="tooltip2"
-              data-tooltip-content={t("contacts.clickto")}
-            >
-              <span className="sections-wrap__contact-styles">Email</span>
-              <br />
-              presnyakov.vladyslav <br />
-              @gmail.com
-            </span>
+            <Tooltip text={t("contacts.clickto")} position="top">
+              <span className="sections-wrap__contact-title sections-wrap__contact-title-email">
+                <span className="sections-wrap__contact-styles">Email</span>
+                <br />
+                presnyakov.vladyslav <br />
+                @gmail.com
+              </span>
+            </Tooltip>
           ) : (
             <span className="sections-wrap__contact-title sections-wrap__contact-title-email-copied">
               {t("contacts.email-copied")}
@@ -165,8 +130,6 @@ const Contacts = () => {
           </a>
         </li>
       </ul>
-      {isMobile ? "" : isHoveringTel && <Tooltip place="top" id="tooltip1" />}
-      {isMobile ? "" : isHoveringEmail && <Tooltip place="top" id="tooltip2" />}
     </div>
   );
 };

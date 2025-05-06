@@ -249,6 +249,22 @@
   height: auto;
 }
 
+#rpv-core__tooltip-body-full-screen-enter {
+  right: 10px !important;
+}
+
+#rpv-core__tooltip-body-full-screen-enter .rpv-core__arrow--bc {
+  left: 80%;
+}
+
+#rpv-core__tooltip-body-zoom-out {
+  left: 10px !important;
+}
+
+#rpv-core__tooltip-body-zoom-out .rpv-core__arrow--bc {
+  left: 20%;
+}
+
 div.rpv-full-screen__exit-button {
   bottom: unset;
   &:hover {

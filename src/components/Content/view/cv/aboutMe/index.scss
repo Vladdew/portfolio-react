@@ -20,6 +20,8 @@
     flex-wrap: wrap;
     text-align: left;
     width: 100%;
+    position: relative;
+    max-width: 200px;
   }
   &__heading {
     font-size: 10px;
@@ -30,6 +32,11 @@
   }
   &__information {
     margin: 5px 0 14px 0;
+  }
+
+  &__information-absolute {
+    position: absolute;
+    top: 26px;
   }
 }
 

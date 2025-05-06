@@ -29,6 +29,10 @@ const AboutMe = () => {
             <span className="aboutMe__heading">{t("about.lingua")}:</span>
             <br />
             <span className="aboutMe__information">{t("about.lingua2")}</span>
+            <br />
+            <span className="aboutMe__information aboutMe__information-absolute">
+              {t("about.lingua3")}
+            </span>
           </li>
           <li>
             <span className="aboutMe__heading">{t("about.education")}:</span>
