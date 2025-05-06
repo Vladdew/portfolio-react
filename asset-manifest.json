@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.4ee8cdee.css",
-    "main.js": "./static/js/main.b84b3058.js",
+    "main.js": "./static/js/main.9686bb3a.js",
     "static/media/gazon.jpg": "./static/media/gazon.0b8cb9de8e1bc64ccc71.jpg",
     "static/media/heft.png": "./static/media/heft.bfce5d69c0f4a0084242.png",
     "static/media/fon.jpg": "./static/media/fon.bd2cba954d22613c1e2b.jpg",
@@ -13,10 +13,10 @@
     "index.html": "./index.html",
     "static/media/getFetch.cjs": "./static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
     "main.4ee8cdee.css.map": "./static/css/main.4ee8cdee.css.map",
-    "main.b84b3058.js.map": "./static/js/main.b84b3058.js.map"
+    "main.9686bb3a.js.map": "./static/js/main.9686bb3a.js.map"
   },
   "entrypoints": [
     "static/css/main.4ee8cdee.css",
-    "static/js/main.b84b3058.js"
+    "static/js/main.9686bb3a.js"
   ]
 }
