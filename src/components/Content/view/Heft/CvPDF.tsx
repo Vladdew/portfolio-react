@@ -68,6 +68,29 @@ const CvPDF = (props: CvPDFTypes) => {
 
   const { Toolbar } = toolbarPluginInstance;
 
+  // Ensure layout recalculates properly on fullscreen/orientation changes
+  useEffect(() => {
+    const fireResizes = () => {
+      window.dispatchEvent(new Event("resize"));
+      setTimeout(() => window.dispatchEvent(new Event("resize")), 150);
+      setTimeout(() => window.dispatchEvent(new Event("resize")), 400);
+    };
+
+    const onFsChange = () => fireResizes();
+
+    document.addEventListener("fullscreenchange", onFsChange);
+    document.addEventListener("webkitfullscreenchange", onFsChange as any);
+    document.addEventListener("msfullscreenchange", onFsChange as any);
+    window.addEventListener("orientationchange", fireResizes);
+
+    return () => {
+      document.removeEventListener("fullscreenchange", onFsChange);
+      document.removeEventListener("webkitfullscreenchange", onFsChange as any);
+      document.removeEventListener("msfullscreenchange", onFsChange as any);
+      window.removeEventListener("orientationchange", fireResizes);
+    };
+  }, []);
+
   if (loading) {
     return <div>Загрузка PDF...</div>; // Индикатор загрузки
   }
@@ -115,15 +138,17 @@ const CvPDF = (props: CvPDFTypes) => {
             }}
           </Toolbar>
 
-          <Worker
-            workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjsVersion}/build/pdf.worker.min.js`}
-          >
-            <Viewer
-              fileUrl={pdfFile} // Убедитесь, что pdfFile не null
-              defaultScale={SpecialZoomLevel.PageWidth}
-              plugins={[toolbarPluginInstance]}
-            />
-          </Worker>
+          <div className="pdf-container">
+            <Worker
+              workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjsVersion}/build/pdf.worker.min.js`}
+            >
+              <Viewer
+                fileUrl={pdfFile}
+                defaultScale={SpecialZoomLevel.PageWidth}
+                plugins={[toolbarPluginInstance]}
+              />
+            </Worker>
+          </div>
         </>
       ) : null}
     </div>
